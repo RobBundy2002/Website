@@ -6,10 +6,12 @@ const Home = () => {
     return (
         <div className="App">
             <div className="bg-navy text-white h-screen flex flex-col items-center justify-center relative">
-                <div className="absolute top-10 right-10 text-right">
+
                     <h1 className="text-4xl font-bold mb-2 text-orange">Rob Bundy</h1>
                     <p className="text-lg text-orange">Computer Science Student & Teaching Assistant at The University of Virginia</p>
-                </div>
+                    <div className="fix">
+                    <a href="https://www.linkedin.com/in/rob-bundy-192035223/" className="btn-linkedin mt-4">LinkedIn</a>
+                    </div>
                 <div className="max-w-md p-8 bg-orange rounded-lg">
                     <div className="mb-4">
                         <img
