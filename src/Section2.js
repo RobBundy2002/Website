@@ -36,7 +36,7 @@ const Section2 = () => {
                 ))}
             </ul>
             <Link
-                to="/"
+                to="/Website"
                 className="bg-orange text-white py-2 px-4 rounded-full mt-4 inline-block hover:bg-white hover:text-orange border border-white"
             >
                 Back to Home

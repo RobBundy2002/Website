@@ -8,10 +8,12 @@ body {
 
 .App {
   text-align: center;
-  background-color: #001f3f;
+  background-color: #000000;
+  min-height: 1000vh;
+  min-width: 300vw;
+  overflow-y: scroll;
   opacity: 0.5;
   color: #FFA500;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
