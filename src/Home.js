@@ -10,8 +10,10 @@ const Home = () => {
                     <p className="text-lg text-orange">
                         Computer Science Student & Teaching Assistant at The University of Virginia
                     </p>
-                    <div className="fix">
-                        <a href="https://www.linkedin.com/in/rob-bundy-192035223/" className="btn-linkedin mt-4">LinkedIn</a>
+                    <div className="fixed bottom-4 right-4">
+                        <a href="https://www.linkedin.com/in/rob-bundy-192035223/" className="linkedin-button">
+                            LinkedIn
+                        </a>
                     </div>
                     <div className="max-w-md p-8 bg-orange rounded-lg">
                         <div className="mb-4">
@@ -22,16 +24,16 @@ const Home = () => {
                             />
                         </div>
                         <a href="/Website/#/Website/section1" className="button-container">
-                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>Assorted Projects</span>
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Assorted Projects</span>
                             <div className="backdrop"></div>
                         </a>
 
                         <a href="/Website/#/Website/section2" className="button-container2">
-                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>Hosted Websites </span>
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Hosted Websites </span>
                             <div className="backdrop2"></div>
                         </a>
                         <a href="/Website/#/Website/section3" className="button-container3">
-                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>Class Assignments</span>
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Class Assignments</span>
                             <div className="backdrop3"></div>
                         </a>
                     </div>
