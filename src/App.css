@@ -65,3 +65,10 @@ body {
   box-shadow: none;
 }
 
+h1 {
+  color: #FFA500;
+  -webkit-text-stroke: 1px white;
+  text-stroke: 1px white;
+  text-fill-color: transparent;
+}
+
