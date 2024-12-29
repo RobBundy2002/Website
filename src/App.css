@@ -9,7 +9,7 @@ body {
 .App {
   text-align: center;
   background-color: #000000;
-  min-height: 1000vh;
+  min-height: 100vh;
   min-width: 300vw;
   overflow-y: scroll;
   opacity: 0.5;
