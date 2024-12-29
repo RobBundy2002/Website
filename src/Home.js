@@ -27,13 +27,16 @@ const Home = () => {
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Assorted Projects</span>
                             <div className="backdrop"></div>
                         </a>
-
                         <a href="/Website/#/Website/section2" className="button-container2">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Hosted Websites </span>
                             <div className="backdrop2"></div>
                         </a>
                         <a href="/Website/#/Website/section3" className="button-container3">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Class Assignments</span>
+                            <div className="backdrop3"></div>
+                        </a>
+                        <a href="/Website/#/Website/skills" className="button-container3">
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Skills and Technologies</span>
                             <div className="backdrop3"></div>
                         </a>
                     </div>

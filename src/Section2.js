@@ -22,6 +22,12 @@ const Section2 = () => {
             title: "CS1112 Intro to Programming ",
             description: "Course Website implemented with the just-the-docs jekyll theme. Built at the University of Virginia for CS1112 alongside Jackson Le.",
             imageUrl: "Images/CS1112 Website.png"
+        },
+        {
+            id: 3,
+            title: "UJLP @ The University of Virginia ",
+            description: "CIO Website for the University Journal for Law and Politics at the University of Virginia. Design Choices made by Shelby Eliasek.",
+            imageUrl: "Images/UJLP.png"
         }
     ];
 
