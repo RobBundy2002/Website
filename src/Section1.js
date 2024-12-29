@@ -3,25 +3,19 @@ import { Link } from 'react-router-dom';
 import './Section1.css';
 
 const Section1 = () => {
-    // Example data structure for projects
+
     const projects = [
         {
             id: 1,
-            title: "Checkers",
-            description: "A simple checkers game where two players can compete against each other.",
-            imageUrl: "https://via.placeholder.com/150" // Replace with your image URL
+            title: "Proverbial Plates",
+            description: "Mobile app built with React Native and Expo that serves as a fridge, spice rack, and pantry item organizer, whilst also providing a plethora of recipes ranked by on the ingredients you already have available",
+            imageUrl: "Images/Proverbial Plates.PNG"
         },
         {
             id: 2,
-            title: "Tic Tac Toe",
-            description: "A classic tic-tac-toe game with both player vs player and player vs AI modes.",
-            imageUrl: "https://via.placeholder.com/150" // Replace with your image URL
-        },
-        {
-            id: 3,
             title: "Wordle App",
-            description: "A Wordle clone that lets you guess five-letter words in six attempts.",
-            imageUrl: "Images/Wordle Recreation.jpg" // Replace with your image URL
+            description: "A Wordle clone implemented with JavaFx, that like the popular New York Times Game, has the user attempt to guess mystery five-letter words in six attempts. Built as a self-taught implementation of JavaFx",
+            imageUrl: "Images/Wordle Recreation.jpg"
         }
     ];
 

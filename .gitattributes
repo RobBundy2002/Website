@@ -114,3 +114,6 @@
 /static/js/main.7575e3d9.js filter=lfs diff=lfs merge=lfs -text
 /static/js/main.7575e3d9.js.map filter=lfs diff=lfs merge=lfs -text
 /package-lock.json filter=lfs diff=lfs merge=lfs -text
+/public/Images/Celestial[[:space:]]Arcade.png filter=lfs diff=lfs merge=lfs -text
+/public/Images/Hoop[[:space:]]Grids.jpg filter=lfs diff=lfs merge=lfs -text
+/public/Images/Proverbial[[:space:]]Plates.PNG filter=lfs diff=lfs merge=lfs -text

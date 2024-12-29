@@ -3,25 +3,25 @@ import { Link } from 'react-router-dom';
 import './Section3.css';
 
 const Section3 = () => {
-    // Static project data
+
     const projects = [
         {
             id: 1,
-            title: "CS1112: Data Structures and Performance",
-            description: "A project focused on data structures and performance optimization techniques in Java.",
-            imageUrl: "https://via.placeholder.com/150" // Replace with an actual image URL if available
+            title: "Skyward Bound",
+            description: "Doodle Jump Style game built in Unity as part of an end of semester final project. Combines C# Scripts with various other sets of asset packages. Built at the University of Virginia for CS4730 alongside Kathleen Mead and Hayden Johnson",
+            imageUrl: "Images/Skyward Bound.jpg"
         },
         {
             id: 2,
-            title: "Grading Commitment Manager",
-            description: "A web-based tool to track grading assignments and deadlines.",
-            imageUrl: "https://via.placeholder.com/150" // Replace with an actual image URL if available
+            title: "Course Review Application",
+            description: "CRUD App built with JavaFx and Sqlite which serves as an interface to add, delete, and edit CR's, and add users and classes to the database. Built at the University of Virginia for CS3140 alongside Matt Crowe and Patrick Williamson",
+            imageUrl: "Images/Course Review App.jpg"
         }
     ];
 
     return (
         <div className="App">
-            <h2>Section 3</h2>
+            <h2>Class Projects</h2>
             <div className="project-container">
                 {projects.map(project => (
                     <div key={project.id} className="project-card">

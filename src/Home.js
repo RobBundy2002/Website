@@ -1,7 +1,6 @@
 import React from 'react';
 import './Home.css';
 import ProfilePhoto from './Profile Photo.jpg';
-
 const Home = () => {
     return (
         <div className="App-container">
