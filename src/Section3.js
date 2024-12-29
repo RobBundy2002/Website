@@ -1,45 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './Section3.css';
 
 const Section3 = () => {
-    const [section3Repos, setSection3Repos] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('https://api.github.com/users/RobBundy2002/repos');
-
-                // Filter repositories for Section 3
-                const filteredRepos = response.data.filter(repo =>
-                    repo.name.startsWith('CS1112') || repo.name.startsWith('Grading-Commitment-Manager')
-                );
-
-                setSection3Repos(filteredRepos);
-            } catch (error) {
-                console.error('Error fetching GitHub repositories:', error);
-            }
-        };
-
-        fetchData();
-    }, []);
+    // Static project data
+    const projects = [
+        {
+            id: 1,
+            title: "CS1112: Data Structures and Performance",
+            description: "A project focused on data structures and performance optimization techniques in Java.",
+            imageUrl: "https://via.placeholder.com/150" // Replace with an actual image URL if available
+        },
+        {
+            id: 2,
+            title: "Grading Commitment Manager",
+            description: "A web-based tool to track grading assignments and deadlines.",
+            imageUrl: "https://via.placeholder.com/150" // Replace with an actual image URL if available
+        }
+    ];
 
     return (
         <div className="App">
             <h2>Section 3</h2>
-            <ul>
-                {section3Repos.map(repo => (
-                    <li key={repo.id}>
-                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                            {repo.name}
-                        </a>
-                    </li>
+            <div className="project-container">
+                {projects.map(project => (
+                    <div key={project.id} className="project-card">
+                        <img
+                            src={project.imageUrl}
+                            alt={project.title}
+                        />
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                    </div>
                 ))}
-            </ul>
-            <Link
-                to="/Website"
-                className="bg-orange text-white py-2 px-4 rounded-full mt-4 inline-block hover:bg-white hover:text-orange border border-white"
-            >
+            </div>
+
+            <Link to="/Website" className="back-to-home">
                 Back to Home
             </Link>
         </div>

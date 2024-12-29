@@ -22,17 +22,17 @@ const Home = () => {
                                 className="w-20 h-20 rounded-full object-cover"
                             />
                         </div>
-                        <a href="/section1" className="button-container">
-                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>Odds and Ends</span>
+                        <a href="/Website/#/Website/section1" className="button-container">
+                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>Assorted Projects</span>
                             <div className="backdrop"></div>
                         </a>
 
-                        <a href="/section2" className="button-container2">
-                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}> Web Applications Built With React</span>
+                        <a href="/Website/#/Website/section2" className="button-container2">
+                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>Hosted Websites </span>
                             <div className="backdrop2"></div>
                         </a>
-                        <a href="/section3" className="button-container3">
-                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>Projects Built For TA'd Courses</span>
+                        <a href="/Website/#/Website/section3" className="button-container3">
+                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>Class Assignments</span>
                             <div className="backdrop3"></div>
                         </a>
                     </div>

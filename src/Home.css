@@ -45,46 +45,27 @@ p {
     width: 300px;
     height: 400px;
     border-radius: 15px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to right, #084461, #FFA500 980%);
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
     padding: 0 2px;
     font-weight: 600;
     font-size: 6px;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    margin: 40px 0;
+    margin: 40px 50px;
 }
 
-.button-container .backdrop,
-.button-container2 .backdrop2,
-.button-container3 .backdrop3 {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-color: #FFA500;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    font-weight: 60;
-    font-size: 6px;
-    border-radius: 125px;
-    transform: translateX(-50%) translateY(-50%);
-    transition: all ease-in-out 0.5s;
-}
-
-.button-container:hover .backdrop,
-.button-container2:hover .backdrop2,
-.button-container3:hover .backdrop3 {
-    top: 48%;
+.button-container:hover,
+.button-container2:hover,
+.button-container3:hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    transform: rotate(15deg) translateX(-50%) translateY(-50%);
 }
 
-.button-container:active .backdrop,
-.button-container2:active .backdrop2,
-.button-container3:active .backdrop3 {
+.button-container:active,
+.button-container2:active,
+.button-container3:active {
     box-shadow: none;
 }
 
@@ -93,15 +74,17 @@ p {
     color: #fff;
 }
 
-.btn-linkedin:link, .btn-linkedin:visited {
+.btn-linkedin:link,
+.btn-linkedin:visited {
     color: #fff;
 }
 
-.btn-linkedin:active, .btn-linkedin:hover {
+.btn-linkedin:active,
+.btn-linkedin:hover {
     background: #084461;
     color: #fff;
 }
 
 .fix {
-    margin-top: 20px;
+    margin-bottom: 8px;
 }
