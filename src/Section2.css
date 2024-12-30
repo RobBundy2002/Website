@@ -65,3 +65,10 @@
     background-color: white;
     color: orange;
 }
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    top: 223333px;
+}
+

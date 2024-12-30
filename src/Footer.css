@@ -1,0 +1,23 @@
+.footer {
+    padding: 2vh;
+    background: linear-gradient(to right, #084461, #FFA500 980%);
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: -106vh;
+    width: 97.7%;
+    z-index: 1000;
+    border: .05vh solid white;
+}
+
+.footer p {
+    margin: 1vh 0;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        bottom: -355vh;
+        width: 94.7%;
+    }
+}
+

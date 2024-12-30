@@ -7,6 +7,8 @@
     align-items: center;
     justify-content: flex-start;
     font-size: calc(10px + 2vmin);
+    overflow-x: hidden;
+    min-height: 200vh;
     z-index: 1;
     position: relative;
 }
@@ -38,7 +40,9 @@ p {
 
 .button-container,
 .button-container2,
-.button-container3 {
+.button-container3,
+.button-container4,
+.button-container5 {
     display: inline-block;
     text-decoration: none;
     width: 300px;
@@ -53,18 +57,22 @@ p {
     font-size: 6px;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    margin: 40px 50px;
+    margin: 40px 5px;
 }
 
 .button-container:hover,
 .button-container2:hover,
-.button-container3:hover {
+.button-container3:hover,
+.button-container4:hover,
+.button-container5:hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .button-container:active,
 .button-container2:active,
-.button-container3:active {
+.button-container3:active,
+.button-container4:active,
+.button-container5:active {
     box-shadow: none;
 }
 
@@ -87,30 +95,6 @@ p {
 .fix {
     margin-bottom: 8px;
 }
-
-.linkedin-button {
-    display: inline-block;
-    position: relative;
-    top: -19vh;
-    right: -80vh;
-    background-color: #2563eb;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.linkedin-button:hover {
-    background-color: #1d4ed8;
-    transform: translateY(-2px);
-}
-
-.linkedin-button:focus {
-    outline: none;
-    border: 2px solid #2563eb;
-    box-shadow: 0 0 0 4px #084461;
+.button-container5 {
+    margin-top: 20px;
 }
