@@ -3,6 +3,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import './SkillsPage.css';
 import {Link} from "react-router-dom";
+
 const SkillsPage = () => {
 
     React.useEffect(() => {
@@ -47,7 +48,6 @@ const SkillsPage = () => {
                     </div>
                 ))}
             </div>
-            <canvas id="myChart"></canvas>
             <Link to="/Website" className="back-to-home">
                 Back to Home
             </Link>

@@ -10,11 +10,6 @@ const Home = () => {
                     <p className="text-lg text-orange">
                         Computer Science Student & Teaching Assistant at The University of Virginia
                     </p>
-                    <div className="fixed bottom-4 right-4">
-                        <a href="https://www.linkedin.com/in/rob-bundy-192035223/" className="linkedin-button">
-                            LinkedIn
-                        </a>
-                    </div>
                     <div className="max-w-md p-8 bg-orange rounded-lg">
                         <div className="mb-4">
                             <img
@@ -35,9 +30,13 @@ const Home = () => {
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Class Assignments</span>
                             <div className="backdrop3"></div>
                         </a>
-                        <a href="/Website/#/Website/skills" className="button-container3">
+                        <a href="/Website/#/Website/skills" className="button-container4">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Skills and Technologies</span>
-                            <div className="backdrop3"></div>
+                            <div className="backdrop4"></div>
+                        </a>
+                        <a href="/Website/#/Website/contactme" className="button-container5">
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Contact Me</span>
+                            <div className="backdrop5"></div>
                         </a>
                     </div>
                 </div>
