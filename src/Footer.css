@@ -7,7 +7,6 @@
     bottom: -106vh;
     width: 97.7%;
     z-index: 1000;
-    border: .05vh solid white;
 }
 
 .footer p {
@@ -16,8 +15,8 @@
 
 @media (max-width: 600px) {
     .footer {
-        bottom: -355vh;
-        width: 94.7%;
+        bottom: -361.5vh;
+        width: 92.3%;
     }
 }
 

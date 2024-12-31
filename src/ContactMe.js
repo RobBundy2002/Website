@@ -29,10 +29,6 @@ const ContactMePage = () => {
                     </a>
                 </div>
 
-                <div className="contact-item2">
-                    <p>Contact me and I'll get to you as soon as I can!</p>
-                </div>
-
                 <Link to="/Website/" className="back-to-home2">
                     Back to Home
                 </Link>
