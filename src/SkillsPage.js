@@ -51,6 +51,7 @@ const SkillsPage = () => {
             <Link to="/Website" className="back-to-home">
                 Back to Home
             </Link>
+
         </div>
     );
 };

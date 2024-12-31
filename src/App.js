@@ -7,6 +7,7 @@ import Section3 from './Section3';
 import SkillsPage from "./SkillsPage";
 import Footer from './Footer';
 import ContactMePage from "./ContactMe";
+import AboutMePage from "./AboutMe";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                 <Route path="/Website/section3" element={<Section3 />} />
                 <Route path="/Website/skills" element={<SkillsPage />} />
                 <Route path="/Website/contactme" element={<ContactMePage />} />
+                <Route path="/Website/aboutme" element={<AboutMePage />} />
             </Routes>
             <Footer/>
         </Router>
