@@ -1,0 +1,41 @@
+.about-me-container {
+    text-align: center;
+    background-color: #001f3f;
+    color: #FFA500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+    overflow-x: hidden;
+    min-height: 200vh;
+    z-index: 1;
+    position: relative;
+}
+
+.about-me-container p{
+    width: 85%;
+}
+
+.back-to-home3 {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 50px;
+    text-decoration: none;
+    border: 2px solid white;
+    font-weight: bold;
+    margin-left: 0vh;
+}
+
+.back-to-home3:hover {
+    background-color: white;
+    color: orange;
+}
+
+@media (max-width: 1200px) {
+    .about-me-container {
+        min-height: 510vh;
+    }
+}

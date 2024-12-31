@@ -92,7 +92,7 @@
 }
 
 
-.back-to-home2 {
+.back-to-home4 {
     background-color: orange;
     color: white;
     padding: 10px 20px;
@@ -104,7 +104,7 @@
     margin-left: 24vh;
 }
 
-.back-to-home2:hover {
+.back-to-home4:hover {
     background-color: white;
     color: orange;
 }
@@ -123,7 +123,7 @@
 
     .email-button {
         top: -4.7vh;
-        left: 17.3vh;
+        left: 17.4vh;
         padding: 3px 6px;
     }
 
@@ -136,7 +136,7 @@
         min-height: 440vh;
     }
 
-    .back-to-home2{
+    .back-to-home4{
         margin-left: 11vh;
     }
 }

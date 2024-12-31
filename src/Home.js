@@ -35,13 +35,18 @@ const Home = () => {
                             <div className="backdrop4"></div>
                         </a>
                         <a href="/Website/#/Website/contactme" className="button-container5">
-                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Contact Me</span>
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Contact Info</span>
+                            <div className="backdrop5"></div>
+                        </a>
+                        <a href="/Website/#/Website/aboutme" className="button-container5">
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>About Me</span>
                             <div className="backdrop5"></div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+
     );
 };
 
