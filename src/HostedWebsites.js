@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Section2.css';
 
-const Section2 = () => {
+
+const HostedWebsites = () => {
 
     const projects = [
         {
@@ -54,4 +54,4 @@ const Section2 = () => {
     );
 };
 
-export default Section2;
+export default HostedWebsites;

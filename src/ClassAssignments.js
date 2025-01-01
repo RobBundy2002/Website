@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Section3.css';
+import './Projects.css';
 
-const Section3 = () => {
+const ClassAssignments = () => {
 
     const projects = [
         {
@@ -42,4 +42,4 @@ const Section3 = () => {
     );
 };
 
-export default Section3;
+export default ClassAssignments;
