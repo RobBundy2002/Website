@@ -18,15 +18,15 @@ const Home = () => {
                                 className="w-20 h-20 rounded-full object-cover"
                             />
                         </div>
-                        <a href="/Website/#/Website/section1" className="button-container">
+                        <a href="/Website/#/Website/assortedprojects" className="button-container">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Assorted Projects</span>
                             <div className="backdrop"></div>
                         </a>
-                        <a href="/Website/#/Website/section2" className="button-container2">
+                        <a href="/Website/#/Website/hostedwebsites" className="button-container2">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Hosted Websites </span>
                             <div className="backdrop2"></div>
                         </a>
-                        <a href="/Website/#/Website/section3" className="button-container3">
+                        <a href="/Website/#/Website/classassignments" className="button-container3">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Class Assignments</span>
                             <div className="backdrop3"></div>
                         </a>
