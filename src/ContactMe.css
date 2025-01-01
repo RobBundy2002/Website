@@ -38,7 +38,7 @@
 }
 
 .linkedin-button {
-    background-color: #0A66C2;
+    background-color: #49796b;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -53,7 +53,7 @@
 }
 
 .email-button {
-    background-color: mediumseagreen;
+    background-color: #5f9ea0;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -68,7 +68,7 @@
 }
 
 .github-button {
-    background-color: indianred;
+    background-color: #317873;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -83,17 +83,16 @@
 }
 
 .linkedin-button:hover {
-    background-color: #004C87;
+    background-color: #317873;
 }
 
 .email-button:hover {
-    background-color: darkgreen;
+    background-color: #a0d6b4;
 }
 
 .github-button:hover {
-    background-color: red;
+    background-color: #5f9ea0;
 }
-
 
 .back-to-home4 {
     background-color: #317873;
@@ -108,7 +107,7 @@
 }
 
 .back-to-home4:hover {
-    background-color: white;
+    background-color: #5f9ea0;
 }
 
 
