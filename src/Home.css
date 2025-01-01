@@ -4,15 +4,18 @@ img {
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
+    border-color: #317873;
+    border-style: solid;
+    border-width: 5px;
 }
 
 h1 {
-    color: #FFA500;
+    color: #317873;
     -webkit-text-stroke: 1px white;
 }
 
 p {
-    color: #FFA500;
+    color: #317873;
     -webkit-text-stroke: 1px white;
 }
 
@@ -52,22 +55,6 @@ p {
 .button-container4:active,
 .button-container5:active {
     box-shadow: none;
-}
-
-.btn-linkedin {
-    border-radius: 0;
-    color: #fff;
-}
-
-.btn-linkedin:link,
-.btn-linkedin:visited {
-    color: #fff;
-}
-
-.btn-linkedin:active,
-.btn-linkedin:hover {
-    background: #084461;
-    color: #fff;
 }
 
 .fix {
