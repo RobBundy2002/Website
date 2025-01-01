@@ -1,7 +1,6 @@
 .App {
     text-align: center;
-    background-color: #001f3f;
-    color: #FFA500;
+    background: linear-gradient(to right, #001f3f, #317873);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,6 +10,10 @@
     position: relative;
     padding: 2vh;
     min-height: 200vh;
+}
+
+.App h2{
+    color: white;
 }
 
 .contact-info {
@@ -93,7 +96,7 @@
 
 
 .back-to-home4 {
-    background-color: orange;
+    background-color: #317873;
     color: white;
     padding: 10px 20px;
     border-radius: 50px;
@@ -106,7 +109,6 @@
 
 .back-to-home4:hover {
     background-color: white;
-    color: orange;
 }
 
 
