@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Section1.css';
 
-const Section1 = () => {
+const AssortedProjects = () => {
 
     const projects = [
         {
@@ -42,4 +41,4 @@ const Section1 = () => {
     );
 };
 
-export default Section1;
+export default AssortedProjects;

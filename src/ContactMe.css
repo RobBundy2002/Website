@@ -45,7 +45,7 @@
     transition: background-color 0.3s;
     margin: 10px auto;
     position: relative;
-    top: 0vh;
+    top: 0;
     left: 2vh;
 }
 
@@ -133,7 +133,7 @@
         padding: 3px 6px;
     }
     .App{
-        min-height: 440vh;
+        min-height: 500vh;
     }
 
     .back-to-home4{

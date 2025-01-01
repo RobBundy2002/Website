@@ -66,6 +66,7 @@
     color: white;
     padding: 10px 20px;
     border-radius: 50px;
+    margin-top: 20px;
     margin-bottom: 4vh;
     justify-content: center;
     display: inline-block;
@@ -77,15 +78,4 @@
 .back-to-home:hover {
     background-color: white;
     color: orange;
-}
-
-
-@media (max-width: 1200px) {
-    .App{
-        min-height: 550vh;
-    }
-
-    .footer-about-me{
-        width: 10%;
-    }
 }
