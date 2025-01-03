@@ -8,6 +8,7 @@ import SkillsPage from "./SkillsPage";
 import Footer from './Footer';
 import ContactMePage from "./ContactMe";
 import AboutMePage from "./AboutMe";
+import ProverbialPlates from "./ProverbialPlates";
 
 const App = () => {
     return (
@@ -20,6 +21,7 @@ const App = () => {
                 <Route path="/Website/skills" element={<SkillsPage />} />
                 <Route path="/Website/contactme" element={<ContactMePage />} />
                 <Route path="/Website/aboutme" element={<AboutMePage />} />
+                <Route path="/Website/proverbialplates" element={<ProverbialPlates />} />
             </Routes>
             <Footer/>
         </Router>
