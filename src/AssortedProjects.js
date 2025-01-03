@@ -8,7 +8,8 @@ const AssortedProjects = () => {
             id: 1,
             title: "Proverbial Plates",
             description: "Mobile app built with React Native and Expo that serves as a fridge, spice rack, and pantry item organizer, whilst also providing a plethora of recipes ranked by on the ingredients you already have available",
-            imageUrl: "Images/Proverbial Plates.PNG"
+            imageUrl: "Images/Proverbial Plates.PNG",
+            link: "/Website/proverbialplates"
         },
         {
             id: 2,
@@ -28,7 +29,13 @@ const AssortedProjects = () => {
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        <h3>{project.title}</h3>
+                        {project.title === "Proverbial Plates" ? (
+                            <Link to={project.link}>
+                                <h3>{project.title}</h3>
+                            </Link>
+                        ) : (
+                            <h3>{project.title}</h3>
+                        )}
                         <p>{project.description}</p>
                     </div>
                 ))}
