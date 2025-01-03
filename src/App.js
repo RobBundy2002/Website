@@ -9,6 +9,7 @@ import Footer from './Footer';
 import ContactMePage from "./ContactMe";
 import AboutMePage from "./AboutMe";
 import ProverbialPlates from "./ProverbialPlates";
+import Wordle from "./Wordle";
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path="/Website/contactme" element={<ContactMePage />} />
                 <Route path="/Website/aboutme" element={<AboutMePage />} />
                 <Route path="/Website/proverbialplates" element={<ProverbialPlates />} />
+                <Route path="/Website/wordle" element={<Wordle />} />
             </Routes>
             <Footer/>
         </Router>

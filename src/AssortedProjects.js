@@ -15,7 +15,8 @@ const AssortedProjects = () => {
             id: 2,
             title: "Wordle App",
             description: "A Wordle clone implemented with JavaFx, that like the popular New York Times Game, has the user attempt to guess mystery five-letter words in six attempts. Built as a self-taught implementation of JavaFx",
-            imageUrl: "Images/Wordle Recreation.jpg"
+            imageUrl: "Images/Wordle Recreation.jpg",
+            link: "/Website/wordle"
         }
     ];
 
@@ -29,7 +30,7 @@ const AssortedProjects = () => {
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        {project.title === "Proverbial Plates" ? (
+                        {project.title === "Proverbial Plates" || project.title === "Wordle App" ? (
                             <Link to={project.link}>
                                 <h3>{project.title}</h3>
                             </Link>
