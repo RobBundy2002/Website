@@ -27,20 +27,20 @@ const Home = () => {
                             <div className="backdrop2"></div>
                         </a>
                         <a href="/Website/#/Website/classassignments" className="button-container3">
-                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Class Assignments</span>
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Class Projects</span>
                             <div className="backdrop3"></div>
                         </a>
                         <a href="/Website/#/Website/skills" className="button-container4">
-                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Skills and Technologies</span>
+                            <span style={{fontWeight: 'bold', fontSize: '40px'}}>Skills + Tech</span>
                             <div className="backdrop4"></div>
                         </a>
                         <a href="/Website/#/Website/contactme" className="button-container5">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Contact Info</span>
                             <div className="backdrop5"></div>
                         </a>
-                        <a href="/Website/#/Website/aboutme" className="button-container5">
+                        <a href="/Website/#/Website/aboutme" className="button-container6">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>About Me</span>
-                            <div className="backdrop5"></div>
+                            <div className="backdrop6"></div>
                         </a>
                     </div>
                 </div>
