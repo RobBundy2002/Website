@@ -42,7 +42,7 @@ const HostedWebsites = () => {
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        {project.title === "College Hoops Matrix Madness" || project.title === "UJLP @ UVA" ? (
+                        {project.title === "Matrix Madness" || project.title === "UJLP @ UVA" ? (
                             <Link to={project.link}>
                                 <h3>{project.title}</h3>
                             </Link>
