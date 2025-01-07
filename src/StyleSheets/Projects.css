@@ -98,5 +98,11 @@ a {
 .styled-link {
     color: #555;
     -webkit-text-stroke: 1px white;
+}
 
+
+@media (max-width: 1200px) {
+    .project-card{
+        width: 80%
+    }
 }

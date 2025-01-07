@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const AboutMePage = () => {
     return (
         <div className="about-me-container">
-            <h1>About Me</h1>
+            <h2>About Me</h2>
             <p>
                 Rob Bundy is a software developer and current 4th year student and teaching assistant at the University
                 of Virginia. Rob grew up in a small town in Southwest Virginia, but has lived in Charlottesville mostly

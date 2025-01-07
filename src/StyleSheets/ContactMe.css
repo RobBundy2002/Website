@@ -12,8 +12,9 @@
     min-height: 200vh;
 }
 
-.App h2{
+h2{
     color: #317873;
+    font-size: calc(50px + 2vmin);
     -webkit-text-stroke: 1px white;
 }
 

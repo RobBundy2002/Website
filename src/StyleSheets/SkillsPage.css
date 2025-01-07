@@ -95,3 +95,11 @@
 .back-button:hover {
     background-color: #5f9ea0;
 }
+
+
+@media (max-width: 1200px) {
+    .back-button{
+        margin-bottom: .5vh;
+        margin-left: 2.75vh;
+    }
+}
