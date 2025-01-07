@@ -15,7 +15,8 @@ const HostedWebsites = () => {
             id: 2,
             title: "College Hoops Matrix Madness",
             description: "Web App Game that serves as a college basketball version of the popular immaculate grid game. Built alongside Grant Costello.",
-            imageUrl: "Images/Hoop Grids.jpg"
+            imageUrl: "Images/Hoop Grids.png",
+            link: "/Website/matrixmadness"
         },
         {
             id: 3,
@@ -30,18 +31,23 @@ const HostedWebsites = () => {
             imageUrl: "Images/UJLP.png"
         }
     ];
-
     return (
         <div className="App">
             <h2>Hosted Websites</h2>
             <div className="project-container">
-                {projects.map(project => (
+                {projects.map((project) => (
                     <div key={project.id} className="project-card">
                         <img
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        <h3>{project.title}</h3>
+                        {project.title === "College Hoops Matrix Madness" ? (
+                            <Link to={project.link}>
+                                <h3>{project.title}</h3>
+                            </Link>
+                        ) : (
+                            <h3>{project.title}</h3>
+                        )}
                         <p>{project.description}</p>
                     </div>
                 ))}
