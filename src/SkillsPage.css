@@ -75,3 +75,23 @@
 .back-to-home:hover {
     background-color: #5f9ea0;
 }
+
+
+.back-button {
+    background-color: #317873;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: 4vh;
+    margin-right: 3vh;
+    justify-content: center;
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid white;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #5f9ea0;
+}
