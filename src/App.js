@@ -1,20 +1,22 @@
 import React from 'react';
-import {HashRouter as Router, Routes, Route} from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import AssortedProjects from './AssortedProjects';
 import HostedWebsites from './HostedWebsites';
 import ClassAssignments from './ClassAssignments';
-import SkillsPage from "./SkillsPage";
+import SkillsPage from './SkillsPage';
 import Footer from './Footer';
-import ContactMePage from "./ContactMe";
-import AboutMePage from "./AboutMe";
-import ProverbialPlates from "./ProverbialPlates";
-import Wordle from "./Wordle";
-import MatrixMadness from "./MatrixMadness";
+import ContactMePage from './ContactMe';
+import AboutMePage from './AboutMe';
+import ProverbialPlates from './ProverbialPlates';
+import Wordle from './Wordle';
+import MatrixMadness from './MatrixMadness';
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
     return (
         <Router>
+            <ScrollToTop />
             <Routes>
                 <Route path="/Website" element={<Home />} />
                 <Route path="/Website/assortedprojects" element={<AssortedProjects />} />
@@ -27,7 +29,7 @@ const App = () => {
                 <Route path="/Website/wordle" element={<Wordle />} />
                 <Route path="/Website/matrixmadness" element={<MatrixMadness />} />
             </Routes>
-            <Footer/>
+            <Footer />
         </Router>
     );
 };
