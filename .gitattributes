@@ -122,3 +122,4 @@
 /public/Videos/Wordle.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/Images/Hoop[[:space:]]Grids.png filter=lfs diff=lfs merge=lfs -text
 /public/Videos/Recording.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/Videos/UJLPRecording.mp4 filter=lfs diff=lfs merge=lfs -text

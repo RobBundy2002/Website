@@ -1,7 +1,7 @@
 import React from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import './SkillsPage.css';
+import './StyleSheets/SkillsPage.css';
 import {Link} from "react-router-dom";
 
 const SkillsPage = () => {

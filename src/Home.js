@@ -1,6 +1,6 @@
 import React from 'react';
-import './Home.css';
-import ProfilePhoto from './Profile Photo.jpg';
+import './StyleSheets/Home.css';
+import ProfilePhoto from './SRC-Images/Profile Photo.jpg';
 const Home = () => {
     return (
         <div className="App-container">

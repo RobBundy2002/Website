@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Projects.css';
+import '../StyleSheets/Projects.css';
 
 const ClassAssignments = () => {
 
@@ -13,7 +13,7 @@ const ClassAssignments = () => {
         },
         {
             id: 2,
-            title: "Course Review Application",
+            title: "Course Review App",
             description: "CRUD App built with JavaFx and Sqlite which serves as an interface to add, delete, and edit CR's, and add users and classes to the database. Built at the University of Virginia for CS3140 alongside Matt Crowe and Patrick Williamson",
             imageUrl: "Images/Course Review App.jpg"
         }

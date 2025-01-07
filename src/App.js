@@ -1,17 +1,19 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import AssortedProjects from './AssortedProjects';
-import HostedWebsites from './HostedWebsites';
-import ClassAssignments from './ClassAssignments';
+import AssortedProjects from "./AssortedProjects/AssortedProjects";
+import HostedWebsites from './HostedWebsites/HostedWebsites';
+import ClassAssignments from './ClassAssignments/ClassAssignments';
 import SkillsPage from './SkillsPage';
-import Footer from './Footer';
+import Footer from './Miscellaneous/Footer';
 import ContactMePage from './ContactMe';
 import AboutMePage from './AboutMe';
-import ProverbialPlates from './ProverbialPlates';
-import Wordle from './Wordle';
-import MatrixMadness from './MatrixMadness';
-import ScrollToTop from "./ScrollToTop";
+import ProverbialPlates from './AssortedProjects/ProverbialPlates';
+import Wordle from './AssortedProjects/Wordle';
+import MatrixMadness from './HostedWebsites/MatrixMadness';
+import ScrollToTop from "./Miscellaneous/ScrollToTop";
+import UJLP from "./HostedWebsites/UJLP";
+
 
 const App = () => {
     return (
@@ -28,6 +30,7 @@ const App = () => {
                 <Route path="/Website/proverbialplates" element={<ProverbialPlates />} />
                 <Route path="/Website/wordle" element={<Wordle />} />
                 <Route path="/Website/matrixmadness" element={<MatrixMadness />} />
+                <Route path="/Website/ujlp" element={<UJLP />} />
             </Routes>
             <Footer />
         </Router>

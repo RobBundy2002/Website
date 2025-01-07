@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutMe.css';
+import './StyleSheets/AboutMe.css';
 import {Link} from "react-router-dom";
 
 const AboutMePage = () => {
