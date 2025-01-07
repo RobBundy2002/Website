@@ -24,14 +24,30 @@
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
+    border-color: #cccccc;
 }
 
 .project-card h3 {
-    font-size: 18px;
+    border: 22px ridge #cccccc;
+    border-radius: 120px;
+    font-size: 26px;
     font-weight: bold;
     margin-top: 16px;
     color: white;
     text-align: center;
+    padding: 6px;
+}
+
+.project-card h3:hover {
+    border: 22px groove #cccccc;
+    border-radius: 120px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 16px;
+    color: white;
+    text-align: center;
+    padding: 6px;
+    transform: scale(1.05);
 }
 
 .project-card p {
@@ -76,5 +92,11 @@
 }
 
 a {
-    color: #317873;
+    color: #1D5E6A;
+}
+
+.styled-link {
+    color: #555;
+    -webkit-text-stroke: 1px white;
+
 }

@@ -13,22 +13,23 @@ const HostedWebsites = () => {
         },
         {
             id: 2,
-            title: "College Hoops Matrix Madness",
+            title: "Matrix Madness",
             description: "Web App Game that serves as a college basketball version of the popular immaculate grid game. Built alongside Grant Costello.",
             imageUrl: "Images/Hoop Grids.png",
             link: "/Website/matrixmadness"
         },
         {
             id: 3,
-            title: "CS1112 Intro to Programming ",
+            title: "CS1112 Website ",
             description: "Course Website implemented with the just-the-docs jekyll theme. Built at the University of Virginia for CS1112 alongside Jackson Le.",
             imageUrl: "Images/CS1112 Website.png"
         },
         {
             id: 3,
-            title: "UJLP @ The University of Virginia ",
+            title: "UJLP @ UVA",
             description: "CIO Website for the University Journal for Law and Politics at the University of Virginia. Design Choices made by Shelby Eliasek.",
-            imageUrl: "Images/UJLP.png"
+            imageUrl: "Images/UJLP.png",
+            link: "/Website/ujlp"
         }
     ];
     return (
@@ -41,7 +42,7 @@ const HostedWebsites = () => {
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        {project.title === "College Hoops Matrix Madness" ? (
+                        {project.title === "College Hoops Matrix Madness" || project.title === "UJLP @ UVA" ? (
                             <Link to={project.link}>
                                 <h3>{project.title}</h3>
                             </Link>
