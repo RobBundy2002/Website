@@ -33,6 +33,10 @@
     background-color: #5f9ea0;
 }
 
+.h2 {
+
+}
+
 @media (max-width: 1200px) {
     .about-me-container {
         min-height: 510vh;
