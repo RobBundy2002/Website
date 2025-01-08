@@ -96,6 +96,37 @@
     background-color: #5f9ea0;
 }
 
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-tag {
+    background-color: #f7b731;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 150px;
+    width: auto;
+}
+
+.skill-tag:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-level {
+    font-size: 14px;
+    font-weight: normal;
+}
 
 @media (max-width: 1200px) {
     .back-button{
