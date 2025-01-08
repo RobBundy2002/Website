@@ -13,6 +13,7 @@ import Wordle from './AssortedProjects/Wordle';
 import MatrixMadness from './HostedWebsites/MatrixMadness';
 import ScrollToTop from "./Miscellaneous/ScrollToTop";
 import UJLP from "./HostedWebsites/UJLP";
+import CelestialArcade from "./HostedWebsites/Celestial Arcade";
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path="/Website/wordle" element={<Wordle />} />
                 <Route path="/Website/matrixmadness" element={<MatrixMadness />} />
                 <Route path="/Website/ujlp" element={<UJLP />} />
+                <Route path="/Website/celestialarcade" element={<CelestialArcade />} />
             </Routes>
             <Footer />
         </Router>

@@ -2,23 +2,20 @@ import React from 'react';
 import '../StyleSheets/Projects.css';
 import {Link} from "react-router-dom";
 
-const UJLP = () => {
+const CelestialArcade = () => {
     return (
         <div className="App">
             <div className="content">
-                <h2 className="title">Undergraduate Journal of Law and Politics at UVA</h2>
+                <h2 className="title">Celestial Arcade</h2>
                 <div className="video-container">
                     <video className="video-mm" controls>
-                        <source src="Videos/UJLPRecording.mp4" type="video/mp4"/>
+                        <source src="Videos/RecordingCA.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <p className="description">
-                    Build to order website for the newly formed UJLP CIO on Grounds at UVA. Actively maintained and can
-                    be found here -> &nbsp;
-                    <a href="https://ujlawandpolitics.org/" target="_blank" rel="noopener noreferrer" className="styled-link">UJLP@UVA</a>
+                    Website that serves as a host for a variety of interactive games such as Rock-Paper-Scissors, Connect4, and TicTacToe. Implemented with TailWindCSS and React.
                 </p>
-
                 <Link to="/Website/hostedwebsites" className="back-button">
                     Back to Websites
                 </Link>
@@ -30,4 +27,4 @@ const UJLP = () => {
     );
 };
 
-export default UJLP;
+export default CelestialArcade;

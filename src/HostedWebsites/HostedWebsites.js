@@ -9,7 +9,8 @@ const HostedWebsites = () => {
             id: 1,
             title: "Celestial Arcade",
             description: "An active website designed to allow users to browse and play various games online such as Checkers, Connect4, and Whack-A-Mole.",
-            imageUrl: "Images/Celestial Arcade.png"
+            imageUrl: "Images/Celestial Arcade.png",
+            link: "/Website/celestialarcade"
         },
         {
             id: 2,
@@ -27,7 +28,7 @@ const HostedWebsites = () => {
         {
             id: 3,
             title: "UJLP @ UVA",
-            description: "CIO Website for the University Journal for Law and Politics at the University of Virginia. Design Choices made by Shelby Eliasek.",
+            description: "CIO Website for the Undergraduate Journal for Law and Politics at the University of Virginia. Design Choices made by Shelby Eliasek.",
             imageUrl: "Images/UJLP.png",
             link: "/Website/ujlp"
         }
@@ -42,7 +43,7 @@ const HostedWebsites = () => {
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        {project.title === "Matrix Madness" || project.title === "UJLP @ UVA" ? (
+                        {project.title === "Celestial Arcade" || project.title === "Matrix Madness" || project.title === "UJLP @ UVA" ? (
                             <Link to={project.link}>
                                 <h3>{project.title}</h3>
                             </Link>

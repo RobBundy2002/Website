@@ -6,7 +6,7 @@ const MatrixMadness = () => {
     return (
         <div className="App">
             <div className="content">
-                <h1 className="title">College Hoops Matrix Madness</h1>
+                <h2 className="title">College Hoops Matrix Madness</h2>
                 <div className="video-container">
                     <video className="video-mm" controls>
                         <source src="Videos/Recording.mp4" type="video/mp4" />
