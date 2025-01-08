@@ -34,7 +34,7 @@ const SkillsPage = () => {
 
     return (
         <div className="container">
-            <h2>Languages and Technologies Used</h2>
+            <h2>Languages and Tech Used</h2>
             <div className="skills-container">
                 {skills.map(skill => (
                     <div className="skill-circle" key={skill.name} data-aos="fade-up">

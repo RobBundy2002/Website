@@ -14,7 +14,9 @@ const CelestialArcade = () => {
                     </video>
                 </div>
                 <p className="description">
-                    Website that serves as a host for a variety of interactive games such as Rock-Paper-Scissors, Connect4, and TicTacToe. Implemented with TailWindCSS and React.
+                    Website that serves as a host for a variety of interactive games such as Rock-Paper-Scissors, Connect4, and TicTacToe. Implemented with TailWindCSS and React. Website can be located at the following url ->&nbsp;
+                    <a href="https://robbundy2002.github.io/Gaming-Website-Project/" target="_blank" rel="noopener noreferrer" className="styled-link">Celestial Arcade</a>
+
                 </p>
                 <Link to="/Website/hostedwebsites" className="back-button">
                     Back to Websites

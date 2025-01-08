@@ -14,7 +14,9 @@ const MatrixMadness = () => {
                     </video>
                 </div>
                 <p className="description">
-                    A web app that offers a college basketball twist on the popular Immaculate Grid game. Built with a sleek React front-end and powered by a robust MongoDB backend, this game delivers seamless grid functionality and real-time data interaction, providing an engaging and dynamic user experience.
+                    A web app that offers a college basketball twist on the popular Immaculate Grid game. Built with a sleek React front-end and powered by a robust MongoDB backend, this game delivers seamless grid functionality and real-time data interaction, providing an engaging and dynamic user experience. Located at the following ->
+                    <a href="https://matrix-madness-frontend.onrender.com/" target="_blank" rel="noopener noreferrer" className="styled-link">College Hoops Matrix Madness</a>
+                    &nbsp;(Note: Grid may take up to a minute to load in.)
                 </p>
                 <Link to="/Website/hostedwebsites" className="back-button">
                     Back to Websites
