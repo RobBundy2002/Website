@@ -6,7 +6,7 @@ const UJLP = () => {
     return (
         <div className="App">
             <div className="content">
-                <h1 className="title">University Journal of Law and Politics at UVA</h1>
+                <h2 className="title">Undergraduate Journal of Law and Politics at UVA</h2>
                 <div className="video-container">
                     <video className="video-mm" controls>
                         <source src="Videos/UJLPRecording.mp4" type="video/mp4"/>
