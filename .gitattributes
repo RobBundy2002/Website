@@ -124,3 +124,6 @@
 /public/Videos/Recording.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/Videos/UJLPRecording.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/Videos/RecordingCA.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/Images/Course[[:space:]]Review[[:space:]]App.png filter=lfs diff=lfs merge=lfs -text
+/public/Videos/CRUD.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/Videos/SkywardBound.mp4 filter=lfs diff=lfs merge=lfs -text
