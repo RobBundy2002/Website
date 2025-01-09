@@ -14,6 +14,8 @@ import MatrixMadness from './HostedWebsites/MatrixMadness';
 import ScrollToTop from "./Miscellaneous/ScrollToTop";
 import UJLP from "./HostedWebsites/UJLP";
 import CelestialArcade from "./HostedWebsites/Celestial Arcade";
+import SkywardBound from "./ClassAssignments/Skyward Bound";
+import CourseReviewApplication from "./ClassAssignments/CourseReviewApplication";
 
 
 const App = () => {
@@ -33,6 +35,8 @@ const App = () => {
                 <Route path="/Website/matrixmadness" element={<MatrixMadness />} />
                 <Route path="/Website/ujlp" element={<UJLP />} />
                 <Route path="/Website/celestialarcade" element={<CelestialArcade />} />
+                <Route path="/Website/skywardbound" element={<SkywardBound />} />
+                <Route path="/Website/coursereviewapp" element={<CourseReviewApplication />} />
             </Routes>
             <Footer />
         </Router>
