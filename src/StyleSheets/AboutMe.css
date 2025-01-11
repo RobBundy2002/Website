@@ -15,6 +15,8 @@
 
 .about-me-container p{
     width: 85%;
+    border: #cccccc 6px solid;
+    border-radius: 15px;
 }
 
 .back-to-home3 {
