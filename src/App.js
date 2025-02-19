@@ -16,6 +16,7 @@ import UJLP from "./HostedWebsites/UJLP";
 import CelestialArcade from "./HostedWebsites/Celestial Arcade";
 import SkywardBound from "./ClassAssignments/Skyward Bound";
 import CourseReviewApplication from "./ClassAssignments/CourseReviewApplication";
+import VampireFrostBite from "./ClassAssignments/VampireFrostbite";
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/Website/celestialarcade" element={<CelestialArcade />} />
                 <Route path="/Website/skywardbound" element={<SkywardBound />} />
                 <Route path="/Website/coursereviewapp" element={<CourseReviewApplication />} />
+                <Route path="/Website/vampirefrostbite" element={<VampireFrostBite />} />
             </Routes>
             <Footer />
         </Router>
