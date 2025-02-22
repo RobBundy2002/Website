@@ -23,7 +23,7 @@ const ClassAssignments = () => {
             id: 3,
             title: "Vampire Frost Bite",
             description: "Pico-8 game coded with Lua, that also includes various designed sprites and sounds to enhance the player experience whilst also fitting the game jam theme assigned of single room. Built at the University of Virginia for CS4730",
-            imageUrl: "Images/VampireFrostbite.png",
+            imageUrl: "Images/VampireFrostBite.png",
             link: "/Website/vampirefrostbite"
         }
     ];
@@ -38,7 +38,7 @@ const ClassAssignments = () => {
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        {project.title === "Vampire Frost Bite" ? (
+                        {project.title === "Vampire Frost Bite" || project.title === "Course Review App" || project.title === "Skyward Bound" ? (
                             <Link to={project.link}>
                                 <h3>{project.title}</h3>
                             </Link>
