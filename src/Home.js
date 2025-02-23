@@ -18,27 +18,27 @@ const Home = () => {
                                 className="w-20 h-20 rounded-full object-cover"
                             />
                         </div>
-                        <a href="/Website/assortedprojects" className="button-container">
+                        <a href="/Website/#/Website/assortedprojects" className="button-container">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Assorted Projects</span>
                             <div className="backdrop"></div>
                         </a>
-                        <a href="/Website/hostedwebsites" className="button-container2">
+                        <a href="/Website/#/Website/hostedwebsites" className="button-container2">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Hosted Websites </span>
                             <div className="backdrop2"></div>
                         </a>
-                        <a href="/Website/classassignments" className="button-container3">
+                        <a href="/Website/#/Website/classassignments" className="button-container3">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Class Projects</span>
                             <div className="backdrop3"></div>
                         </a>
-                        <a href="/Website/skills" className="button-container4">
+                        <a href="/Website/#/Website/skills" className="button-container4">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Skills + Tech</span>
                             <div className="backdrop4"></div>
                         </a>
-                        <a href="/Website/contactme" className="button-container5">
+                        <a href="/Website/#/Website/contactme" className="button-container5">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>Contact Info</span>
                             <div className="backdrop5"></div>
                         </a>
-                        <a href="/Website/aboutme" className="button-container6">
+                        <a href="/Website/#/Website/aboutme" className="button-container6">
                             <span style={{fontWeight: 'bold', fontSize: '40px'}}>About Me</span>
                             <div className="backdrop6"></div>
                         </a>
