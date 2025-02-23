@@ -18,7 +18,6 @@ import SkywardBound from "./ClassAssignments/Skyward Bound";
 import CourseReviewApplication from "./ClassAssignments/CourseReviewApplication";
 import VampireFrostBite from "./ClassAssignments/VampireFrostbite";
 
-
 const App = () => {
     return (
         <Router>

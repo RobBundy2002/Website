@@ -16,7 +16,7 @@ const AboutMePage = () => {
                 as planning on working full time as a software engineer starting in the summer.
             </p>
             <p>
-                Some of Rob's main coding interests include exploring the world of game development, working on his
+                Some of Rob's main coding interests include exploring game development, working on his
                 mobile app, or website maintenance and advancement for his other projects. When he's not writing code, you'll
                 find him playing disc golf, listening to Forrest Frank, or hooping at the local UVA gym.
             </p>
