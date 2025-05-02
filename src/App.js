@@ -17,6 +17,7 @@ import CelestialArcade from "./HostedWebsites/Celestial Arcade";
 import SkywardBound from "./ClassAssignments/Skyward Bound";
 import CourseReviewApplication from "./ClassAssignments/CourseReviewApplication";
 import VampireFrostBite from "./ClassAssignments/VampireFrostbite";
+import DraculaReborn from "./ClassAssignments/DraculaReborn";
 
 const App = () => {
     return (
@@ -38,6 +39,7 @@ const App = () => {
                 <Route path="/Website/skywardbound" element={<SkywardBound />} />
                 <Route path="/Website/coursereviewapp" element={<CourseReviewApplication />} />
                 <Route path="/Website/vampirefrostbite" element={<VampireFrostBite />} />
+                <Route path="/Website/draculareborn" element={<DraculaReborn />} />
             </Routes>
             <Footer />
         </Router>
