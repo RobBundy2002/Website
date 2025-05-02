@@ -25,6 +25,13 @@ const ClassAssignments = () => {
             description: "Pico-8 game coded with Lua, that also includes various designed sprites and sounds to enhance the player experience whilst also fitting the game jam theme assigned of single room. Built at the University of Virginia for CS4730",
             imageUrl: "Images/VampireFrostBite.png",
             link: "/Website/vampirefrostbite"
+        },
+        {
+            id: 4,
+            title: "Dracula Reborn",
+            description: "Pico-8 game coded with Lua. Individual contributions include most core game logic, and garlic thrower mechanics. Built at the University of Virginia for SLAV2500 alongside Alexandra McDonald, Christian Giannos, and Ankit Poudyal",
+            imageUrl: "Images/DraculaReborn.png",
+            link: "/Website/draculareborn"
         }
     ];
 
@@ -38,7 +45,7 @@ const ClassAssignments = () => {
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        {project.title === "Vampire Frost Bite" || project.title === "Course Review App" || project.title === "Skyward Bound" ? (
+                        {project.title === "Vampire Frost Bite" || project.title === "Course Review App" || project.title === "Skyward Bound" || project.title === "Dracula Reborn" ? (
                             <Link to={project.link}>
                                 <h3>{project.title}</h3>
                             </Link>
