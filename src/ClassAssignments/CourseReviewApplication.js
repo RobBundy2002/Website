@@ -8,7 +8,7 @@ const CourseReviewApplication = () => {
             <div className="content">
                 <h2 className="title">Course Review App</h2>
                 <div className="video-container">
-                    <video className="video-mm" controls>
+                    <video className="video-mm" controls muted={true}>
                         <source src="Videos/CRUD.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>

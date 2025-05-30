@@ -18,6 +18,7 @@ import SkywardBound from "./ClassAssignments/Skyward Bound";
 import CourseReviewApplication from "./ClassAssignments/CourseReviewApplication";
 import VampireFrostBite from "./ClassAssignments/VampireFrostbite";
 import DraculaReborn from "./ClassAssignments/DraculaReborn";
+import CreditApprovalProject from "./ClassAssignments/CreditApprovalProject";
 
 const App = () => {
     return (
@@ -40,6 +41,7 @@ const App = () => {
                 <Route path="/Website/coursereviewapp" element={<CourseReviewApplication />} />
                 <Route path="/Website/vampirefrostbite" element={<VampireFrostBite />} />
                 <Route path="/Website/draculareborn" element={<DraculaReborn />} />
+                <Route path="/Website/mlproject" element={<CreditApprovalProject />} />
             </Routes>
             <Footer />
         </Router>
