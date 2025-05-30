@@ -32,6 +32,13 @@ const ClassAssignments = () => {
             description: "Pico-8 game coded with Lua. Individual contributions include most core game logic, and garlic thrower mechanics. Built at the University of Virginia for SLAV2500 alongside Alexandra McDonald, Christian Giannos, and Ankit Poudyal",
             imageUrl: "Images/DraculaReborn.png",
             link: "/Website/draculareborn"
+        },
+        {
+            id: 5,
+            title: "Credit Approval Machine Learning",
+            description: "Machine learning final project completed to determine the likelihood of credit card approval status based on past categorical date. Built at the University of Virginia under the Guidance of Professor Basit",
+            imageUrl: "Images/ml.jpg",
+            link: "/Website/mlproject"
         }
     ];
 
@@ -45,7 +52,7 @@ const ClassAssignments = () => {
                             src={project.imageUrl}
                             alt={project.title}
                         />
-                        {project.title === "Vampire Frost Bite" || project.title === "Course Review App" || project.title === "Skyward Bound" || project.title === "Dracula Reborn" ? (
+                        {project.title === "Vampire Frost Bite" || project.title === "Course Review App" || project.title === "Skyward Bound" || project.title === "Dracula Reborn" || project.title === "Credit Approval Machine Learning" ?(
                             <Link to={project.link}>
                                 <h3>{project.title}</h3>
                             </Link>

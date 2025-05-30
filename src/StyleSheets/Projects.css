@@ -30,8 +30,9 @@
 }
 
 .project-card h3 {
-    border: 22px ridge #cccccc;
-    border-radius: 120px;
+    border: 10px solid #5f9ea0;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px #66fcf1;
     font-size: 26px;
     font-weight: bold;
     margin-top: 16px;
@@ -41,8 +42,9 @@
 }
 
 .project-card h3:hover {
-    border: 22px groove #cccccc;
-    border-radius: 120px;
+    border: 10px solid #5f9ea0;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px #66fcf1;
     font-size: 26px;
     font-weight: bold;
     margin-top: 16px;
@@ -102,6 +104,85 @@ a {
     -webkit-text-stroke: 1px white;
 }
 
+.tab-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tab-button {
+    background-color: #1f2833;
+    color: white;
+    border: 2px solid #45a29e;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.tab-button:hover {
+    background-color: #45a29e;
+    color: #0b0c10;
+}
+
+.active-tab {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    font-weight: bold;
+}
+
+.new-card{
+        background-color: #1D5E6A;
+        width: 300px;
+        height: 400px;
+        border: 4px solid #ccc;
+        border-radius: 8px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+    margin: 0 auto 2rem auto;
+}
+
+
+.new-card img {
+    width: 97%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border-color: #cccccc;
+}
+
+.new-card h3 {
+    border: 22px crimson;
+    border-radius: 120px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 16px;
+    color: white;
+    text-align: center;
+    padding: 6px;
+}
+
+.new-card p {
+    font-size: 14.5px;
+    color: #555;
+    margin-top: 8px;
+    text-align: center;
+}
+
+
+.new-card ul li {
+    color: white;
+    font-size: 19px;
+    margin-bottom: 0px;
+}
 
 @media (max-width: 1200px) {
     .project-card{
