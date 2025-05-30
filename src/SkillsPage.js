@@ -27,7 +27,7 @@ const SkillsPage = () => {
         { name: 'Docker', color: '#2496ed' },
         { name: 'Kubernetes', color: '#326ce5' },
         { name: 'Kafka', color: '#3f465c' },
-        { name: 'Helm', color: '#0d1031' },
+        { name: 'Helm', color: '#fa6b68' },
         { name: 'Unity', color: '#3d8f6b' }
     ];
 
