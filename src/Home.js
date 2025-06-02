@@ -30,7 +30,7 @@ const Home = () => {
                 >
                     <h1 className="text-5xl font-extrabold text-orange-400 mb-2">Rob Bundy</h1>
                     <p className="text-xl text-orange-200 mb-8">
-                        Computer Science Student & Teaching Assistant at The University of Virginia
+                        Software Developer and Computer Science Graduate of The University of Virginia
                     </p>
                     <motion.img
                         src={ProfilePhoto}

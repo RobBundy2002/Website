@@ -81,7 +81,6 @@
 
 .back-to-home:hover, .back-button:hover {
     background-color: #5f9ea0;
-    box-shadow: 0 8px 20px rgba(95, 158, 160, 0.9);
 }
 
 @media (max-width: 1200px) {

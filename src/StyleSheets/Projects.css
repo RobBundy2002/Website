@@ -31,8 +31,7 @@
 
 .project-card h3 {
     border: 10px solid #5f9ea0;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px #66fcf1;
+    border-radius: 110px;
     font-size: 26px;
     font-weight: bold;
     margin-top: 16px;
@@ -43,8 +42,7 @@
 
 .project-card h3:hover {
     border: 10px solid #5f9ea0;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px #66fcf1;
+    border-radius: 110px;
     font-size: 26px;
     font-weight: bold;
     margin-top: 16px;
