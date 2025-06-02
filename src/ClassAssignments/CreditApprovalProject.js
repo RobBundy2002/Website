@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
-import '../StyleSheets/Projects.css';
+import '../StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const CreditApprovalProject = () => {
     const [activeTab, setActiveTab] = useState('Overview');
-
-    const tabs = ['Overview', 'Approach', 'Preprocessing', 'Models', 'Results', 'Conclusion', 'Report'];
+    const tabs = ['Overview', 'Approach', 'Results', 'Report'];
 
     const renderContent = () => {
         switch (activeTab) {
             case 'Overview':
                 return (
-                    <div className="new-card">
-                        <h3>Overview</h3>
+                    <div className="tab-content">
                         <p>
-                            This project uses the UCI Credit Approval dataset to predict credit application outcomes using various machine learning models. The dataset has 690 entries and 15 attributes with binary approval status (+ for approved, - for denied).
+                            This project uses the UCI Credit Approval dataset to predict credit application 
+                            outcomes using various machine learning models. The dataset has 690 entries and 
+                            15 attributes with binary approval status (+ for approved, - for denied).
                         </p>
                         <p>
-                            Data includes personal, financial, employment, and loan details, with preprocessing required for missing values and categorical encoding.
+                            Data includes personal, financial, employment, and loan details, with preprocessing 
+                            required for missing values and categorical encoding.
                         </p>
                     </div>
                 );
             case 'Approach':
                 return (
-                    <div className="new-card">
-                        <h3>Approach </h3>
+                    <div className="tab-content">
                         <ul>
                             <li>Handle missing values, encode categoricals, and normalize numerics</li>
                             <li>Balance dataset with SMOTE</li>
@@ -33,102 +34,82 @@ const CreditApprovalProject = () => {
                         </ul>
                     </div>
                 );
-            case 'Preprocessing':
-                return (
-                    <div className="new-card">
-                        <h3>Preprocessing</h3>
-                        <ul>
-                            <li>Filled missing numeric values with column medians</li>
-                            <li>Removed low variance features</li>
-                            <li>Performed stratified train-test split (80/20)</li>
-                            <li>Applied <code>StandardScaler</code> for normalization</li>
-                            <li>Used SMOTE for balancing class distributions</li>
-                        </ul>
-                    </div>
-                );
-            case 'Models':
-                return (
-                    <div className="new-card">
-                        <h3>Trained Models</h3>
-                        <ul>
-                            <li>K-Nearest Neighbors (KNN)</li>
-                            <li>Decision Tree</li>
-                            <li>Linear SVM</li>
-                            <li>Random Forest</li>
-                        </ul>
-                        <p>All trained on SMOTE-balanced data, tested on original unbalanced data. PCA and feature importances used for model interpretation.</p>
-                    </div>
-                );
             case 'Results':
                 return (
-                    <div className="new-card">
-                        <h3>Results</h3>
+                    <div className="tab-content">
+                        <p><strong>Model Accuracies:</strong></p>
                         <ul>
                             <li>KNN: 92.31%</li>
                             <li>Decision Tree: 93.49%</li>
                             <li>Linear SVM: 55.12%</li>
                             <li>Random Forest: 93.56%</li>
                         </ul>
-                        <p><strong>Top Features:</strong> Years Employed, Credit Score, Income, Prior Default Status</p>
-                        <p>Using only top 4 features still achieved 89.39% (DT) and 93.22% (RF) accuracy.</p>
-                    </div>
-                );
-            case 'Conclusion':
-                return (
-                    <div className="new-card">
-                        <h3>Conclusion</h3>
-                        <p>Non-linear models like Decision Tree and Random Forest outperformed SVM, showing complex relationships in the data.</p>
-                        <p>KNN showed strong local pattern classification. Feature analysis confirms importance of employment, credit score, and income.</p>
-                        <p>Preprocessing and balancing significantly improved results. Averaging models provided reliable performance while managing false positives and negatives effectively.</p>
+                        <p><strong>Key Findings:</strong></p>
+                        <ul>
+                            <li>Top Features: Years Employed, Credit Score, Income, Prior Default Status</li>
+                            <li>Using only top 4 features still achieved 89.39% (DT) and 93.22% (RF) accuracy</li>
+                            <li>Non-linear models outperformed linear approaches significantly</li>
+                        </ul>
                     </div>
                 );
             case 'Report':
                 return (
-                    <div className="new-card" style={{ height: '600px', width: '600px' }}>
-                        <h3>Final Report</h3>
+                    <div className="pdf-container">
                         <iframe
                             src={`${process.env.PUBLIC_URL}/Machine_Learning_Final_Writeup.pdf#toolbar=0&navpanes=0&scrollbar=0`}
                             width="100%"
-                            height="100%"
-                            style={{ border: 'none', overflow: "hidden", borderRadius: '10px' }}
+                            height="600px"
+                            style={{ border: 'none', borderRadius: '8px' }}
                             title="Final Report PDF"
                         />
                     </div>
                 );
-
             default:
                 return null;
         }
     };
 
     return (
-        <div className="App">
-            <div className="content">
-                <h2 className="title">Credit Approval Prediction Using Machine Learning</h2>
-                <p className="description">
-                    Rob Bundy · Professor Basit · ML Independent Study · May 4th, 2025
-                </p>
+        <div className="page-container">
+            <div className="content-container">
+                <motion.h1 
+                    className="page-title"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Credit Approval Prediction
+                </motion.h1>
 
-                <div className="tab-bar">
-                    {tabs.map((tab) => (
-                        <button
-                            key={tab}
-                            className={`tab-button ${activeTab === tab ? 'active-tab' : ''}`}
-                            onClick={() => setActiveTab(tab)}
-                        >
-                            {tab}
-                        </button>
-                    ))}
+                <motion.div
+                    className="project-card"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    style={{ maxWidth: '800px', margin: '0 auto' }}
+                >
+                    <div className="tabs">
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab}
+                                className={`tab-button ${activeTab === tab ? 'active' : ''}`}
+                                onClick={() => setActiveTab(tab)}
+                            >
+                                {tab}
+                            </button>
+                        ))}
+                    </div>
+                    {renderContent()}
+                </motion.div>
+
+                <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                    <Link to="/Website/classassignments" className="back-button" style={{ marginRight: '1rem' }}>
+                        Back to Assignments
+                    </Link>
+                    <Link to="/Website" className="back-button">
+                        Back to Home
+                    </Link>
                 </div>
-
-                {renderContent()}
-
-                <Link to="/Website/classassignments" className="back-button">
-                    Back to Assignments
-                </Link>
-                <Link to="/Website/" className="back-to-home">
-                    Back to Home
-                </Link>
             </div>
         </div>
     );

@@ -3,34 +3,28 @@ import { Link } from 'react-router-dom';
 import '../StyleSheets/SharedStyles.css';
 import { motion } from 'framer-motion';
 
-const HostedWebsites = () => {
+const VideoGames = () => {
     const projects = [
         {
             id: 1,
-            title: "Celestial Arcade",
-            description: "An active website designed to allow users to browse and play various games online such as Checkers, Connect4, and Whack-A-Mole.",
-            imageUrl: "Images/Celestial Arcade.png",
-            link: "/Website/celestialarcade"
+            title: "Skyward Bound",
+            description: "Doodle Jump Style game built in Unity as part of an end of semester final project. Combines C# Scripts with various other sets of asset packages. Built at the University of Virginia for CS4730 alongside Kathleen Mead and Hayden Johnson",
+            imageUrl: "Images/Skyward Bound.jpg",
+            link: "/Website/videogames/skywardbound"
         },
         {
             id: 2,
-            title: "Matrix Madness",
-            description: "Web App Game that serves as a college basketball version of the popular immaculate grid game. Built alongside Grant Costello.",
-            imageUrl: "Images/Hoop Grids.png",
-            link: "/Website/matrixmadness"
+            title: "Dracula Reborn",
+            description: "Pico-8 game coded with Lua. Individual contributions include most core game logic, and garlic thrower mechanics. Built at the University of Virginia for SLAV2500 alongside Alexandra McDonald, Christian Giannos, and Ankit Poudyal",
+            imageUrl: "Images/DraculaReborn.png",
+            link: "/Website/videogames/draculareborn"
         },
         {
             id: 3,
-            title: "CS1112 Website",
-            description: "Course Website implemented with the just-the-docs jekyll theme. Built at the University of Virginia for CS1112 alongside Jackson Le.",
-            imageUrl: "Images/CS1112 Website.png"
-        },
-        {
-            id: 4,
-            title: "UJLP @ UVA",
-            description: "CIO Website for the Undergraduate Journal for Law and Politics at the University of Virginia. Design Choices made by Shelby Eliasek.",
-            imageUrl: "Images/UJLP.png",
-            link: "/Website/ujlp"
+            title: "Vampire Frost Bite",
+            description: "Pico-8 game coded with Lua, that also includes various designed sprites and sounds to enhance the player experience whilst also fitting the game jam theme assigned of single room. Built at the University of Virginia for CS4730",
+            imageUrl: "Images/VampireFrostBite.png",
+            link: "/Website/videogames/vampirefrostbite"
         }
     ];
 
@@ -43,7 +37,7 @@ const HostedWebsites = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    Hosted Websites
+                    Video Games
                 </motion.h1>
                 
                 <motion.div 
@@ -65,13 +59,9 @@ const HostedWebsites = () => {
                                 alt={project.title}
                                 className="project-image"
                             />
-                            {project.link ? (
-                                <Link to={project.link} style={{ textDecoration: 'none' }}>
-                                    <h3 className="project-title">{project.title}</h3>
-                                </Link>
-                            ) : (
+                            <Link to={project.link} style={{ textDecoration: 'none' }}>
                                 <h3 className="project-title">{project.title}</h3>
-                            )}
+                            </Link>
                             <p className="project-description">{project.description}</p>
                         </motion.div>
                     ))}
@@ -87,4 +77,4 @@ const HostedWebsites = () => {
     );
 };
 
-export default HostedWebsites;
+export default VideoGames; 
