@@ -3,7 +3,7 @@ import '../StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const UJLP = () => {
+const SkywardBound = () => {
     return (
         <div className="page-container">
             <div className="content-container">
@@ -13,7 +13,7 @@ const UJLP = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    UJLP at UVA
+                    Skyward Bound
                 </motion.h1>
 
                 <motion.div
@@ -24,28 +24,22 @@ const UJLP = () => {
                     style={{ maxWidth: '800px', margin: '0 auto' }}
                 >
                     <div className="video-container">
-                        <video className="video-w" controls>
-                            <source src="Videos/UJLPRecording.mp4" type="video/mp4" />
+                        <video className="video-mm" controls>
+                            <source src="Videos/RecordingSB.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
                     <p className="project-description">
-                        Build to order website for the newly formed UJLP CIO on Grounds at UVA. Actively maintained and can
-                        be found here:&nbsp;
-                        <a 
-                            href="https://ujlawandpolitics.org/" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            style={{ color: 'var(--accent)', textDecoration: 'none', borderBottom: '1px dashed var(--accent)' }}
-                        >
-                            UJLP@UVA
-                        </a>
+                        A vertical platformer game developed in Unity where players navigate through 
+                        challenging levels by jumping between platforms and avoiding obstacles. The game 
+                        features dynamic difficulty scaling, power-ups, and a unique scoring system that 
+                        rewards both speed and precision.
                     </p>
                 </motion.div>
 
                 <div className="navigation-buttons">
-                    <Link to="/Website/hostedwebsites" className="back-button">
-                        Back to Hosted Websites
+                    <Link to="/Website/videogames" className="back-button">
+                        Back to Video Games
                     </Link>
                     <Link to="/Website" className="back-button">
                         Back to Home
@@ -56,4 +50,4 @@ const UJLP = () => {
     );
 };
 
-export default UJLP;
+export default SkywardBound; 

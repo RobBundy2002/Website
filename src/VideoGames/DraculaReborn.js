@@ -3,7 +3,7 @@ import '../StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const UJLP = () => {
+const DraculaReborn = () => {
     return (
         <div className="page-container">
             <div className="content-container">
@@ -13,7 +13,7 @@ const UJLP = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    UJLP at UVA
+                    Dracula Reborn
                 </motion.h1>
 
                 <motion.div
@@ -25,27 +25,27 @@ const UJLP = () => {
                 >
                     <div className="video-container">
                         <video className="video-w" controls>
-                            <source src="Videos/UJLPRecording.mp4" type="video/mp4" />
+                            <source src="Videos/RecordingDR.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p className="project-description">
-                        Build to order website for the newly formed UJLP CIO on Grounds at UVA. Actively maintained and can
-                        be found here:&nbsp;
-                        <a 
-                            href="https://ujlawandpolitics.org/" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            style={{ color: 'var(--accent)', textDecoration: 'none', borderBottom: '1px dashed var(--accent)' }}
-                        >
-                            UJLP@UVA
-                        </a>
+                    <p className="description">
+                        Dracula Reborn is an action game where players control a bat on a quest to regain his true form;
+                        Dracula. Set within a cursed terrain, the game challenges players to collect blood and bloodstones
+                        scattered throughout the world. As they navigate the  environment, players must also evade deadly
+                        threats like sunlight beams and dodge relentless vampire hunters and garlic throwers.
+
+                        To survive, the bat can also toss nets to trap enemies and hurl cups to catch falling
+                        holy water before it hits the bat. Built with the PICO-8 engine, Dracula Reborn
+                        features pixel art,  arcade controls, and a haunting soundtrack that immerses players in a fight
+                        for survival. Dracula Reborn delivers a uniquely intense and rewarding gameplay experience.
+
                     </p>
                 </motion.div>
 
                 <div className="navigation-buttons">
-                    <Link to="/Website/hostedwebsites" className="back-button">
-                        Back to Hosted Websites
+                    <Link to="/Website/videogames" className="back-button">
+                        Back to Video Games
                     </Link>
                     <Link to="/Website" className="back-button">
                         Back to Home
@@ -56,4 +56,4 @@ const UJLP = () => {
     );
 };
 
-export default UJLP;
+export default DraculaReborn; 

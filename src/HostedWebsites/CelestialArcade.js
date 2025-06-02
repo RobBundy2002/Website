@@ -3,7 +3,7 @@ import '../StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const UJLP = () => {
+const CelestialArcade = () => {
     return (
         <div className="page-container">
             <div className="content-container">
@@ -13,7 +13,7 @@ const UJLP = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    UJLP at UVA
+                    Celestial Arcade
                 </motion.h1>
 
                 <motion.div
@@ -24,23 +24,16 @@ const UJLP = () => {
                     style={{ maxWidth: '800px', margin: '0 auto' }}
                 >
                     <div className="video-container">
-                        <video className="video-w" controls>
-                            <source src="Videos/UJLPRecording.mp4" type="video/mp4" />
+                        <video className="video-mm" controls>
+                            <source src="Videos/RecordingCA.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    <p className="project-description">
-                        Build to order website for the newly formed UJLP CIO on Grounds at UVA. Actively maintained and can
-                        be found here:&nbsp;
-                        <a 
-                            href="https://ujlawandpolitics.org/" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            style={{ color: 'var(--accent)', textDecoration: 'none', borderBottom: '1px dashed var(--accent)' }}
-                        >
-                            UJLP@UVA
-                        </a>
-                    </p>
+                    <a className="project-description">
+                        Website that serves as a host for a variety of interactive games such as Rock-Paper-Scissors, Connect4, and TicTacToe. Implemented with TailWindCSS and React.
+                        Website can be located at the following url ->&nbsp;
+                        <a href="https://robbundy2002.github.io/Gaming-Website-Project/" target="_blank" rel="noopener noreferrer" className="styled-link">Celestial Arcade</a>
+                    </a>
                 </motion.div>
 
                 <div className="navigation-buttons">
@@ -56,4 +49,4 @@ const UJLP = () => {
     );
 };
 
-export default UJLP;
+export default CelestialArcade; 

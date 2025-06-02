@@ -1,63 +1,83 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import './StyleSheets/Home.css';
-import ProfilePhoto from './SRC-Images/Profile Photo.jpg';
+import './StyleSheets/SharedStyles.css';
 import { Helmet } from 'react-helmet';
-
-const buttonData = [
-    { href: "/Website/#/Website/assortedprojects", label: "Assorted Projects", className: "button-container" },
-    { href: "/Website/#/Website/hostedwebsites", label: "Hosted Websites", className: "button-container2" },
-    { href: "/Website/#/Website/classassignments", label: "Class Projects", className: "button-container3" },
-    { href: "/Website/#/Website/skills", label: "Skills + Tech", className: "button-container4" },
-    { href: "/Website/#/Website/contactme", label: "Contact Info", className: "button-container5" },
-    { href: "/Website/#/Website/aboutme", label: "About Me", className: "button-container6" },
-];
+import { FaUser, FaGlobe, FaCode, FaGraduationCap, FaGamepad } from 'react-icons/fa';
 
 const Home = () => {
+    const categories = [
+        {
+            title: "About Me",
+            description: "Learn more about my background, skills, and journey in software development.",
+            link: "/Website/aboutme",
+            icon: <FaUser size={30} />
+        },
+        {
+            title: "Hosted Websites",
+            description: "Explore my collection of live, deployed web applications and projects.",
+            link: "/Website/hostedwebsites",
+            icon: <FaGlobe size={30} />
+        },
+        {
+            title: "Video Games",
+            description: "Check out my collection of Unity and other game development projects.",
+            link: "/Website/videogames",
+            icon: <FaGamepad size={30} />
+        },
+        {
+            title: "Assorted Projects",
+            description: "Browse through my diverse portfolio of software development projects.",
+            link: "/Website/assortedprojects",
+            icon: <FaCode size={30} />
+        },
+        {
+            title: "Class Assignments",
+            description: "View notable academic projects and coursework implementations.",
+            link: "/Website/classassignments",
+            icon: <FaGraduationCap size={30} />
+        }
+    ];
+
     return (
-        <div className="App-container bg-gradient-to-r from-blue-900 via-purple-900 to-indigo-900 min-h-screen text-white">
+        <div className="page-container">
             <Helmet>
                 <title>Rob Bundy | Portfolio</title>
                 <meta name="description" content="Rob Bundy's professional portfolio and project showcase." />
             </Helmet>
 
-            <div className="App flex flex-col items-center justify-center py-16 px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: -50 }}
+            <div className="home-container">
+                <motion.div 
+                    className="hero-section"
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                    className="text-center"
+                    transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-5xl font-extrabold text-orange-400 mb-2">Rob Bundy</h1>
-                    <p className="text-xl text-orange-200 mb-8">
-                        Software Developer and Computer Science Graduate of The University of Virginia
-                    </p>
-                    <motion.img
-                        src={ProfilePhoto}
-                        alt="Profile"
-                        className="w-32 h-32 rounded-full object-cover mx-auto mb-6 border-4 border-orange-300"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.5, duration: 0.8 }}
-                        loading="lazy"
-                    />
+                    <h1 className="hero-title">Rob Bundy</h1>
+                    <p className="hero-subtitle">Software Developer · Masters Student</p>
                 </motion.div>
 
-                <div className="max-w-md p-8 bg-orange rounded-lg">
-                    {buttonData.map((btn, index) => (
-                        <motion.a
-                            key={index}
-                            href={btn.href}
-                            className={btn.className}
+                <motion.div 
+                    className="project-categories"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    {categories.map((category, index) => (
+                        <motion.div
+                            key={category.title}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1.2 + index * 0.3, duration: 0.6 }}
+                            transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                         >
-                            <span style={{ fontWeight: 'bold', fontSize: '40px' }}>{btn.label}</span>
-                            <div className={`backdrop${index === 0 ? '' : index + 1}`}></div>
-                        </motion.a>
+                            <Link to={category.link} className="category-card">
+                                <div className="category-icon">{category.icon}</div>
+                                <h2 className="category-title">{category.title}</h2>
+                                <p className="category-description">{category.description}</p>
+                            </Link>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </div>
     );
