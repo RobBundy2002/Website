@@ -7,13 +7,20 @@ const AssortedProjects = () => {
     const projects = [
         {
             id: 1,
+            title: "ResumeGPT",
+            description: "An AI-powered resume builder and analyzer built with React and OpenAI's GPT API. The application helps users create professional resumes by providing intelligent suggestions, formatting assistance, and content optimization based on industry best practices.",
+            imageUrl: "Images/ResumeGPT.png",
+            link: "/Website/resumegpt"
+        },
+        {
+            id: 2,
             title: "Proverbial Plates",
             description: "Mobile app built with React Native and Expo that serves as a fridge, spice rack, and pantry item organizer, whilst also providing a plethora of recipes ranked by on the ingredients you already have available",
             imageUrl: "Images/Proverbial Plates.PNG",
             link: "/Website/proverbialplates"
         },
         {
-            id: 2,
+            id: 3,
             title: "Wordle App",
             description: "A Wordle clone implemented with JavaFx, that like the popular New York Times Game, has the user attempt to guess mystery five-letter words in six attempts. Built as a self-taught implementation of JavaFx",
             imageUrl: "Images/Wordle Recreation.jpg",

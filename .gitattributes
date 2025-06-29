@@ -131,3 +131,5 @@
 /public/Videos/VampireFrostbite.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/Videos/Dracula[[:space:]]Reborn.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/Machine_Learning_Final_Writeup.pdf filter=lfs diff=lfs merge=lfs -text
+/public/Images/ResumeGPT.png filter=lfs diff=lfs merge=lfs -text
+/public/Videos/ResumeGPT.mp4 filter=lfs diff=lfs merge=lfs -text
