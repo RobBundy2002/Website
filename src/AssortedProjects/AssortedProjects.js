@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../StyleSheets/SharedStyles.css';
 import { motion } from 'framer-motion';
+import { FaExternalLinkAlt, FaReact, FaMobile, FaJava } from 'react-icons/fa';
 
 const AssortedProjects = () => {
     const projects = [
@@ -10,68 +11,175 @@ const AssortedProjects = () => {
             title: "ResumeGPT",
             description: "An AI-powered resume builder and analyzer built with React and OpenAI's GPT API. The application helps users create professional resumes by providing intelligent suggestions, formatting assistance, and content optimization based on industry best practices.",
             imageUrl: "Images/ResumeGPT.png",
-            link: "/Website/resumegpt"
+            link: "/Website/resumegpt",
+            technologies: ["React", "OpenAI API", "JavaScript", "HTML", "CSS"],
+            features: ["AI-Powered Suggestions", "Resume Analysis", "Professional Templates"],
+            icon: <FaReact size={24} />,
+            color: "var(--accent-primary)",
+            year: 2024
         },
         {
             id: 2,
             title: "Proverbial Plates",
             description: "Mobile app built with React Native and Expo that serves as a fridge, spice rack, and pantry item organizer, whilst also providing a plethora of recipes ranked by on the ingredients you already have available",
             imageUrl: "Images/Proverbial Plates.PNG",
-            link: "/Website/proverbialplates"
+            link: "/Website/proverbialplates",
+            technologies: ["React Native", "Expo", "JavaScript", "CSS"],
+            features: ["Recipe Recommendations", "Ingredient Tracking", "Mobile App"],
+            icon: <FaMobile size={24} />,
+            color: "var(--accent-tertiary)",
+            year: 2025
         },
         {
             id: 3,
             title: "Wordle App",
             description: "A Wordle clone implemented with JavaFx, that like the popular New York Times Game, has the user attempt to guess mystery five-letter words in six attempts. Built as a self-taught implementation of JavaFx",
             imageUrl: "Images/Wordle Recreation.jpg",
-            link: "/Website/wordle"
+            link: "/Website/wordle",
+            technologies: ["Java", "JavaFX", "FXML"],
+            features: ["Word Guessing Game", "Desktop Application", "JavaFX UI"],
+            icon: <FaJava size={24} />,
+            color: "var(--accent-secondary)",
+            year: 2024
         }
     ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        }
+    };
 
     return (
         <div className="page-container">
             <div className="content-container">
-                <motion.h1 
-                    className="page-title"
-                    initial={{ opacity: 0, y: -20 }}
+                {/* Hero Section */}
+                <motion.section 
+                    className="hero-section"
+                    initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.8 }}
                 >
-                    Assorted Projects
-                </motion.h1>
-                
-                <motion.div 
-                    className="projects-grid"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                >
-                    {projects.map((project, index) => (
-                        <motion.div
-                            key={project.id}
-                            className="project-card"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 + index * 0.1 }}
-                        >
-                            <img
-                                src={project.imageUrl}
-                                alt={project.title}
-                                className="project-image"
-                            />
-                            <Link to={project.link} style={{ textDecoration: 'none' }}>
-                                <h3 className="project-title">{project.title}</h3>
-                            </Link>
-                            <p className="project-description">{project.description}</p>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                    <h1 className="page-title">Assorted Projects</h1>
+                    <p className="hero-subtitle">Diverse software development projects and applications</p>
+                    
+                    <div className="hero-stats">
+                        <div className="stat-item">
+                            <span className="stat-number">{projects.length}</span>
+                            <span className="stat-label">Projects</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number">8</span>
+                            <span className="stat-label">Technologies</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number">2025</span>
+                            <span className="stat-label">Latest</span>
+                        </div>
+                    </div>
+                </motion.section>
 
-                <div style={{ textAlign: 'center' }}>
-                    <Link to="/Website" className="back-button">
-                        ← Back to Home
+                {/* Projects Grid */}
+                <motion.section 
+                    className="projects-section"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <div className="projects-grid">
+                        {projects.map((project, index) => (
+                            <motion.div
+                                key={project.id}
+                                className="project-card enhanced-card"
+                                variants={itemVariants}
+                                whileHover={{ 
+                                    scale: 1.02,
+                                    transition: { duration: 0.2 }
+                                }}
+                            >
+                                <div className="project-image-container">
+                                    <img
+                                        src={project.imageUrl}
+                                        alt={project.title}
+                                        className="project-image"
+                                    />
+                                    <div className="project-overlay">
+                                        <div 
+                                            className="project-icon"
+                                            style={{ background: project.color }}
+                                        >
+                                            {project.icon}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="project-content">
+                                    <div className="project-header">
+                                        <h3 className="project-title">{project.title}</h3>
+                                        <Link to={project.link} className="project-link">
+                                            <FaExternalLinkAlt size={16} />
+                                        </Link>
+                                    </div>
+                                    
+                                    <p className="project-description">{project.description}</p>
+                                    
+                                    <div className="project-technologies">
+                                        <h4>Technologies</h4>
+                                        <div className="tech-tags">
+                                            {project.technologies.map((tech, techIndex) => (
+                                                <span key={techIndex} className="tech-tag">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="project-features">
+                                        <h4>Key Features</h4>
+                                        <ul className="features-list">
+                                            {project.features.map((feature, featureIndex) => (
+                                                <li key={featureIndex} className="feature-item-list">
+                                                    <FaExternalLinkAlt size={12} />
+                                                    <span>{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.section>
+
+                {/* Navigation */}
+                <motion.div 
+                    className="navigation-buttons"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
+                >
+                    <Link to="/Website" className="back-button primary">
+                        <span className="button-icon">🏠</span>
+                        <span>Back to Home</span>
                     </Link>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import '../StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FaBrain, FaChartLine, FaFileAlt, FaEye } from 'react-icons/fa';
 
 const CreditApprovalProject = () => {
     const [activeTab, setActiveTab] = useState('Overview');
-    const tabs = ['Overview', 'Approach', 'Results', 'Report'];
+    const tabs = [
+        { id: 'Overview', label: 'Overview', icon: <FaEye size={16} /> },
+        { id: 'Approach', label: 'Approach', icon: <FaBrain size={16} /> },
+        { id: 'Results', label: 'Results', icon: <FaChartLine size={16} /> },
+        { id: 'Report', label: 'Report', icon: <FaFileAlt size={16} /> }
+    ];
 
     const renderContent = () => {
         switch (activeTab) {
@@ -69,47 +75,98 @@ const CreditApprovalProject = () => {
         }
     };
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        }
+    };
+
     return (
         <div className="page-container">
             <div className="content-container">
-                <motion.h1 
-                    className="page-title"
-                    initial={{ opacity: 0, y: -20 }}
+                {/* Hero Section */}
+                <motion.section 
+                    className="hero-section"
+                    initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.8 }}
                 >
-                    Credit Approval Prediction
-                </motion.h1>
+                    <h1 className="page-title">Credit Approval Prediction</h1>
+                    <p className="hero-subtitle">Machine Learning Project - UCI Credit Approval Dataset</p>
+                    
+                    <div className="hero-stats">
+                        <div className="stat-item">
+                            <span className="stat-number">93.56%</span>
+                            <span className="stat-label">Best Accuracy</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number">690</span>
+                            <span className="stat-label">Data Points</span>
+                        </div>
+                        <div className="stat-item">
+                            <span className="stat-number">4</span>
+                            <span className="stat-label">Models Tested</span>
+                        </div>
+                    </div>
+                </motion.section>
 
-                <motion.div
-                    className="project-card"
+                {/* Main Content */}
+                <motion.section 
+                    className="project-detail-section"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <motion.div variants={itemVariants} className="enhanced-card">
+                        <div className="tabs">
+                            {tabs.map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
+                                    onClick={() => setActiveTab(tab.id)}
+                                >
+                                    <span className="tab-icon">{tab.icon}</span>
+                                    <span className="tab-label">{tab.label}</span>
+                                </button>
+                            ))}
+                        </div>
+                        {renderContent()}
+                    </motion.div>
+                </motion.section>
+
+                {/* Navigation */}
+                <motion.div 
+                    className="enhanced-nav"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    style={{ maxWidth: '800px', margin: '0 auto' }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
                 >
-                    <div className="tabs">
-                        {tabs.map((tab) => (
-                            <button
-                                key={tab}
-                                className={`tab-button ${activeTab === tab ? 'active' : ''}`}
-                                onClick={() => setActiveTab(tab)}
-                            >
-                                {tab}
-                            </button>
-                        ))}
-                    </div>
-                    {renderContent()}
+                    <Link to="/Website/classassignments" className="back-button">
+                        <span className="button-icon">←</span>
+                        <span>Back to Assignments</span>
+                    </Link>
+                    <Link to="/Website" className="back-button primary">
+                        <span className="button-icon">🏠</span>
+                        <span>Back to Home</span>
+                    </Link>
                 </motion.div>
-
-                <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-                    <Link to="/Website/classassignments" className="back-button" style={{ marginRight: '1rem' }}>
-                        Back to Assignments
-                    </Link>
-                    <Link to="/Website" className="back-button">
-                        Back to Home
-                    </Link>
-                </div>
             </div>
         </div>
     );
