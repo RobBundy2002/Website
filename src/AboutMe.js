@@ -108,7 +108,7 @@ const AboutMePage = () => {
                                 </div>
                                 <div className="detail-item">
                                     <FaBriefcase className="detail-icon" />
-                                    <span>Software Developer at General Atomics</span>
+                                    <span>Software Developer at General Atomics Integrated Intelligence</span>
                                 </div>
                             </div>
 
