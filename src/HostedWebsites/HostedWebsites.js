@@ -32,13 +32,13 @@ const HostedWebsites = () => {
             description: "Course Website implemented with the just-the-docs jekyll theme. Built at the University of Virginia for CS1112 alongside Jackson Le.",
             imageUrl: "Images/CS1112 Website.png",
             status: "Live",
-            technologies: ["Jekyll", "Ruby", "HTML/CSS"],
+            technologies: ["Jekyll", "Markdown", "HTML/CSS"],
             features: ["Course Materials", "Documentation", "Student Resources"]
         },
         {
             id: 4,
             title: "UJLP @ UVA",
-            description: "CIO Website for the Undergraduate Journal for Law and Politics at the University of Virginia. Design Choices made by Shelby Eliasek.",
+            description: "CIO Website for the Undergraduate Journal for Law and Politics at the University of Virginia.",
             imageUrl: "Images/UJLP.png",
             link: "/Website/ujlp",
             status: "Live",
