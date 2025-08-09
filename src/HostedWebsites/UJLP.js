@@ -159,7 +159,7 @@ const UJLP = () => {
                         <span>Back to Projects</span>
                     </Link>
                     <Link to="/Website" className="back-button primary">
-                        <span className="button-icon">🏠</span>
+                        <span className="button-icon"></span>
                         <span>Back to Home</span>
                     </Link>
                 </motion.div>

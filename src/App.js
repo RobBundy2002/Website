@@ -9,6 +9,7 @@ import AboutMePage from './AboutMe';
 import ProverbialPlates from './AssortedProjects/ProverbialPlates';
 import Wordle from './AssortedProjects/Wordle';
 import ResumeGPT from './AssortedProjects/ResumeGPT';
+import AIVestor from './AssortedProjects/AIVestor';
 import MatrixMadness from './HostedWebsites/MatrixMadness';
 import ScrollToTop from "./Miscellaneous/ScrollToTop";
 import UJLP from "./HostedWebsites/UJLP";
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path="/Website/classassignments" element={<ClassAssignments />} />
                 <Route path="/Website/videogames" element={<VideoGames />} />
                 <Route path="/Website/aboutme" element={<AboutMePage />} />
+                <Route path="/Website/aivestor" element={<AIVestor />} />
                 <Route path="/Website/proverbialplates" element={<ProverbialPlates />} />
                 <Route path="/Website/wordle" element={<Wordle />} />
                 <Route path="/Website/resumegpt" element={<ResumeGPT />} />
