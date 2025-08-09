@@ -25,7 +25,7 @@ const SkywardBound = () => {
                 >
                     <div className="video-container">
                         <video className="video-mm" controls>
-                            <source src="Videos/RecordingSB.mp4" type="video/mp4" />
+                            <source src="Videos/SkywardBound.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>

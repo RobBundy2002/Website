@@ -2,12 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../StyleSheets/SharedStyles.css';
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaReact, FaMobile, FaJava } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaReact, FaMobile, FaJava, FaBrain } from 'react-icons/fa';
 
 const AssortedProjects = () => {
     const projects = [
         {
             id: 1,
+            title: "AI Vestor",
+            description: "An intelligent investment analysis platform that leverages artificial intelligence to provide comprehensive market insights and portfolio optimization. Combines advanced machine learning algorithms with real-time market data.",
+            imageUrl: "Images/AIVestor.png",
+            link: "/Website/aivestor",
+            technologies: ["Python", "Machine Learning", "TensorFlow", "React", "JavaScript"],
+            features: ["AI-Powered Analysis", "Market Predictions", "Portfolio Optimization"],
+            icon: <FaBrain size={24} />,
+            color: "var(--accent-primary)"
+        },
+        {
+            id: 2,
             title: "ResumeGPT",
             description: "An AI-powered resume builder and analyzer built with React and OpenAI's GPT API. The application helps users create professional resumes by providing intelligent suggestions, formatting assistance, and content optimization based on industry best practices.",
             imageUrl: "Images/ResumeGPT.png",
@@ -15,11 +26,10 @@ const AssortedProjects = () => {
             technologies: ["React", "OpenAI API", "JavaScript", "HTML", "CSS"],
             features: ["AI-Powered Suggestions", "Resume Analysis", "Professional Templates"],
             icon: <FaReact size={24} />,
-            color: "var(--accent-primary)",
-            year: 2024
+            color: "var(--accent-secondary)"
         },
         {
-            id: 2,
+            id: 3,
             title: "Proverbial Plates",
             description: "Mobile app built with React Native and Expo that serves as a fridge, spice rack, and pantry item organizer, whilst also providing a plethora of recipes ranked by on the ingredients you already have available",
             imageUrl: "Images/Proverbial Plates.PNG",
@@ -27,11 +37,10 @@ const AssortedProjects = () => {
             technologies: ["React Native", "Expo", "JavaScript", "CSS"],
             features: ["Recipe Recommendations", "Ingredient Tracking", "Mobile App"],
             icon: <FaMobile size={24} />,
-            color: "var(--accent-tertiary)",
-            year: 2025
+            color: "var(--accent-tertiary)"
         },
         {
-            id: 3,
+            id: 4,
             title: "Wordle App",
             description: "A Wordle clone implemented with JavaFx, that like the popular New York Times Game, has the user attempt to guess mystery five-letter words in six attempts. Built as a self-taught implementation of JavaFx",
             imageUrl: "Images/Wordle Recreation.jpg",
@@ -39,8 +48,7 @@ const AssortedProjects = () => {
             technologies: ["Java", "JavaFX", "FXML"],
             features: ["Word Guessing Game", "Desktop Application", "JavaFX UI"],
             icon: <FaJava size={24} />,
-            color: "var(--accent-secondary)",
-            year: 2024
+            color: "var(--accent-primary)"
         }
     ];
 
@@ -86,7 +94,7 @@ const AssortedProjects = () => {
                             <span className="stat-label">Projects</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-number">8</span>
+                            <span className="stat-number">12</span>
                             <span className="stat-label">Technologies</span>
                         </div>
                         <div className="stat-item">
@@ -176,7 +184,7 @@ const AssortedProjects = () => {
                     transition={{ delay: 0.8, duration: 0.5 }}
                 >
                     <Link to="/Website" className="back-button primary">
-                        <span className="button-icon">🏠</span>
+                        <span className="button-icon"></span>
                         <span>Back to Home</span>
                     </Link>
                 </motion.div>

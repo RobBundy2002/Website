@@ -25,7 +25,7 @@ const VampireFrostbite = () => {
                 >
                     <div className="video-container">
                         <video className="video-w" controls>
-                            <source src="Videos/RecordingVF.mp4" type="video/mp4" />
+                            <source src="Videos/VampfireFrostbite.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>

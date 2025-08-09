@@ -2,29 +2,29 @@ import React from 'react';
 import '../StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaPlay, FaGlobe } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaPlay, FaBrain, FaChartLine, FaRobot } from 'react-icons/fa';
 
-const UJLP = () => {
+const AIVestor = () => {
     const features = [
         {
-            icon: "🎨",
-            title: "Modern Design",
-            description: "Clean, professional interface with contemporary aesthetics"
+            icon: "🤖",
+            title: "AI-Powered Analysis",
+            description: "Advanced machine learning algorithms for investment insights"
         },
         {
-            icon: "📱",
-            title: "Mobile Responsive",
-            description: "Optimized for all devices and screen sizes"
+            icon: "📈",
+            title: "Market Predictions",
+            description: "Real-time market analysis and trend prediction"
         },
         {
-            icon: "⚡",
-            title: "Fast Performance",
-            description: "Optimized loading speeds and smooth interactions"
+            icon: "💰",
+            title: "Portfolio Optimization",
+            description: "Intelligent portfolio management and optimization"
         },
         {
-            icon: "🛠️",
-            title: "Active Maintenance",
-            description: "Regular updates and ongoing support"
+            icon: "📊",
+            title: "Data Visualization",
+            description: "Interactive charts and comprehensive analytics"
         }
     ];
 
@@ -54,27 +54,28 @@ const UJLP = () => {
     return (
         <div className="page-container">
             <div className="content-container">
+                {/* Hero Section */}
                 <motion.section 
                     className="hero-section"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="page-title">UJLP at UVA</h1>
-                    <p className="hero-subtitle">University Judiciary Law and Politics - Official Website</p>
+                    <h1 className="page-title">AI Vestor</h1>
+                    <p className="hero-subtitle">Intelligent Investment Analysis Platform</p>
                     
                     <div className="hero-stats">
                         <div className="stat-item">
-                            <span className="stat-number">Live</span>
-                            <span className="stat-label">Status</span>
+                            <span className="stat-number">AI</span>
+                            <span className="stat-label">Powered</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-number">React</span>
-                            <span className="stat-label">Framework</span>
+                            <span className="stat-number">Real-time</span>
+                            <span className="stat-label">Analysis</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-number">2024</span>
-                            <span className="stat-label">Launched</span>
+                            <span className="stat-number">2025</span>
+                            <span className="stat-label">Latest</span>
                         </div>
                     </div>
                 </motion.section>
@@ -92,7 +93,7 @@ const UJLP = () => {
                             <h3 className="section-title">Project Demo</h3>
                             <div className="video-container enhanced-video">
                                 <video className="video-w" controls preload="metadata">
-                                    <source src="Videos/UJLPRecording.mp4" type="video/mp4" />
+                                    <source src="Videos/AI Vestor.mp4" type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
                                 <div className="video-overlay">
@@ -106,25 +107,23 @@ const UJLP = () => {
                             <div className="detail-section">
                                 <h3 className="section-title">About the Project</h3>
                                 <p className="enhanced-description">
-                                    A custom-built website for the newly formed UJLP CIO on Grounds at UVA. 
-                                    This project features modern web technologies and responsive design, 
-                                    actively maintained and serving the UVA community.
+                                    AI Vestor is an intelligent investment analysis platform that leverages artificial intelligence 
+                                    to provide comprehensive market insights and portfolio optimization. The application combines 
+                                    advanced machine learning algorithms with real-time market data to deliver actionable 
+                                    investment recommendations and risk analysis.
                                 </p>
                             </div>
 
                             <div className="detail-section">
-                                <h3 className="section-title">Live Website</h3>
-                                <div className="link-container">
-                                    <a 
-                                        href="https://ujlawandpolitics.org/" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="live-link"
-                                    >
-                                        <FaGlobe className="link-icon" />
-                                        <span className="link-text">Visit UJLP@UVA</span>
-                                        <FaExternalLinkAlt className="link-arrow" />
-                                    </a>
+                                <h3 className="section-title">Key Technologies</h3>
+                                <div className="tech-tags">
+                                    <span className="tech-tag">Python</span>
+                                    <span className="tech-tag">Machine Learning</span>
+                                    <span className="tech-tag">TensorFlow</span>
+                                    <span className="tech-tag">React</span>
+                                    <span className="tech-tag">JavaScript</span>
+                                    <span className="tech-tag">Data Analysis</span>
+                                    <span className="tech-tag">API Integration</span>
                                 </div>
                             </div>
 
@@ -154,7 +153,7 @@ const UJLP = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
                 >
-                    <Link to="/Website/hostedwebsites" className="back-button">
+                    <Link to="/Website/assortedprojects" className="back-button">
                         <span className="button-icon">←</span>
                         <span>Back to Projects</span>
                     </Link>
@@ -168,4 +167,4 @@ const UJLP = () => {
     );
 };
 
-export default UJLP;
+export default AIVestor;

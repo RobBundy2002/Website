@@ -246,7 +246,7 @@ const AboutMePage = () => {
                     transition={{ delay: 0.8, duration: 0.5 }}
                 >
                     <Link to="/Website" className="back-button primary">
-                        <span className="button-icon">🏠</span>
+                        <span className="button-icon"></span>
                         <span>Back to Home</span>
                     </Link>
                 </motion.div>
