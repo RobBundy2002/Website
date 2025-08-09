@@ -141,22 +141,11 @@ const AboutMePage = () => {
                                 >
                                     <FaEnvelope />
                                 </motion.a>
-                                <motion.a 
-                                    href="https://leetcode.com/yourusername" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    className="social-link"
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <SiLeetcode />
-                                </motion.a>
                             </div>
                         </div>
                     </div>
                 </motion.section>
 
-                {/* About Section */}
                 <motion.section 
                     className="about-section"
                     variants={containerVariants}
@@ -172,8 +161,8 @@ const AboutMePage = () => {
                                     I graduated from the University of Virginia with a Bachelor's of Arts in Computer Science and a minor in Religious Studies in May 2025.
                                 </p>
                                 <p>
-                                    My next chapter begins in Summer 2025 as a Software Developer at General Atomics Integrated Intelligence, 
-                                    followed by pursuing an Online Masters in Computer Science at Georgia Tech in Fall 2025.
+                                    My next chapter has begun, as I am a Software Developer at General Atomics Integrated Intelligence,
+                                    as well as pursuing an Online Masters in Computer Science at Georgia Tech in Fall 2025.
                                 </p>
                                 <p>
                                     When I'm not coding, you'll find me throwing discs at the local disc golf course, 
@@ -207,7 +196,6 @@ const AboutMePage = () => {
                     </motion.div>
                 </motion.section>
 
-                {/* Skills Section */}
                 <motion.section 
                     className="skills-section"
                     variants={containerVariants}
