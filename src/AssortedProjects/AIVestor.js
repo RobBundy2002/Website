@@ -88,18 +88,11 @@ const AIVestor = () => {
                     animate="visible"
                 >
                     <motion.div variants={itemVariants} className="enhanced-card">
-                        {/* Video Section */}
-                        <div className="video-section">
-                            <h3 className="section-title">Project Demo</h3>
-                            <div className="video-container enhanced-video">
-                                <video className="video-w" controls preload="metadata">
-                                    <source src="Videos/AI Vestor.mp4" type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
-                                <div className="video-overlay">
-                                    <FaPlay className="play-icon" />
-                                </div>
-                            </div>
+                        <div className="video-container">
+                            <video className="video-mm" controls>
+                                <source src="Videos/AIVestor.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
 
                         {/* Project Details */}
