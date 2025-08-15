@@ -80,7 +80,6 @@ const AIVestor = () => {
                     </div>
                 </motion.section>
 
-                {/* Main Content */}
                 <motion.section 
                     className="project-detail-section"
                     variants={containerVariants}
