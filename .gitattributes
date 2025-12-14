@@ -136,3 +136,5 @@
 /public/Images/AIVestor.png filter=lfs diff=lfs merge=lfs -text
 /public/Videos/AI[[:space:]]Vestor.mp4 filter=lfs diff=lfs merge=lfs -text
 /public/Videos/AIVestor.mp4 filter=lfs diff=lfs merge=lfs -text
+/public/Images/BeneathTree.png filter=lfs diff=lfs merge=lfs -text
+/public/Videos/Shroom.mp4 filter=lfs diff=lfs merge=lfs -text

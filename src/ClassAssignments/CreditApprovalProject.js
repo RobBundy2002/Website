@@ -101,7 +101,6 @@ const CreditApprovalProject = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                {/* Hero Section */}
                 <motion.section 
                     className="hero-section"
                     initial={{ opacity: 0, y: 50 }}
@@ -127,7 +126,6 @@ const CreditApprovalProject = () => {
                     </div>
                 </motion.section>
 
-                {/* Main Content */}
                 <motion.section 
                     className="project-detail-section"
                     variants={containerVariants}
@@ -151,7 +149,6 @@ const CreditApprovalProject = () => {
                     </motion.div>
                 </motion.section>
 
-                {/* Navigation */}
                 <motion.div 
                     className="enhanced-nav"
                     initial={{ opacity: 0, y: 20 }}

@@ -1178,7 +1178,6 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-/* Modern Footer Styles */
 .modern-footer {
     background: var(--card-bg);
     border-top: 1px solid var(--border-color);

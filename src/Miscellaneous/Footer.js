@@ -7,10 +7,10 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-section">
                     <p className="footer-text">&copy; 2025 Rob Bundy. All Rights Reserved.</p>
-                    <p className="footer-subtext">University of Virginia Undergraduate</p>
+                    <p className="footer-subtext"></p>
                 </div>
                 <div className="footer-section">
-                    <p className="footer-subtext">Software Developer & Masters Student</p>
+                    <p className="footer-subtext">Software Engineer & Masters Student</p>
                 </div>
             </div>
         </footer>

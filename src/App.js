@@ -20,6 +20,7 @@ import VideoGames from './VideoGames/VideoGames';
 import SkywardBound from './VideoGames/SkywardBound';
 import DraculaReborn from './VideoGames/DraculaReborn';
 import VampireFrostbite from './VideoGames/VampireFrostbite';
+import BeneathTheWorldTree from "./VideoGames/BeneathTheWorldTree";
 
 const App = () => {
     return (
@@ -44,6 +45,7 @@ const App = () => {
                 <Route path="/Website/videogames/skywardbound" element={<SkywardBound />} />
                 <Route path="/Website/videogames/draculareborn" element={<DraculaReborn />} />
                 <Route path="/Website/videogames/vampirefrostbite" element={<VampireFrostbite />} />
+                <Route path="/Website/videogames/beneaththeworldtree" element={<BeneathTheWorldTree />} />
             </Routes>
             <Footer />
         </Router>

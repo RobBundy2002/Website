@@ -41,6 +41,18 @@ const VideoGames = () => {
             icon: <FaCode size={24} />,
             color: "var(--accent-tertiary)",
             platform: "Pico-8"
+        },
+        {
+            id: 4,
+            title: "Beneath the World Tree",
+            description: "An immersive 3D video game built in unity as part of a semester long final project. This game combines 3d rigidbody physics, an original scored audio, and active narration that teaches you how to play the game. Built at Georgia Institute of Technology for CS6457 alongside Michelle Jones, Hao Sun, Omer Mirza, and Sameen Shaik.",
+            imageUrl: "Images/BeneathTree.png",
+            link: "/Website/videogames/beneaththeworldtree",
+            technologies: ["Unity", "C#", "Game Development"],
+            features: ["3D Manic Shooter", "Unity Engine", "C# Scripts"],
+            icon: <FaUnity size={24} />,
+            color: "var(--accent-primary)",
+            platform: "Unity"
         }
     ];
 
@@ -70,7 +82,6 @@ const VideoGames = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                {/* Hero Section */}
                 <motion.section 
                     className="hero-section"
                     initial={{ opacity: 0, y: 50 }}

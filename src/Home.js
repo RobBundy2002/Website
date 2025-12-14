@@ -65,13 +65,12 @@ const Home = () => {
     return (
         <div className="page-container">
             <Helmet>
-                <title>Rob Bundy | Software Developer & Masters Student</title>
+                <title>Rob Bundy | Software Engineer & Masters Student</title>
                 <meta name="description" content="Rob Bundy's professional portfolio showcasing web development, game development, and software engineering projects." />
                 <meta name="keywords" content="software developer, web development, game development, React, Unity, portfolio" />
             </Helmet>
 
             <div className="content-container">
-                {/* Hero Section */}
                 <motion.section 
                     className="hero-section"
                     initial={{ opacity: 0, y: 50 }}
@@ -95,7 +94,7 @@ const Home = () => {
                     </motion.div>
                     
                     <h1 className="hero-title">Rob Bundy</h1>
-                    <p className="hero-subtitle">Software Developer · Masters Student · Game Developer</p>
+                    <p className="hero-subtitle">Software Engineer · Masters Student · Game Developer</p>
                     
                     <motion.div 
                         className="hero-stats"
