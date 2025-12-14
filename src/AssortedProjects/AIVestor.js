@@ -54,7 +54,6 @@ const AIVestor = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                {/* Hero Section */}
                 <motion.section 
                     className="hero-section"
                     initial={{ opacity: 0, y: 50 }}
@@ -94,7 +93,6 @@ const AIVestor = () => {
                             </video>
                         </div>
 
-                        {/* Project Details */}
                         <div className="project-details">
                             <div className="detail-section">
                                 <h3 className="section-title">About the Project</h3>
@@ -119,7 +117,6 @@ const AIVestor = () => {
                                 </div>
                             </div>
 
-                            {/* Features Grid */}
                             <div className="features-grid">
                                 {features.map((feature, index) => (
                                     <motion.div 
@@ -138,7 +135,6 @@ const AIVestor = () => {
                     </motion.div>
                 </motion.section>
 
-                {/* Navigation */}
                 <motion.div 
                     className="enhanced-nav"
                     initial={{ opacity: 0, y: 20 }}

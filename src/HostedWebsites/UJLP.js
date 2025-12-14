@@ -79,7 +79,6 @@ const UJLP = () => {
                     </div>
                 </motion.section>
 
-                {/* Main Content */}
                 <motion.section 
                     className="project-detail-section"
                     variants={containerVariants}
@@ -87,7 +86,6 @@ const UJLP = () => {
                     animate="visible"
                 >
                     <motion.div variants={itemVariants} className="enhanced-card">
-                        {/* Video Section */}
                         <div className="video-section">
                             <h3 className="section-title">Project Demo</h3>
                             <div className="video-container enhanced-video">
@@ -101,7 +99,6 @@ const UJLP = () => {
                             </div>
                         </div>
 
-                        {/* Project Details */}
                         <div className="project-details">
                             <div className="detail-section">
                                 <h3 className="section-title">About the Project</h3>
@@ -128,7 +125,6 @@ const UJLP = () => {
                                 </div>
                             </div>
 
-                            {/* Features Grid */}
                             <div className="features-grid">
                                 {features.map((feature, index) => (
                                     <motion.div 
@@ -147,7 +143,6 @@ const UJLP = () => {
                     </motion.div>
                 </motion.section>
 
-                {/* Navigation */}
                 <motion.div 
                     className="enhanced-nav"
                     initial={{ opacity: 0, y: 20 }}

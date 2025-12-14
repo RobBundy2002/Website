@@ -117,7 +117,6 @@ const Home = () => {
                     </motion.div>
                 </motion.section>
 
-                {/* Categories Section */}
                 <motion.section 
                     className="categories-section"
                     variants={containerVariants}
@@ -159,7 +158,6 @@ const Home = () => {
                     </div>
                 </motion.section>
 
-                {/* Quick Stats Section */}
                 <motion.section 
                     className="quick-stats-section"
                     initial={{ opacity: 0, y: 30 }}

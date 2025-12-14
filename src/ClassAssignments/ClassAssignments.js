@@ -58,7 +58,6 @@ const ClassAssignments = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                {/* Hero Section */}
                 <motion.section 
                     className="hero-section"
                     initial={{ opacity: 0, y: 50 }}
@@ -84,7 +83,6 @@ const ClassAssignments = () => {
                     </div>
                 </motion.section>
 
-                {/* Projects Grid */}
                 <motion.section 
                     className="projects-section"
                     variants={containerVariants}
@@ -156,7 +154,6 @@ const ClassAssignments = () => {
                     </div>
                 </motion.section>
 
-                {/* Navigation */}
                 <motion.div 
                     className="navigation-buttons"
                     initial={{ opacity: 0, y: 20 }}
