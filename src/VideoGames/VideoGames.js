@@ -107,7 +107,6 @@ const VideoGames = () => {
                     </div>
                 </motion.section>
 
-                {/* Projects Grid */}
                 <motion.section 
                     className="projects-section"
                     variants={containerVariants}
@@ -182,7 +181,6 @@ const VideoGames = () => {
                     </div>
                 </motion.section>
 
-                {/* Navigation */}
                 <motion.div 
                     className="navigation-buttons"
                     initial={{ opacity: 0, y: 20 }}

@@ -71,7 +71,6 @@ const AboutMePage = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                {/* Hero Section */}
                 <motion.section 
                     className="about-hero"
                     initial={{ opacity: 0, y: 50 }}
@@ -226,7 +225,6 @@ const AboutMePage = () => {
                     </motion.div>
                 </motion.section>
 
-                {/* Navigation */}
                 <motion.div 
                     className="navigation-buttons"
                     initial={{ opacity: 0, y: 20 }}
