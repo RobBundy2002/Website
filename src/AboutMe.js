@@ -95,7 +95,7 @@ const AboutMePage = () => {
                         
                         <div className="profile-info">
                             <h1 className="page-title">Rob Bundy</h1>
-                            <p className="hero-subtitle">Software Developer · Masters Student · Game Developer</p>
+                            <p className="hero-subtitle">Software Engineer · Masters Student · Game Developer</p>
                             
                             <div className="profile-details">
                                 <div className="detail-item">
@@ -108,7 +108,7 @@ const AboutMePage = () => {
                                 </div>
                                 <div className="detail-item">
                                     <FaBriefcase className="detail-icon" />
-                                    <span>Software Developer at General Atomics Integrated Intelligence</span>
+                                    <span>Software Engineer at General Atomics Integrated Intelligence</span>
                                 </div>
                             </div>
 
@@ -161,7 +161,7 @@ const AboutMePage = () => {
                                     I graduated from the University of Virginia with a Bachelor's of Arts in Computer Science and a minor in Religious Studies in May 2025.
                                 </p>
                                 <p>
-                                    My next chapter has begun, as I am a Software Developer at General Atomics Integrated Intelligence,
+                                    My next chapter has begun, as I am a Software Engineer at General Atomics Integrated Intelligence,
                                     as well as pursuing an Online Masters in Computer Science at Georgia Tech in Fall 2025.
                                 </p>
                                 <p>
