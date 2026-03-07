@@ -23,7 +23,7 @@ const CreditApprovalProject = () => {
           date="2024"
           role="ML Engineer"
           tech={["Python", "scikit-learn", "Pandas"]}
-          links={[{ href: '/Machine_Learning_Final_Writeup.pdf', label: 'Final Report' }]}
+          links={[{ href: `${process.env.PUBLIC_URL}/Machine_Learning_Final_Writeup.pdf`, label: 'Final Report' }]}
           sections={sections}
         />
 
