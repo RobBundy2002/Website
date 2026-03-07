@@ -1,53 +1,33 @@
 import React from 'react';
-import '../StyleSheets/SharedStyles.css';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import CaseStudy from '../components/CaseStudy';
 
 const SkywardBound = () => {
-    return (
-        <div className="page-container">
-            <div className="content-container">
-                <motion.h1 
-                    className="page-title"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    Skyward Bound
-                </motion.h1>
+  const sections = [
+    { heading: 'About', content: 'Skyward Bound is a vertical platformer built in Unity featuring dynamic difficulty, power-ups, and precision-based scoring.' },
+    { heading: 'Role', content: 'Implemented core C# gameplay systems and level design mechanics.' },
+    { heading: 'Result', content: 'A polished gameplay prototype suitable for showcases.' }
+  ];
 
-                <motion.div
-                    className="project-card"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    style={{ maxWidth: '800px', margin: '0 auto' }}
-                >
-                    <div className="video-container">
-                        <video className="video-mm" controls>
-                            <source src="Videos/SkywardBound.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <p className="project-description">
-                        A vertical platformer game developed in Unity where players navigate through 
-                        challenging levels by jumping between platforms and avoiding obstacles. The game 
-                        features dynamic difficulty scaling, power-ups, and a unique scoring system that 
-                        rewards both speed and precision.
-                    </p>
-                </motion.div>
+  return (
+    <div className="page-container">
+      <div className="content-container">
+        <CaseStudy
+          title="Skyward Bound"
+          subtitle="Unity vertical platformer"
+          image="Images/Skyward Bound.jpg"
+          date="2024"
+          role="Gameplay Programmer"
+          tech={["Unity", "C#"]}
+          links={[]}
+          sections={sections}
+        />
 
-                <div className="navigation-buttons">
-                    <Link to="/Website/videogames" className="back-button">
-                        Back to Video Games
-                    </Link>
-                    <Link to="/Website" className="back-button">
-                        Back to Home
-                    </Link>
-                </div>
-            </div>
+        <div style={{ marginTop: 'var(--spacing-2xl)' }}>
+          <a href="/Website/videogames" className="back-button">← Back to Video Games</a>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default SkywardBound; 

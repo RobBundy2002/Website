@@ -58,16 +58,9 @@ const ClassAssignments = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                {/* Hero Section */}
-                <motion.section 
-                    className="hero-section"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
+                <div className="page-intro">
                     <h1 className="page-title">Class Projects</h1>
                     <p className="hero-subtitle">Academic projects and coursework implementations</p>
-                    
                     <div className="hero-stats">
                         <div className="stat-item">
                             <span className="stat-number">{projects.length}</span>
@@ -82,7 +75,7 @@ const ClassAssignments = () => {
                             <span className="stat-label">University</span>
                         </div>
                     </div>
-                </motion.section>
+                </div>
 
                 {/* Projects Grid */}
                 <motion.section 

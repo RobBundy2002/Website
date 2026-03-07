@@ -71,55 +71,14 @@ const Home = () => {
             </Helmet>
 
             <div className="content-container">
-                <motion.section 
-                    className="hero-section"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="hero-avatar"
-                    >
-                        <div className="profile-image-container">
-                            <img
-                                src="Images/Grad.jpg"
-                                alt="Rob Bundy"
-                                className="profile-image"
-                            />
-                            <div className="profile-image-overlay"></div>
-                        </div>
-                    </motion.div>
-                    
-                    <h1 className="hero-title">Rob Bundy</h1>
-                    <p className="hero-subtitle">Software Engineer · Masters Student · Game Developer</p>
-                    
-                    <motion.div 
-                        className="hero-stats"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                        <div className="stat-item">
-                            <span className="stat-number">4+</span>
-                            <span className="stat-label">Years Experience</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="stat-number">20+</span>
-                            <span className="stat-label">Projects</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="stat-number">15+</span>
-                            <span className="stat-label">Technologies</span>
-                        </div>
-                    </motion.div>
-                </motion.section>
+                <div className="page-intro">
+                    <h2 className="section-title">Welcome</h2>
+                    <p className="hero-subtitle">Software Engineer · Masters Student · Game Developer. Explore projects, case studies, and coursework below.</p>
+                </div>
 
-                {/* Categories Section */}
+                {/* Featured Projects */}
                 <motion.section 
-                    className="categories-section"
+                    className="featured-section"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
@@ -130,60 +89,49 @@ const Home = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
-                        Explore My Work
+                        Featured Projects
                     </motion.h2>
-                    
-                    <div className="project-categories">
-                        {categories.map((category, index) => (
-                            <motion.div
-                                key={category.title}
-                                variants={itemVariants}
-                                whileHover={{ 
-                                    scale: 1.02,
-                                    transition: { duration: 0.2 }
-                                }}
-                                whileTap={{ scale: 0.98 }}
-                            >
-                                <Link to={category.link} className="category-card">
-                                    <div className="category-icon">
-                                        {category.icon}
-                                    </div>
-                                    <h3 className="category-title">{category.title}</h3>
-                                    <p className="category-description">{category.description}</p>
-                                    <div className="category-arrow">
-                                        <FaArrowRight size={16} />
-                                    </div>
-                                </Link>
-                            </motion.div>
-                        ))}
+
+                    <div className="featured-grid">
+                        <motion.div className="featured-card" variants={itemVariants} whileHover={{ scale: 1.02 }}>
+                            <img src="Images/ResumeGPT.png" alt="ResumeGPT" className="featured-image" />
+                            <div className="featured-body">
+                                <h3>Resume GPT</h3>
+                                <p className="muted">Full-stack AI web app integrating OpenAI for streaming responses. Securely deployed to GitHub.</p>
+                                <div className="featured-actions">
+                                    <Link to="/Website/resumegpt" className="back-button primary">View</Link>
+                                    <a className="live-link" href="https://github.com/RobBundy2002" target="_blank" rel="noreferrer">Repo</a>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div className="featured-card" variants={itemVariants} whileHover={{ scale: 1.02 }}>
+                            <img src="Images/UJLP.png" alt="UJLP" className="featured-image" />
+                            <div className="featured-body">
+                                <h3>UJLP CIO Website</h3>
+                                <p className="muted">End-to-end site for an academic journal, with a custom article CMS and responsive design.</p>
+                                <div className="featured-actions">
+                                    <Link to="/Website/ujlp" className="back-button primary">View</Link>
+                                    <a className="live-link" href="https://ujlawandpolitics.org/" target="_blank" rel="noreferrer">Live</a>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div className="featured-card" variants={itemVariants} whileHover={{ scale: 1.02 }}>
+                            <img src="Images/Hoop Grids.png" alt="Matrix Madness" className="featured-image" />
+                            <div className="featured-body">
+                                <h3>Matrix Madness</h3>
+                                <p className="muted">College hoops analytics grid game — modular React app with responsive design.</p>
+                                <div className="featured-actions">
+                                    <Link to="/Website/matrixmadness" className="back-button primary">View</Link>
+                                    <a className="live-link" href="https://matrix-madness-frontend.onrender.com/" target="_blank" rel="noreferrer">Live</a>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </motion.section>
 
-                {/* Quick Stats Section */}
-                <motion.section 
-                    className="quick-stats-section"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                    <div className="stats-grid">
-                        <div className="stat-card">
-                            <div className="stat-icon">🚀</div>
-                            <h4>Fast & Responsive</h4>
-                            <p>Modern web applications built with cutting-edge technologies</p>
-                        </div>
-                        <div className="stat-card">
-                            <div className="stat-icon">🎮</div>
-                            <h4>Game Development</h4>
-                            <p>Unity games and interactive experiences</p>
-                        </div>
-                        <div className="stat-card">
-                            <div className="stat-icon">💡</div>
-                            <h4>Innovative Solutions</h4>
-                            <p>Creative problem-solving through code</p>
-                        </div>
-                    </div>
-                </motion.section>
+
             </div>
         </div>
     );

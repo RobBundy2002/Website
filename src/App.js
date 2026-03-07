@@ -4,7 +4,8 @@ import Home from './Home';
 import AssortedProjects from "./AssortedProjects/AssortedProjects";
 import HostedWebsites from './HostedWebsites/HostedWebsites';
 import ClassAssignments from './ClassAssignments/ClassAssignments';
-import Footer from './Miscellaneous/Footer';
+import Footer from './components/FooterNew';
+import Layout from './components/Layout';
 import AboutMePage from './AboutMe';
 import ProverbialPlates from './AssortedProjects/ProverbialPlates';
 import Wordle from './AssortedProjects/Wordle';
@@ -25,7 +26,8 @@ const App = () => {
     return (
         <Router>
             <ScrollToTop />
-            <Routes>
+            <Layout>
+              <Routes>
                 <Route path="/Website" element={<Home />} />
                 <Route path="/Website/assortedprojects" element={<AssortedProjects />} />
                 <Route path="/Website/hostedwebsites" element={<HostedWebsites />} />
@@ -44,8 +46,8 @@ const App = () => {
                 <Route path="/Website/videogames/skywardbound" element={<SkywardBound />} />
                 <Route path="/Website/videogames/draculareborn" element={<DraculaReborn />} />
                 <Route path="/Website/videogames/vampirefrostbite" element={<VampireFrostbite />} />
-            </Routes>
-            <Footer />
+              </Routes>
+            </Layout>
         </Router>
     );
 };

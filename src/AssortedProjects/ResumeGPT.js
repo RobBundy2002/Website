@@ -1,50 +1,33 @@
 import React from 'react';
-import '../StyleSheets/SharedStyles.css';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import CaseStudy from '../components/CaseStudy';
 
 const ResumeGPT = () => {
-    return (
-        <div className="page-container">
-            <div className="content-container">
-                <motion.h1 
-                    className="page-title"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    ResumeGPT
-                </motion.h1>
+  const sections = [
+    { heading: 'About', content: "An AI-powered resume builder and analyzer built with React and the OpenAI API. It provides intelligent suggestions, formatting, and content optimization." },
+    { heading: 'Role', content: "Full-stack developer: integrated streaming API responses, designed secure key handling, and built the frontend UX." },
+    { heading: 'Result', content: "Deployed app on GitHub Pages with streaming experience and secure API patterns." }
+  ];
 
-                <motion.div
-                    className="project-card"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    style={{ maxWidth: '800px', margin: '0 auto' }}
-                >
-                    <div className="video-container">
-                        <video className="video-w" controls>
-                            <source src="Videos/ResumeGPT.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <p className="description">
-                        An AI-powered resume builder and analyzer built with React and OpenAI's GPT API. The application helps users create professional resumes by providing intelligent suggestions, formatting assistance, and content optimization based on industry best practices.
-                    </p>
-                </motion.div>
+  return (
+    <div className="page-container">
+      <div className="content-container">
+        <CaseStudy
+          title="Resume GPT"
+          subtitle="AI-powered resume builder & analyzer"
+          image="Images/ResumeGPT.png"
+          date="Apr 2025 - Jun 2025"
+          role="Full-stack Developer"
+          tech={["React", "OpenAI API", "Node"]}
+          links={[{ href: 'https://github.com/RobBundy2002', label: 'Repo' }]}
+          sections={sections}
+        />
 
-                <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-                    <Link to="/Website/assortedprojects" className="back-button" style={{ marginRight: '1rem' }}>
-                        Back to Projects
-                    </Link>
-                    <Link to="/Website" className="back-button">
-                        Back to Home
-                    </Link>
-                </div>
-            </div>
+        <div style={{ marginTop: 'var(--spacing-2xl)' }}>
+          <a href="/Website/assortedprojects" className="back-button">← Back to Projects</a>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
-export default ResumeGPT; 
+export default ResumeGPT;

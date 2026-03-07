@@ -3,7 +3,8 @@ import './StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaBriefcase, FaHeart } from 'react-icons/fa';
-import { SiLeetcode } from 'react-icons/si';
+import Timeline from './components/Timeline';
+import SkillsGrid from './components/SkillsGrid';
 
 const AboutMePage = () => {
     const skills = [
@@ -95,7 +96,6 @@ const AboutMePage = () => {
                         
                         <div className="profile-info">
                             <h1 className="page-title">Rob Bundy</h1>
-                            <p className="hero-subtitle">Software Engineer · Masters Student · Game Developer</p>
                             
                             <div className="profile-details">
                                 <div className="detail-item">
@@ -108,7 +108,7 @@ const AboutMePage = () => {
                                 </div>
                                 <div className="detail-item">
                                     <FaBriefcase className="detail-icon" />
-                                    <span>Software Engineer at General Atomics Integrated Intelligence</span>
+                                    <span>Software Engineer at General Atomics Intelligence</span>
                                 </div>
                             </div>
 
@@ -157,17 +157,24 @@ const AboutMePage = () => {
                         <div className="about-content">
                             <div className="about-text">
                                 <p>
-                                    Originally from the charming small town of Lebanon in Southwest Virginia, I now call Charlottesville my home. 
-                                    I graduated from the University of Virginia with a Bachelor's of Arts in Computer Science and a minor in Religious Studies in May 2025.
+                                    Hey, I'm a software engineer and lifelong builder, if it can be coded, designed,
+                                    or thrown across a disc golf course, I'm probably obsessed with it.
                                 </p>
                                 <p>
-                                    My next chapter has begun, as I am a Software Engineer at General Atomics Integrated Intelligence,
-                                    as well as pursuing an Online Masters in Computer Science at Georgia Tech in Fall 2025.
+                                    I grew up in Lebanon, a small town tucked in Southwest Virginia, and made my way to
+                                    Charlottesville to study Computer Science and Religious Studies at UVA. That mix probably
+                                    says a lot about me. I graduated in May 2025 and hit the ground running: I'm now a Software
+                                    Engineer at General Atomics Intelligence and pursuing my Online Master's in
+                                    Computer Science at Georgia Tech.
                                 </p>
                                 <p>
-                                    When I'm not coding, you'll find me throwing discs at the local disc golf course, 
-                                    immersed in music, or shooting hoops at the UVA gym. I'm deeply passionate about game development, 
-                                    building innovative apps, and keeping my web projects on the cutting edge of technology.
+                                    When I'm not working or in class, you'll find me on the disc golf course, shooting hoops at the gym, or deep in a music rabbit hole. My real passion is
+                                    building: game development, innovative apps, and web projects that push what's actually
+                                    possible. I care about craft, and I care about making things that feel alive.
+                                </p>
+                                <p>
+                                    I'm always looking for the next interesting problem to solve. If that sounds like your
+                                    kind of person, let's connect.
                                 </p>
                             </div>
                             
@@ -196,35 +203,10 @@ const AboutMePage = () => {
                     </motion.div>
                 </motion.section>
 
-                <motion.section 
-                    className="skills-section"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <motion.div variants={itemVariants} className="skills-card">
-                        <h2 className="section-title">Skills & Technologies</h2>
-                        <div className="skills-grid">
-                            {skills.map((skill, index) => (
-                                <motion.div
-                                    key={skill.name}
-                                    className="skill-badge"
-                                    style={{ 
-                                        background: skillCategories[skill.category]?.color || "var(--accent-primary)"
-                                    }}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: index * 0.05 }}
-                                >
-                                    <span className="skill-icon">{skillCategories[skill.category]?.icon || "💻"}</span>
-                                    <span className="skill-name">{skill.name}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-                </motion.section>
+                {/* Timeline inserted here */}
+                <Timeline />
+
+                <SkillsGrid />
 
                 {/* Navigation */}
                 <motion.div 

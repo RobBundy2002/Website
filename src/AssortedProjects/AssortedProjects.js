@@ -78,16 +78,9 @@ const AssortedProjects = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                {/* Hero Section */}
-                <motion.section 
-                    className="hero-section"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
+                <div className="page-intro">
                     <h1 className="page-title">Assorted Projects</h1>
                     <p className="hero-subtitle">Diverse software development projects and applications</p>
-                    
                     <div className="hero-stats">
                         <div className="stat-item">
                             <span className="stat-number">{projects.length}</span>
@@ -102,7 +95,7 @@ const AssortedProjects = () => {
                             <span className="stat-label">Latest</span>
                         </div>
                     </div>
-                </motion.section>
+                </div>
 
                 {/* Projects Grid */}
                 <motion.section 
@@ -115,7 +108,7 @@ const AssortedProjects = () => {
                         {projects.map((project, index) => (
                             <motion.div
                                 key={project.id}
-                                className="project-card enhanced-card"
+                                className="project-card enhanced-card stacked"
                                 variants={itemVariants}
                                 whileHover={{ 
                                     scale: 1.02,

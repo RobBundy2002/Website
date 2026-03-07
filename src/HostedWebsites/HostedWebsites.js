@@ -84,16 +84,9 @@ const HostedWebsites = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                {/* Hero Section */}
-                <motion.section 
-                    className="hero-section"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
+                <div className="page-intro">
                     <h1 className="page-title">Hosted Websites</h1>
                     <p className="hero-subtitle">Live web applications and deployed projects</p>
-                    
                     <div className="hero-stats">
                         <div className="stat-item">
                             <span className="stat-number">{projects.length}</span>
@@ -108,7 +101,7 @@ const HostedWebsites = () => {
                             <span className="stat-label">Technologies</span>
                         </div>
                     </div>
-                </motion.section>
+                </div>
 
                 {/* Projects Grid */}
                 <motion.section 

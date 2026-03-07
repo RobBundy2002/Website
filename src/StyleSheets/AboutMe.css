@@ -1,11 +1,12 @@
+/* AboutMe.css now uses the shared theme tokens from SharedStyles.css */
 :root {
-    --primary-bg: #0a192f;
-    --secondary-bg: #112240;
-    --text-primary: #ccd6f6;
-    --text-secondary: #8892b0;
-    --accent: #64ffda;
-    --gradient-start: #0a192f;
-    --gradient-end: #112240;
+    --primary-bg: var(--primary-bg);
+    --secondary-bg: var(--secondary-bg);
+    --text-primary: var(--text-primary);
+    --text-secondary: var(--text-secondary);
+    --accent: var(--accent-primary);
+    --gradient-start: var(--primary-bg);
+    --gradient-end: var(--secondary-bg);
 }
 
 .about-me-container {

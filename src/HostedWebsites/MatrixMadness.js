@@ -1,52 +1,33 @@
 import React from 'react';
-import '../StyleSheets/SharedStyles.css';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import CaseStudy from '../components/CaseStudy';
 
 const MatrixMadness = () => {
-    return (
-        <div className="page-container">
-            <div className="content-container">
-                <motion.h1 
-                    className="page-title"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    Matrix Madness
-                </motion.h1>
+  const sections = [
+    { heading: 'About', content: 'Matrix Madness is a college basketball variant of the popular grid guessing game. Built with React and Node, it offers interactive scoring and social features.' },
+    { heading: 'Role', content: 'Front-end architecture and interactive grid implementation.' },
+    { heading: 'Result', content: 'A responsive web app with reusable components and a production-ready deployment.' }
+  ];
 
-                <motion.div
-                    className="project-card"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    style={{ maxWidth: '800px', margin: '0 auto' }}
-                >
-                    <div className="video-container">
-                        <video className="video-mm" controls>
-                            <source src="Videos/Recording.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <p className="project-description">
-                        A web app that offers a college basketball twist on the popular Immaculate Grid game. Built with a sleek React front-end and powered by a robust MongoDB backend, this game delivers seamless grid functionality and real-time data interaction, providing an engaging and dynamic user experience. Located at the following ->
-                        <a href="https://matrix-madness-frontend.onrender.com/" target="_blank" rel="noopener noreferrer" className="styled-link">College Hoops Matrix Madness</a>
-                        &nbsp;(Note: Grid may take up to a minute to load in.)
-                    </p>
-                </motion.div>
+  return (
+    <div className="page-container">
+      <div className="content-container">
+        <CaseStudy
+          title="Matrix Madness"
+          subtitle="College Hoops Grid Game"
+          image="Images/Hoop Grids.png"
+          date="Oct 2023 - Jan 2024"
+          role="Front-end Developer"
+          tech={["React", "Node.js", "MongoDB"]}
+          links={[{ href: 'https://matrix-madness-frontend.onrender.com/', label: 'Live' }]}
+          sections={sections}
+        />
 
-                <div className="navigation-buttons">
-                    <Link to="/Website/hostedwebsites" className="back-button">
-                        Back to Hosted Websites
-                    </Link>
-                    <Link to="/Website" className="back-button">
-                        Back to Home
-                    </Link>
-                </div>
-            </div>
+        <div style={{ marginTop: 'var(--spacing-2xl)' }}>
+          <a href="/Website/hostedwebsites" className="back-button">← Back to Hosted Websites</a>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default MatrixMadness;
