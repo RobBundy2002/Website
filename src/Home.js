@@ -71,9 +71,6 @@ const Home = () => {
             </Helmet>
 
             <div className="content-container">
-                <div className="page-intro fancy-intro">
-                    {/* intro intentionally left minimal */}
-                </div>
 
                 {/* Featured Projects */}
                 <motion.section 

@@ -1,5 +1,6 @@
 import React from 'react';
 import CaseStudy from '../components/CaseStudy';
+import { Link } from 'react-router-dom';
 
 const CelestialArcade = () => {
   const sections = [
@@ -22,7 +23,7 @@ const CelestialArcade = () => {
         />
 
         <div style={{ marginTop: 'var(--spacing-2xl)' }}>
-          <a href="/Website/hostedwebsites" className="back-button">← Back to Hosted Websites</a>
+          <Link to="/Website/hostedwebsites" className="back-button">← Back to Hosted Websites</Link>
         </div>
       </div>
     </div>

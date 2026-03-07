@@ -1,5 +1,6 @@
 import React from 'react';
 import CaseStudy from '../components/CaseStudy';
+import { Link } from 'react-router-dom';
 
 const CourseReviewApplication = () => {
   const sections = [
@@ -23,7 +24,7 @@ const CourseReviewApplication = () => {
         />
 
         <div style={{ marginTop: 'var(--spacing-2xl)' }}>
-          <a href="/Website/classassignments" className="back-button">← Back to Assignments</a>
+          <Link to="/Website/classassignments" className="back-button">← Back to Assignments</Link>
         </div>
       </div>
     </div>

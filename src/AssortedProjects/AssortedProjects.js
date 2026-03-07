@@ -142,9 +142,6 @@ const AssortedProjects = () => {
                                             <FaExternalLinkAlt size={16} />
                                         </Link>
                                     </div>
-                                    
-                                    <p className="project-description">{project.description}</p>
-                                    
                                     <div className="project-technologies">
                                         <h4>Technologies</h4>
                                         <div className="tech-tags">

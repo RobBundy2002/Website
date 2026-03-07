@@ -1,5 +1,6 @@
 import React from 'react';
 import CaseStudy from '../components/CaseStudy';
+import { Link } from 'react-router-dom';
 
 const DraculaReborn = () => {
   const sections = [
@@ -22,7 +23,7 @@ const DraculaReborn = () => {
         />
 
         <div style={{ marginTop: 'var(--spacing-2xl)' }}>
-          <a href="/Website/videogames" className="back-button">← Back to Video Games</a>
+          <Link to="/Website/videogames" className="back-button">← Back to Video Games</Link>
         </div>
       </div>
     </div>

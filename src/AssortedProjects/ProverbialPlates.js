@@ -1,4 +1,5 @@
 import CaseStudy from '../components/CaseStudy';
+import { Link } from 'react-router-dom';
 
 const ProverbialPlates = () => {
   const sections = [
@@ -21,7 +22,7 @@ const ProverbialPlates = () => {
         />
 
         <div style={{ marginTop: 'var(--spacing-2xl)' }}>
-          <a href="/Website/assortedprojects" className="back-button">← Back to Projects</a>
+          <Link to="/Website/assortedprojects" className="back-button">← Back to Projects</Link>
         </div>
       </div>
     </div>
