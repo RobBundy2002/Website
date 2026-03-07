@@ -1776,12 +1776,19 @@ body {
 
 /* Intro stats badges */
 .intro-stats { display:flex; gap: var(--spacing-md); align-items:center; }
-.stat-badge { background: rgba(255,255,255,0.03); padding: 12px 16px; border-radius: 12px; text-align:center; min-width:96px; }
-.stat-badge .stat-number { font-size: 1.4rem; font-weight:800; color: var(--accent-secondary); }
-.stat-badge .stat-label { font-size: 0.8rem; color: var(--text-secondary); }
+.stat-badge { background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 10px; text-align:center; min-width:80px; }
+.stat-badge .stat-number { font-size: 1.25rem; font-weight:800; color: var(--accent-secondary); }
+.stat-badge .stat-label { font-size: 0.78rem; color: var(--text-secondary); }
 
 .intro-left { flex:1; }
 .intro-right { display:flex; gap:var(--spacing-md); align-items:center; }
+
+@media (max-width: 640px) {
+  .stat-badge { padding: 8px 10px; min-width: 64px; }
+  .stat-badge .stat-number { font-size: 1rem; }
+  .stat-badge .stat-label { font-size: 0.72rem; }
+  .intro-right { justify-content:center; flex-wrap:wrap; gap:8px; }
+}
 
 .featured-card { z-index: 1; }
 

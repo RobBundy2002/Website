@@ -87,7 +87,7 @@ const VideoGames = () => {
                             <div className="stat-label">Platforms</div>
                         </div>
                         <div className="stat-badge">
-                            <div className="stat-number">{Math.max(...projects.map(p => (p.date ? parseInt((p.date||'').match(/\d{4}/)?.[0] || 0) : 0), 2020))}</div>
+                            <div className="stat-number">2026</div>
                             <div className="stat-label">Latest</div>
                         </div>
                     </div>

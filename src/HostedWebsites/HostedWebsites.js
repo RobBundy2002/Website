@@ -22,11 +22,13 @@ const HostedWebsites = () => {
             title: "Matrix Madness",
             description: "College basketball grid game with interactive scoring.",
             imageUrl: "Images/Hoop Grids.png",
+            videoUrl: "Videos/Recording.mp4",
             link: "/Website/matrixmadness",
             status: "Live",
             technologies: ["React", "Node.js", "MongoDB"],
             features: ["Interactive Grid", "Score Tracking", "Social Features"]
         },
+
         {
             id: 3,
             title: "CS1112 Website",
@@ -96,15 +98,11 @@ const HostedWebsites = () => {
                             <div className="stat-label">Projects</div>
                         </div>
                         <div className="stat-badge">
-                            <div className="stat-number">{projects.filter(p => p.status === "Live").length}</div>
-                            <div className="stat-label">Live Sites</div>
-                        </div>
-                        <div className="stat-badge">
                             <div className="stat-number">{new Set(projects.flatMap(p => p.technologies)).size}</div>
                             <div className="stat-label">Technologies</div>
                         </div>
                         <div className="stat-badge">
-                            <div className="stat-number">{Math.max(...projects.map(p => (p.date ? parseInt((p.date||'').match(/\\d{4}/)?.[0] || 0) : 0), 2020))}</div>
+                            <div className="stat-number">2026</div>
                             <div className="stat-label">Latest</div>
                         </div>
                     </div>

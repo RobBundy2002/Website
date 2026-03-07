@@ -15,6 +15,7 @@ const MatrixMadness = () => {
           title="Matrix Madness"
           subtitle="College Hoops Grid Game"
           image="Images/Hoop Grids.png"
+          video="Videos/Recording.mp4"
           date="Oct 2023 - Jan 2024"
           role="Front-end Developer"
           tech={["React", "Node.js", "MongoDB"]}
