@@ -9,8 +9,8 @@ const VideoGames = () => {
         {
             id: 1,
             title: "Skyward Bound",
-            description: "Doodle Jump Style game built in Unity as part of an end of semester final project. Combines C# Scripts with various other sets of asset packages. Built at the University of Virginia for CS4730 alongside Kathleen Mead and Hayden Johnson",
-            imageUrl: "Images/Skyward Bound.jpg",
+            description: "Vertical platformer prototype built in Unity with precision-based scoring.",            imageUrl: "Images/Skyward Bound.jpg",
+            videoUrl: "Videos/SkywardBound.mp4",
             link: "/Website/videogames/skywardbound",
             technologies: ["Unity", "C#", "Game Development"],
             features: ["Doodle Jump Style", "Unity Engine", "C# Scripts"],
@@ -18,11 +18,12 @@ const VideoGames = () => {
             color: "var(--accent-primary)",
             platform: "Unity"
         },
+
         {
             id: 2,
             title: "Dracula Reborn",
-            description: "Pico-8 game coded with Lua. Individual contributions include most core game logic, and garlic thrower mechanics. Built at the University of Virginia for SLAV2500 alongside Alexandra McDonald, Christian Giannos, and Ankit Poudyal",
-            imageUrl: "Images/DraculaReborn.png",
+            description: "PICO-8 action demo with pixel art and arcade controls.",            imageUrl: "Images/DraculaReborn.png",
+            videoUrl: "Videos/Dracula Reborn.mp4",
             link: "/Website/videogames/draculareborn",
             technologies: ["Pico-8", "Lua", "Game Logic"],
             features: ["Core Game Logic", "Garlic Thrower", "Pico-8 Engine"],
@@ -30,11 +31,12 @@ const VideoGames = () => {
             color: "var(--accent-secondary)",
             platform: "Pico-8"
         },
+
         {
             id: 3,
             title: "Vampire Frost Bite",
-            description: "Pico-8 game coded with Lua, that also includes various designed sprites and sounds to enhance the player experience whilst also fitting the game jam theme assigned of single room. Built at the University of Virginia for CS4730",
-            imageUrl: "Images/VampireFrostBite.png",
+            description: "Single-room PICO-8 title featuring custom sprites and sound.",            imageUrl: "Images/VampireFrostBite.png",
+            videoUrl: "Videos/VampireFrostbite.mp4",
             link: "/Website/videogames/vampirefrostbite",
             technologies: ["Pico-8", "Lua", "Sprite Design"],
             features: ["Custom Sprites", "Sound Design", "Single Room Theme"],
@@ -70,21 +72,23 @@ const VideoGames = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                <div className="page-intro">
-                    <h1 className="page-title">Video Games</h1>
-                    <p className="hero-subtitle">Unity and Pico-8 game development projects</p>
-                    <div className="hero-stats">
-                        <div className="stat-item">
-                            <span className="stat-number">{projects.length}</span>
-                            <span className="stat-label">Games</span>
+                <div className="page-intro fancy-intro">
+                    <div className="intro-left">
+                        <h1 className="page-title">Video Games</h1>
+                        <p className="hero-subtitle">Unity and Pico-8 game development projects</p>
+                    </div>
+                    <div className="intro-right intro-stats">
+                        <div className="stat-badge">
+                            <div className="stat-number">{projects.length}</div>
+                            <div className="stat-label">Games</div>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-number">2</span>
-                            <span className="stat-label">Platforms</span>
+                        <div className="stat-badge">
+                            <div className="stat-number">{new Set(projects.map(p => p.platform)).size}</div>
+                            <div className="stat-label">Platforms</div>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-number">2024</span>
-                            <span className="stat-label">Latest</span>
+                        <div className="stat-badge">
+                            <div className="stat-number">{Math.max(...projects.map(p => (p.date ? parseInt((p.date||'').match(/\d{4}/)?.[0] || 0) : 0), 2020))}</div>
+                            <div className="stat-label">Latest</div>
                         </div>
                     </div>
                 </div>
@@ -108,11 +112,17 @@ const VideoGames = () => {
                                 }}
                             >
                                 <div className="project-image-container">
-                                    <img
-                                        src={project.imageUrl}
-                                        alt={project.title}
-                                        className="project-image"
-                                    />
+                                    {project.videoUrl ? (
+                                        <video className="project-video" muted autoPlay loop playsInline>
+                                            <source src={project.videoUrl} type="video/mp4" />
+                                        </video>
+                                    ) : (
+                                        <img
+                                            src={project.imageUrl}
+                                            alt={project.title}
+                                            className="project-image"
+                                        />
+                                    )}
                                     <div className="project-overlay">
                                         <div 
                                             className="project-icon"

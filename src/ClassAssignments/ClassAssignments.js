@@ -9,8 +9,8 @@ const ClassAssignments = () => {
         {
             id: 1,
             title: "Course Review App",
-            description: "CRUD App built with JavaFx and Sqlite which serves as an interface to add, delete, and edit CR's, and add users and classes to the database. Built at the University of Virginia for CS3140 alongside Matt Crowe and Patrick Williamson",
-            imageUrl: "Images/Course Review App.png",
+            description: "JavaFX CRUD app with SQLite backend for course reviews.",            imageUrl: "Images/Course Review App.png",
+            videoUrl: "Videos/CRUD.mp4",
             link: "/Website/coursereviewapp",
             technologies: ["JavaFX", "SQLite", "Java"],
             features: ["CRUD Operations", "Database Management", "User Interface"],
@@ -18,11 +18,11 @@ const ClassAssignments = () => {
             color: "var(--accent-primary)",
             course: "CS3140"
         },
+
         {
             id: 2,
             title: "Credit Approval Machine Learning",
-            description: "Machine learning final project completed to determine the likelihood of credit card approval status based on past categorical date. Built at the University of Virginia under the Guidance of Professor Basit",
-            imageUrl: "Images/ml.jpg",
+            description: "Machine learning pipeline for credit approval prediction.",            imageUrl: "Images/ml.jpg",
             link: "/Website/mlproject",
             technologies: ["Python", "Machine Learning", "Data Analysis"],
             features: ["ML Models", "Credit Analysis", "Data Processing"],
@@ -58,21 +58,23 @@ const ClassAssignments = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                <div className="page-intro">
-                    <h1 className="page-title">Class Projects</h1>
-                    <p className="hero-subtitle">Academic projects and coursework implementations</p>
-                    <div className="hero-stats">
-                        <div className="stat-item">
-                            <span className="stat-number">{projects.length}</span>
-                            <span className="stat-label">Projects</span>
+                <div className="page-intro fancy-intro">
+                    <div className="intro-left">
+                        <h1 className="page-title">Class Projects</h1>
+                        <p className="hero-subtitle">Academic projects and coursework implementations</p>
+                    </div>
+                    <div className="intro-right intro-stats">
+                        <div className="stat-badge">
+                            <div className="stat-number">{projects.length}</div>
+                            <div className="stat-label">Projects</div>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-number">2</span>
-                            <span className="stat-label">Courses</span>
+                        <div className="stat-badge">
+                            <div className="stat-number">{new Set(projects.flatMap(p => p.technologies)).size}</div>
+                            <div className="stat-label">Technologies</div>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-number">UVA</span>
-                            <span className="stat-label">University</span>
+                        <div className="stat-badge">
+                            <div className="stat-number">{Math.max(...projects.map(p => (p.date ? parseInt((p.date||'').match(/\d{4}/)?.[0] || 0) : 0), 2020))}</div>
+                            <div className="stat-label">Latest</div>
                         </div>
                     </div>
                 </div>
@@ -96,11 +98,17 @@ const ClassAssignments = () => {
                                 }}
                             >
                                 <div className="project-image-container">
-                                    <img
-                                        src={project.imageUrl}
-                                        alt={project.title}
-                                        className="project-image"
-                                    />
+                                    {project.videoUrl ? (
+                                        <video className="project-video" muted autoPlay loop playsInline>
+                                            <source src={project.videoUrl} type="video/mp4" />
+                                        </video>
+                                    ) : (
+                                        <img
+                                            src={project.imageUrl}
+                                            alt={project.title}
+                                            className="project-image"
+                                        />
+                                    )}
                                     <div className="project-overlay">
                                         <div 
                                             className="project-icon"

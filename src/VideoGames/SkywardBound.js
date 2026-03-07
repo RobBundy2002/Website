@@ -4,8 +4,7 @@ import CaseStudy from '../components/CaseStudy';
 const SkywardBound = () => {
   const sections = [
     { heading: 'About', content: 'Skyward Bound is a vertical platformer built in Unity featuring dynamic difficulty, power-ups, and precision-based scoring.' },
-    { heading: 'Role', content: 'Implemented core C# gameplay systems and level design mechanics.' },
-    { heading: 'Result', content: 'A polished gameplay prototype suitable for showcases.' }
+    { heading: 'Role', content: 'Implemented core C# gameplay systems and level design mechanics.' }
   ];
 
   return (

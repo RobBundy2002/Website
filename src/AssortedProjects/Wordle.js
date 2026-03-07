@@ -1,11 +1,9 @@
-import React from 'react';
 import CaseStudy from '../components/CaseStudy';
 
 const Wordle = () => {
   const sections = [
     { heading: 'About', content: 'Wordle App Recreation implemented with Java and JavaFX. Includes a dictionary and classic Wordle gameplay mechanics.' },
-    { heading: 'Role', content: 'Built the JavaFX UI and underlying game logic.' },
-    { heading: 'Outcome', content: 'Functional desktop recreation suitable for demonstrations and teaching.' }
+    { heading: 'Role', content: 'Built the JavaFX UI and underlying game logic.' }
   ];
 
   return (
@@ -14,7 +12,7 @@ const Wordle = () => {
         <CaseStudy
           title="Wordle Recreation"
           subtitle="JavaFX desktop recreation"
-          image="Images/Wordle Recreation.jpg"
+          video="Videos/Wordle.mp4"
           date="2023"
           role="Developer"
           tech={["Java", "JavaFX"]}

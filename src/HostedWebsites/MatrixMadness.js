@@ -4,8 +4,7 @@ import CaseStudy from '../components/CaseStudy';
 const MatrixMadness = () => {
   const sections = [
     { heading: 'About', content: 'Matrix Madness is a college basketball variant of the popular grid guessing game. Built with React and Node, it offers interactive scoring and social features.' },
-    { heading: 'Role', content: 'Front-end architecture and interactive grid implementation.' },
-    { heading: 'Result', content: 'A responsive web app with reusable components and a production-ready deployment.' }
+    { heading: 'Role', content: 'Front-end architecture and interactive grid implementation.' }
   ];
 
   return (

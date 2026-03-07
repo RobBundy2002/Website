@@ -9,46 +9,48 @@ const AssortedProjects = () => {
         {
             id: 1,
             title: "AI Vestor",
-            description: "An intelligent investment analysis platform that leverages artificial intelligence to provide comprehensive market insights and portfolio optimization. Combines advanced machine learning algorithms with real-time market data.",
+            description: "AI investment analysis platform with market insights and portfolio optimization.",
             imageUrl: "Images/AIVestor.png",
             link: "/Website/aivestor",
             technologies: ["Python", "Machine Learning", "TensorFlow", "React", "JavaScript"],
             features: ["AI-Powered Analysis", "Market Predictions", "Portfolio Optimization"],
             icon: <FaBrain size={24} />,
-            color: "var(--accent-primary)"
+            color: "var(--accent-primary)",
+            videoUrl: "Videos/AIVestor.mp4"
         },
         {
             id: 2,
             title: "ResumeGPT",
-            description: "An AI-powered resume builder and analyzer built with React and OpenAI's GPT API. The application helps users create professional resumes by providing intelligent suggestions, formatting assistance, and content optimization based on industry best practices.",
+            description: "AI resume builder that provides intelligent suggestions and formatting.",
             imageUrl: "Images/ResumeGPT.png",
             link: "/Website/resumegpt",
             technologies: ["React", "OpenAI API", "JavaScript", "HTML", "CSS"],
             features: ["AI-Powered Suggestions", "Resume Analysis", "Professional Templates"],
             icon: <FaReact size={24} />,
-            color: "var(--accent-secondary)"
+            color: "var(--accent-secondary)",
+            videoUrl: "Videos/ResumeGPT.mp4"
         },
         {
             id: 3,
             title: "Proverbial Plates",
-            description: "Mobile app built with React Native and Expo that serves as a fridge, spice rack, and pantry item organizer, whilst also providing a plethora of recipes ranked by on the ingredients you already have available",
-            imageUrl: "Images/Proverbial Plates.PNG",
+            description: "Mobile pantry app that suggests recipes from available ingredients.",            imageUrl: "Images/Proverbial Plates.PNG",
             link: "/Website/proverbialplates",
             technologies: ["React Native", "Expo", "JavaScript", "CSS"],
             features: ["Recipe Recommendations", "Ingredient Tracking", "Mobile App"],
             icon: <FaMobile size={24} />,
-            color: "var(--accent-tertiary)"
+            color: "var(--accent-tertiary)",
+            videoUrl: "Videos/ScreenRecording_01-03-2025 00-43-06_1.mp4"
         },
         {
             id: 4,
             title: "Wordle App",
-            description: "A Wordle clone implemented with JavaFx, that like the popular New York Times Game, has the user attempt to guess mystery five-letter words in six attempts. Built as a self-taught implementation of JavaFx",
-            imageUrl: "Images/Wordle Recreation.jpg",
+            description: "Wordle-style desktop game built with JavaFX.",            imageUrl: "Images/Wordle Recreation.jpg",
             link: "/Website/wordle",
             technologies: ["Java", "JavaFX", "FXML"],
             features: ["Word Guessing Game", "Desktop Application", "JavaFX UI"],
             icon: <FaJava size={24} />,
-            color: "var(--accent-primary)"
+            color: "var(--accent-primary)",
+            videoUrl: "Videos/Wordle.mp4"
         }
     ];
 
@@ -78,21 +80,23 @@ const AssortedProjects = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                <div className="page-intro">
-                    <h1 className="page-title">Assorted Projects</h1>
-                    <p className="hero-subtitle">Diverse software development projects and applications</p>
-                    <div className="hero-stats">
-                        <div className="stat-item">
-                            <span className="stat-number">{projects.length}</span>
-                            <span className="stat-label">Projects</span>
+                <div className="page-intro fancy-intro">
+                    <div className="intro-left">
+                        <h1 className="page-title">Assorted Projects</h1>
+                        <p className="hero-subtitle">Diverse software development projects and applications</p>
+                    </div>
+                    <div className="intro-right intro-stats">
+                        <div className="stat-badge">
+                            <div className="stat-number">{projects.length}</div>
+                            <div className="stat-label">Projects</div>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-number">12</span>
-                            <span className="stat-label">Technologies</span>
+                        <div className="stat-badge">
+                            <div className="stat-number">{new Set(projects.flatMap(p => p.technologies)).size}</div>
+                            <div className="stat-label">Technologies</div>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-number">2025</span>
-                            <span className="stat-label">Latest</span>
+                        <div className="stat-badge">
+                            <div className="stat-number">{Math.max(...projects.map(p => (p.date ? parseInt((p.date||'').match(/\d{4}/)?.[0] || 0) : 0), 2020))}</div>
+                            <div className="stat-label">Latest</div>
                         </div>
                     </div>
                 </div>
@@ -108,7 +112,7 @@ const AssortedProjects = () => {
                         {projects.map((project, index) => (
                             <motion.div
                                 key={project.id}
-                                className="project-card enhanced-card stacked"
+                                className="project-card enhanced-card"
                                 variants={itemVariants}
                                 whileHover={{ 
                                     scale: 1.02,

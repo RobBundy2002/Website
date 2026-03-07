@@ -9,8 +9,9 @@ const HostedWebsites = () => {
         {
             id: 1,
             title: "Celestial Arcade",
-            description: "An active website designed to allow users to browse and play various games online such as Checkers, Connect4, and Whack-A-Mole.",
+            description: "Collection of lightweight browser games and demos.",
             imageUrl: "Images/Celestial Arcade.png",
+            videoUrl: "Videos/RecordingCA.mp4",
             link: "/Website/celestialarcade",
             status: "Live",
             technologies: ["React", "JavaScript", "CSS"],
@@ -19,7 +20,7 @@ const HostedWebsites = () => {
         {
             id: 2,
             title: "Matrix Madness",
-            description: "Web App Game that serves as a college basketball version of the popular immaculate grid game. Built alongside Grant Costello.",
+            description: "College basketball grid game with interactive scoring.",
             imageUrl: "Images/Hoop Grids.png",
             link: "/Website/matrixmadness",
             status: "Live",
@@ -29,7 +30,7 @@ const HostedWebsites = () => {
         {
             id: 3,
             title: "CS1112 Website",
-            description: "Course Website implemented with the just-the-docs jekyll theme. Built at the University of Virginia for CS1112 alongside Jackson Le.",
+            description: "Course site built with a docs-focused static site theme.",
             imageUrl: "Images/CS1112 Website.png",
             status: "Live",
             technologies: ["Jekyll", "Markdown", "HTML/CSS"],
@@ -38,7 +39,7 @@ const HostedWebsites = () => {
         {
             id: 4,
             title: "UJLP @ UVA",
-            description: "CIO Website for the Undergraduate Journal for Law and Politics at the University of Virginia.",
+            description: "Academic journal site with editorial CMS and accessible reading.",
             imageUrl: "Images/UJLP.png",
             link: "/Website/ujlp",
             status: "Live",
@@ -84,26 +85,31 @@ const HostedWebsites = () => {
     return (
         <div className="page-container">
             <div className="content-container">
-                <div className="page-intro">
-                    <h1 className="page-title">Hosted Websites</h1>
-                    <p className="hero-subtitle">Live web applications and deployed projects</p>
-                    <div className="hero-stats">
-                        <div className="stat-item">
-                            <span className="stat-number">{projects.length}</span>
-                            <span className="stat-label">Total Projects</span>
+                <div className="page-intro fancy-intro">
+                    <div className="intro-left">
+                        <h1 className="page-title">Hosted Websites</h1>
+                        <p className="hero-subtitle">Live web applications and deployed projects</p>
+                    </div>
+                    <div className="intro-right intro-stats">
+                        <div className="stat-badge">
+                            <div className="stat-number">{projects.length}</div>
+                            <div className="stat-label">Projects</div>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-number">{projects.filter(p => p.status === "Live").length}</span>
-                            <span className="stat-label">Live Sites</span>
+                        <div className="stat-badge">
+                            <div className="stat-number">{projects.filter(p => p.status === "Live").length}</div>
+                            <div className="stat-label">Live Sites</div>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-number">4+</span>
-                            <span className="stat-label">Technologies</span>
+                        <div className="stat-badge">
+                            <div className="stat-number">{new Set(projects.flatMap(p => p.technologies)).size}</div>
+                            <div className="stat-label">Technologies</div>
+                        </div>
+                        <div className="stat-badge">
+                            <div className="stat-number">{Math.max(...projects.map(p => (p.date ? parseInt((p.date||'').match(/\\d{4}/)?.[0] || 0) : 0), 2020))}</div>
+                            <div className="stat-label">Latest</div>
                         </div>
                     </div>
                 </div>
 
-                {/* Projects Grid */}
                 <motion.section 
                     className="projects-section"
                     variants={containerVariants}
@@ -122,11 +128,17 @@ const HostedWebsites = () => {
                                 }}
                             >
                                 <div className="project-image-container">
-                                    <img
-                                        src={project.imageUrl}
-                                        alt={project.title}
-                                        className="project-image"
-                                    />
+                                    {project.videoUrl ? (
+                                        <video className="project-video" muted autoPlay loop playsInline>
+                                            <source src={project.videoUrl} type="video/mp4" />
+                                        </video>
+                                    ) : (
+                                        <img
+                                            src={project.imageUrl}
+                                            alt={project.title}
+                                            className="project-image"
+                                        />
+                                    )}
                                     <div className="project-overlay">
                                         <div 
                                             className="status-badge"

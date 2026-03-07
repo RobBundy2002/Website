@@ -71,9 +71,8 @@ const Home = () => {
             </Helmet>
 
             <div className="content-container">
-                <div className="page-intro">
-                    <h2 className="section-title">Welcome</h2>
-                    <p className="hero-subtitle">Software Engineer · Masters Student · Game Developer. Explore projects, case studies, and coursework below.</p>
+                <div className="page-intro fancy-intro">
+                    {/* intro intentionally left minimal */}
                 </div>
 
                 {/* Featured Projects */}
