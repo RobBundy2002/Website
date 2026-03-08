@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const SkywardBound = () => {
   const sections = [
     { heading: 'About', content: 'Skyward Bound is a vertical platformer built in Unity featuring dynamic difficulty, power-ups, and precision-based scoring.' },
-    { heading: 'Role', content: 'Implemented core C# gameplay systems and level design mechanics.' }
+    { heading: 'Role', content: 'Implemented core C# gameplay systems and level design mechanics.' },
+    { heading: 'Team', content: 'Developed alongside Kathleen (Katie) Mead and Hayden Johnson at the University of Virginia.' }
   ];
 
   return (
@@ -14,7 +15,7 @@ const SkywardBound = () => {
         <CaseStudy
           title="Skyward Bound"
           subtitle="Unity vertical platformer"
-          image="Images/Skyward Bound.jpg"
+          video="Videos/SkywardBound.mp4"
           date="2024"
           role="Gameplay Programmer"
           tech={["Unity", "C#"]}

@@ -6,6 +6,7 @@ const CourseReviewApplication = () => {
   const sections = [
     { heading: 'About', content: 'Desktop application for managing and reviewing course feedback, built with Java and JavaFX. Includes CRUD operations and SQLite storage.' },
     { heading: 'Role', content: 'Designed UI and database interactions; implemented course search and review flows.' },
+    { heading: 'Team', content: 'Developed alongside Matthew Crowe and Patrick Williamson.' }
 
   ];
 

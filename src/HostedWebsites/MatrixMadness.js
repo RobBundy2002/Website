@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const MatrixMadness = () => {
   const sections = [
     { heading: 'About', content: 'Matrix Madness is a college basketball variant of the popular grid guessing game. Built with React and Node, it offers interactive scoring and social features.' },
-    { heading: 'Role', content: 'Front-end architecture and interactive grid implementation.' }
+    { heading: 'Role', content: 'Front-end architecture and interactive grid implementation.' },
+    { heading: 'Team', content: 'Built alongside Grant Costello.' }
   ];
 
   return (

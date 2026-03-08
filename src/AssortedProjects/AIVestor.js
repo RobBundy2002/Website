@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const AIVestor = () => {
   const sections = [
     { heading: 'About', content: 'AI Vestor is an intelligent investment analysis platform that leverages AI to provide market insights and portfolio optimization. It combines machine learning algorithms with real-time data to deliver actionable recommendations.' },
-    { heading: 'Role', content: 'Designed core ML pipeline, integrated new data sources, and implemented visualization components.' }
+    { heading: 'Role', content: 'Designed core ML pipeline, integrated new data sources, and implemented visualization components.' },
+    { heading: 'Team', content: 'Developed alongside Grant Costello.' }
   ];
 
   return (

@@ -19,7 +19,7 @@ const CaseStudy = ({ title, subtitle, image, video, date, role, tech, links = []
       </div>
       <div className="case-body">
         <div className="case-header">
-          <h1 className="case-title">{title}</h1>
+          <h1 className="case-title gradient-accent">{title}</h1>
           {subtitle && <p className="case-subtitle">{subtitle}</p>}
           <div className="case-meta">
             {role && <span className="meta-item">{role}</span>}

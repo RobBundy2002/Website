@@ -8,8 +8,21 @@ const VideoGames = () => {
     const projects = [
         {
             id: 1,
+            title: "Beneath the World Tree",
+            description: "Unity exploration prototype set in a layered world.",
+            videoUrl: "Videos/Shroom_beneath_world_tree_Trailer.mp4",
+            link: "/Website/videogames/beneaththeworldtree",
+            technologies: ["Unity", "C#", "Game Design"],
+            features: ["Vertical Exploration", "Environmental Puzzles", "Narrative Nodes"],
+            icon: <FaUnity size={24} />,
+            color: "var(--accent-primary)",
+            platform: "Unity"
+        },
+        {
+            id: 2,
             title: "Skyward Bound",
-            description: "Vertical platformer prototype built in Unity with precision-based scoring.",            imageUrl: "Images/Skyward Bound.jpg",
+            description: "Vertical platformer prototype built in Unity with precision-based scoring.",
+            imageUrl: "Images/Skyward Bound.jpg",
             videoUrl: "Videos/SkywardBound.mp4",
             link: "/Website/videogames/skywardbound",
             technologies: ["Unity", "C#", "Game Development"],
@@ -20,9 +33,10 @@ const VideoGames = () => {
         },
 
         {
-            id: 2,
+            id: 3,
             title: "Dracula Reborn",
-            description: "PICO-8 action demo with pixel art and arcade controls.",            imageUrl: "Images/DraculaReborn.png",
+            description: "PICO-8 action demo with pixel art and arcade controls.",
+            imageUrl: "Images/DraculaReborn.png",
             videoUrl: "Videos/Dracula Reborn.mp4",
             link: "/Website/videogames/draculareborn",
             technologies: ["Pico-8", "Lua", "Game Logic"],
@@ -33,9 +47,10 @@ const VideoGames = () => {
         },
 
         {
-            id: 3,
+            id: 4,
             title: "Vampire Frost Bite",
-            description: "Single-room PICO-8 title featuring custom sprites and sound.",            imageUrl: "Images/VampireFrostBite.png",
+            description: "Single-room PICO-8 title featuring custom sprites and sound.",
+            imageUrl: "Images/VampireFrostBite.png",
             videoUrl: "Videos/VampireFrostbite.mp4",
             link: "/Website/videogames/vampirefrostbite",
             technologies: ["Pico-8", "Lua", "Sprite Design"],
@@ -74,20 +89,20 @@ const VideoGames = () => {
             <div className="content-container">
                 <div className="page-intro fancy-intro">
                     <div className="intro-left">
-                        <h1 className="page-title">Video Games</h1>
+                        <h1 className="page-title gradient-accent">Video Games</h1>
                         <p className="hero-subtitle">Unity and Pico-8 game development projects</p>
                     </div>
                     <div className="intro-right intro-stats">
                         <div className="stat-badge">
-                            <div className="stat-number">{projects.length}</div>
+                            <div className="stat-number gradient-accent">{projects.length}</div>
                             <div className="stat-label">Games</div>
                         </div>
                         <div className="stat-badge">
-                            <div className="stat-number">{new Set(projects.map(p => p.platform)).size}</div>
+                            <div className="stat-number gradient-accent">{new Set(projects.map(p => p.platform)).size}</div>
                             <div className="stat-label">Platforms</div>
                         </div>
                         <div className="stat-badge">
-                            <div className="stat-number">2026</div>
+                            <div className="stat-number gradient-accent">2026</div>
                             <div className="stat-label">Latest</div>
                         </div>
                     </div>
@@ -124,13 +139,7 @@ const VideoGames = () => {
                                         />
                                     )}
                                     <div className="project-overlay">
-                                        <div 
-                                            className="project-icon"
-                                            style={{ background: project.color }}
-                                        >
-                                            {project.icon}
-                                        </div>
-                                        <div className="platform-badge">
+                                        <div className={`platform-badge platform-${project.platform.replace(/[^a-z0-9]/gi,'').toLowerCase()}`}>
                                             {project.platform}
                                         </div>
                                     </div>

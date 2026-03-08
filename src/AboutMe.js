@@ -162,8 +162,7 @@ const AboutMePage = () => {
                                 </p>
                                 <p>
                                     I grew up in Lebanon, a small town tucked in Southwest Virginia, and made my way to
-                                    Charlottesville to study Computer Science and Religious Studies at UVA. That mix probably
-                                    says a lot about me. I graduated in May 2025 and hit the ground running: I'm now a Software
+                                    Charlottesville to study Computer Science and Religious Studies at UVA. I graduated in May 2025 and hit the ground running: I'm now a Software
                                     Engineer at General Atomics Intelligence and pursuing my Online Master's in
                                     Computer Science at Georgia Tech.
                                 </p>

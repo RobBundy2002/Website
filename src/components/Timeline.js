@@ -3,34 +3,61 @@ import React from 'react';
 // Vertical resume-style timeline (detailed, no arrows)
 const timelineData = [
   {
-    year: 'May 2025',
-    title: 'B.A., Computer Science — University of Virginia',
+    year: 'Jun 2025 - Present',
+    title: 'Software Engineer I — GA-Intelligence',
     details: [
-      'Graduated May 2025 with B.A. in Computer Science',
-      'Minor in Religious Studies'
+      'Led migration of data converters into a centralized repository, adding strict validation and unit tests to improve data flow reliability.',
+      'Own release processes and manage MR queue for critical repositories, coordinating deployments end-to-end.',
+      'Served as secondary technical lead for data schema and conversion repos: guided schema decisions, code reviews, and coordinated releases.',
+      'Mentor other junior developers; lead sprint ceremonies and technical training sessions.',
+      'Delivered critical converters under tight deadlines; recognized with a Spotlight Award.'
     ]
   },
   {
     year: 'Jun 2024 - Aug 2024',
-    title: 'Backend Software Engineering Intern — GA-Intelligence',
+    title: 'Backend Software Engineering Intern — GA-Intelligence (formerly GA-CCRI)',
     details: [
-      'Integrated new data sources in Java and expanded CI/CD Docker architecture',
-      'Built Bash automation tools and contributed XML/XSLT display utilities'
+      'Integrated a new data source in Java and rebranded adjacent testing modules.',
+      'Prototyped and deployed Bash automation tools for funding allocation; design adopted company-wide.',
+      'Expanded & redesigned CI/CD Docker architecture for improved maintainability.',
+      'Collaborated on XML + XSLT display utilities and static test configurations.'
     ]
   },
   {
-    year: 'Jun 2025 - Present',
-    title: 'Software Engineer II — GA-Intelligence',
+    year: 'Aug 2023 - May 2025',
+    title: 'Undergraduate Teaching Assistant — University of Virginia',
     details: [
-      'Led migration of data converters into a centralized repository with validation and unit tests',
-      'Owned release processes, mentored junior devs, led sprint ceremonies, recognized with a Spotlight Award'
+      'TA for Intro to Programming, Data Structures & Algorithms I, HCI, Intro to Cybersecurity.',
+      'Promoted to Head TA for CS1112: managed Piazza, course admin, and contributed to course website development.',
+      'Provided grading, office hours, and mentorship; delivered timely feedback on programming assignments.'
     ]
   },
   {
-    year: 'Dec 2028 (expected)',
-    title: 'M.S., Computer Science (Online) — Georgia Institute of Technology',
+    year: 'Oct 2023 - Present',
+    title: 'Projects & Portfolio (Oct 2023 - Present)',
     details: [
-      'Online M.S. in Computer Science with a concentration in Human-Computer Interaction (expected Dec 2028)'
+      'AI Vestor — Intelligent investment analysis platform using ML & real-time data',
+      'Celestial Arcade — Web games hub hosting multiple lightweight browser games',
+      'Course Review App — JavaFX + SQLite CRUD application (CS3140)',
+      'Credit Approval ML — Machine learning pipeline for predicting credit approval (UCI dataset)',
+      'Dracula Reborn — PICO-8 action demo with pixel art and arcade controls',
+      'Matrix Madness — College hoops grid game with interactive scoring and reusable React components',
+      'Proverbial Plates — Mobile pantry & recipe app built with React Native and Expo',
+      'Resume GPT — AI-powered resume builder with streaming OpenAI integration (Apr 2025 - Jun 2025)',
+      'Skyward Bound — Unity vertical platformer (prototype)',
+      'Vampire Frost Bite — PICO-8 single-room title with custom sprites and sound',
+      'Wordle Recreation — JavaFX desktop Wordle-style game',
+      'UJLP CIO Website — End-to-end React website with custom article management (Oct 2024 - Present)',
+      'Portfolio Website — React-based personal portfolio (Dec 2024 - Present)'
+    ]
+  },
+  {
+    year: '2021 - 2022',
+    title: 'Early Education & First Programming Experiences',
+    details: [
+      'May 2021 — Graduated from Lebanon High School as Salutatorian.',
+      'August 2021 — Started attendance at the University of Virginia.',
+      'January 2022 — First programming experience: took CS1112 (Intro to Programming).'
     ]
   }
 ];

@@ -82,20 +82,20 @@ const AssortedProjects = () => {
             <div className="content-container">
                 <div className="page-intro fancy-intro">
                     <div className="intro-left">
-                        <h1 className="page-title">Assorted Projects</h1>
+                        <h1 className="page-title gradient-accent">Assorted Projects</h1>
                         <p className="hero-subtitle">Diverse software development projects and applications</p>
                     </div>
                     <div className="intro-right intro-stats">
                         <div className="stat-badge">
-                            <div className="stat-number">{projects.length}</div>
+                            <div className="stat-number gradient-accent">{projects.length}</div>
                             <div className="stat-label">Projects</div>
                         </div>
                         <div className="stat-badge">
-                            <div className="stat-number">{new Set(projects.flatMap(p => p.technologies)).size}</div>
+                            <div className="stat-number gradient-accent">{new Set(projects.flatMap(p => p.technologies)).size}</div>
                             <div className="stat-label">Technologies</div>
                         </div>
                         <div className="stat-badge">
-                            <div className="stat-number">2026</div>
+                            <div className="stat-number gradient-accent">2026</div>
                             <div className="stat-label">Latest</div>
                         </div>
                     </div>
@@ -120,19 +120,18 @@ const AssortedProjects = () => {
                                 }}
                             >
                                 <div className="project-image-container">
-                                    <img
-                                        src={project.imageUrl}
-                                        alt={project.title}
-                                        className="project-image"
-                                    />
-                                    <div className="project-overlay">
-                                        <div 
-                                            className="project-icon"
-                                            style={{ background: project.color }}
-                                        >
-                                            {project.icon}
-                                        </div>
-                                    </div>
+                                    {project.videoUrl ? (
+                                        <video className="project-video" muted autoPlay loop playsInline>
+                                            <source src={project.videoUrl} type="video/mp4" />
+                                        </video>
+                                    ) : (
+                                        <img
+                                            src={project.imageUrl}
+                                            alt={project.title}
+                                            className="project-image"
+                                        />
+                                    )}
+                                    <div className="project-overlay" />
                                 </div>
 
                                 <div className="project-content">
