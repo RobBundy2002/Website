@@ -37,7 +37,7 @@ const CaseStudy = ({ title, subtitle, image, video, date, role, tech, links = []
           {sections.map((s, idx) => (
             <section key={idx} className="case-section">
               <h3>{s.heading}</h3>
-              <p>{s.content}</p>
+              <div>{typeof s.content === 'string' ? <p>{s.content}</p> : s.content}</div>
             </section>
           ))}
         </div>

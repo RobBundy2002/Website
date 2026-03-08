@@ -5,7 +5,12 @@ const AIVestor = () => {
   const sections = [
     { heading: 'About', content: 'AI Vestor is an intelligent investment analysis platform that leverages AI to provide market insights and portfolio optimization. It combines machine learning algorithms with real-time data to deliver actionable recommendations.' },
     { heading: 'Role', content: 'Designed core ML pipeline, integrated new data sources, and implemented visualization components.' },
-    { heading: 'Team', content: 'Developed alongside Grant Costello.' }
+    { heading: 'Team', content: (
+      <span>
+        Developed alongside 
+        <button className="discreet-link" onClick={() => window.open('https://www.linkedin.com/in/grant-costello/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3Bl0tN%2FVo8TgaJpKgE3oEHkw%3D%3D','_blank','noopener,noreferrer')}>Grant Costello</button>
+      </span>
+    ) }
   ];
 
   return (
@@ -25,6 +30,8 @@ const AIVestor = () => {
         <div style={{ marginTop: 'var(--spacing-2xl)' }}>
           <Link to="/Website/assortedprojects" className="back-button">← Back to Projects</Link>
         </div>
+
+
       </div>
     </div>
   );

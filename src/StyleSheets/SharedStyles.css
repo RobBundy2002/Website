@@ -1907,6 +1907,29 @@ body {
 .footer-inner-simple a:hover { color: var(--text-primary); }
 .footer-icons a { margin-left: 16px; font-size: 1.2rem; color: var(--text-secondary); }
 .footer-icons a:hover { color: var(--text-primary); }
+
+/* Discreet inline name button (looks like plain text, copies link) */
+.discreet-link {
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    margin: 0 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline dotted rgba(255,255,255,0.06);
+}
+
+.discreet-link:hover {
+    color: var(--accent-primary);
+    text-decoration-color: rgba(124,92,255,0.25);
+}
+
+.discreet-copied {
+    color: var(--accent-primary);
+    margin-left: 8px;
+    font-weight:700;
+}
 /* About page header centering */
 .profile-header { display:flex; align-items:center; gap: var(--spacing-2xl); flex-wrap:wrap; justify-content:center; text-align:center; }
 .profile-info { text-align:center; }
