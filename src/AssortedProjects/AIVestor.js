@@ -8,7 +8,7 @@ const AIVestor = () => {
     { heading: 'Team', content: (
       <span>
         Developed alongside 
-        <button className="discreet-link" onClick={() => window.open('https://www.linkedin.com/in/grant-costello/?lipi=urn%3Ali%3Apage%3Ad_flagship3_people_connections%3Bl0tN%2FVo8TgaJpKgE3oEHkw%3D%3D','_blank','noopener,noreferrer')}>Grant Costello</button>
+        <button className="discreet-link" onClick={() => window.open('https://gcostello.com/','_blank','noopener,noreferrer')}>Grant Costello</button>
       </span>
     ) }
   ];
