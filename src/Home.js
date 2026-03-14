@@ -109,7 +109,7 @@ const Home = () => {
                             </video>
                             <div className="featured-body">
                                 <h3>UJLP CIO Website</h3>
-                                <p className="muted">End-to-end site for an academic journal, with a custom article CMS and responsive design.</p>
+                                <p className="muted">End-to-end site for an academic journal, with a custom article CMS.</p>
                                 <div className="featured-actions">
                                     <Link to="/Website/ujlp" className="back-button primary">View</Link>
                                 </div>
@@ -148,7 +148,7 @@ const Home = () => {
                             </video>
                             <div className="featured-body">
                                 <h3>Proverbial Plates</h3>
-                                <p className="muted">Mobile pantry app that suggests recipes from available ingredients.</p>
+                                <p className="muted">Mobile pantry app that suggests recipes.</p>
                                 <div className="featured-actions">
                                     <Link to="/Website/proverbialplates" className="back-button primary">View</Link>
                                     <a className="live-link" href="#" target="_blank" rel="noreferrer">Repo</a>
@@ -159,7 +159,7 @@ const Home = () => {
                         <motion.div className="featured-card" variants={itemVariants} whileHover={{ scale: 1.02 }}>
                             <img src="Images/ml.jpg" alt="Credit Approval" className="featured-image" />
                             <div className="featured-body">
-                                <h3>Credit Approval — ML Project</h3>
+                                <h3>Credit Approval ML</h3>
                                 <p className="muted">Machine learning pipeline for credit approval prediction.</p>
                                 <div className="featured-actions">
                                     <Link to="/Website/mlproject" className="back-button primary">View</Link>
