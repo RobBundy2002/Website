@@ -51,11 +51,15 @@
 /* Header quick styles (ensure header doesn't collapse to inline junk) */
 .site-header { display: block; }
 .header-inner { max-width: 1200px; margin: 0 auto; padding: 0.5rem var(--spacing-md); display:flex; align-items:center; justify-content:space-between; gap:var(--spacing-md); }
-.brand-link { color: var(--text-primary); font-weight:800; font-size:1.05rem; text-decoration:none; display:inline-block }
+..brand-link { color: var(--text-secondary); font-weight:800; font-size:1.25rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px }
 .brand-sub { color:var(--text-secondary); font-size:0.8rem; display:block }
 .main-nav { display:flex; gap:var(--spacing-md); align-items:center }
 .nav-link { color:var(--text-secondary); text-decoration:none; padding:0.4rem 0.6rem; border-radius:8px }
 .nav-link.active, .nav-link:hover { color:var(--text-primary); background: rgba(124,92,255,0.08); }
+
+/* Ensure the brand-link keeps its color and isn't affected by .nav-link hover */
+.brand-link { color: var(--text-secondary); }
+.brand-link:hover { color: var(--text-secondary); }
 .header-cta .cta-button { background: linear-gradient(90deg,var(--accent-primary),var(--accent-secondary)); color:#021228; padding:0.45rem 0.75rem; border-radius:8px; font-weight:700; text-decoration:none }
 
 /* Reset and Base Styles */
@@ -524,6 +528,64 @@ body {
     gap: var(--spacing-lg);
     flex-wrap: wrap;
     margin-top: var(--spacing-3xl);
+}
+
+/* Header extras */
+.uva-logo { vertical-align: middle; margin-right: 8px; border-radius: 6px; box-shadow: var(--shadow-sm); width:40px; height:40px; object-fit:cover }
+
+.header-cta .cta-button { margin-left: 8px; }
+
+/* Desktop / Mobile utility classes */
+.desktop-only { display: inline-flex; }
+.mobile-only { display: none; }
+
+@media (max-width: 880px) {
+  .desktop-only { display: none !important; }
+  .mobile-only { display: inline-flex !important; }
+}
+
+/* Header search */
+.header-search-wrapper { position: relative; }
+.header-search-input { padding:8px 10px; border-radius:8px; border:1px solid var(--border-color); background: transparent; color: var(--text-primary); min-width:260px }
+.search-dropdown { position:absolute; top:calc(100% + 8px); left:0; width:420px; background:var(--card-bg); border:1px solid var(--border-color); border-radius:8px; padding:6px; display:none; z-index:30; box-shadow:var(--shadow-md); }
+.search-dropdown.open { display:block; }
+.search-item { display:block; padding:8px; border-radius:6px; color:var(--text-primary); text-decoration:none; }
+.search-item:hover { background: rgba(124,92,255,0.06); color:var(--text-primary); }
+
+/* Align header area */
+.header-inner { max-width:1200px; margin:0 auto; padding:0.5rem var(--spacing-md); display:flex; align-items:center; justify-content:space-between; gap:var(--spacing-md); }
+
+@media (max-width: 1000px) {
+  .search-dropdown { width:320px; }
+}
+
+@media (max-width: 880px) {
+  .header-search-input { min-width: 160px }
+}
+
+
+/* Education styles */
+.education-hero { text-align: center; margin-bottom: var(--spacing-2xl); }
+.education-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--spacing-md); }
+.edu-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.edu-sub { color: var(--text-secondary); font-weight:600; }
+.edu-meta { color: var(--text-secondary); font-size:0.9rem }
+
+.course-section { margin-top: var(--spacing-2xl); }
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--spacing-md); }
+.course-card { background: var(--card-bg); border:1px solid var(--border-color); padding:var(--spacing-md); border-radius:var(--radius-md); }
+.course-name { font-weight:700; color:var(--accent-primary); }
+.course-title { color:var(--text-primary); font-weight:700; margin-bottom: var(--spacing-sm); }
+.course-desc { color:var(--text-secondary); margin-bottom: var(--spacing-sm); }
+.course-skills { display:flex; gap:8px; flex-wrap:wrap }
+.skill-pill { background: rgba(255,255,255,0.03); padding:4px 8px; border-radius:8px; color:var(--text-primary); font-weight:600; }
+
+.other-edu { margin-top: var(--spacing-2xl); }
+.gt-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:var(--spacing-md); }
+.gt-card { background: var(--card-bg); border:1px solid var(--border-color); padding:var(--spacing-md); border-radius: var(--radius-md); }
+
+@media (max-width: 680px) {
+  .education-grid, .course-grid, .gt-grid { grid-template-columns: 1fr; }
 }
 
 /* Video Components */
