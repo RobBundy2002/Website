@@ -31,7 +31,7 @@ const Education = () => {
               <img src={process.env.PUBLIC_URL + '/Images/gt.jpg'} alt="Georgia Tech" style={{height:240, objectFit:'cover', marginBottom:12, width: '100%'}} />
               <h3>Georgia Institute of Technology</h3>
               <p className="edu-sub">M.S. Computer Science (Online)</p>
-              <p className="edu-meta">Expected December 2028 • Online • GPA: 4.2</p>
+              <p className="edu-meta">Expected December 2028 • Online • GPA: 4.0</p>
               <p className="edu-meta">College of Computing</p>
             </div>
 
