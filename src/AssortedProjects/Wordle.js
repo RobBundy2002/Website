@@ -22,7 +22,7 @@ const Wordle = () => {
         />
 
         <div style={{ marginTop: 'var(--spacing-2xl)' }}>
-          <Link to="/Website/assortedprojects" className="back-button">← Back to Projects</Link>
+          <Link to="/Website/projects" className="back-button">← Back to Projects</Link>
         </div>
       </div>
     </div>

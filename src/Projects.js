@@ -66,7 +66,6 @@ export const PROJECT_LIST = [
     title: 'CS1112 Website',
     description: 'Course site built with a docs-focused static site theme.',
     imageUrl: 'Images/CS1112 Website.png',
-    link: '/Website/cs1112',
     technologies: ['Jekyll', 'Markdown', 'HTML/CSS'],
     features: ['Course Materials', 'Documentation', 'Student Resources']
   },
@@ -103,7 +102,7 @@ const Projects = () => {
       <div className="content-container">
         <div className="page-intro fancy-intro">
           <div className="intro-left">
-            <h1 className="page-title gradient-accent">Projects</h1>
+            <h1 className="page-title gradient-accent">Assorted Projects</h1>
             <p className="hero-subtitle">All projects and hosted websites in one place</p>
           </div>
           <div className="intro-right intro-stats">

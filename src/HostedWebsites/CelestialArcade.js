@@ -23,7 +23,7 @@ const CelestialArcade = () => {
         />
 
         <div style={{ marginTop: 'var(--spacing-2xl)' }}>
-          <Link to="/Website/hostedwebsites" className="back-button">← Back to Hosted Websites</Link>
+          <Link to="/Website/projects" className="back-button">← Back to Assorted Projects</Link>
         </div>
       </div>
     </div>

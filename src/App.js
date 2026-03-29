@@ -3,9 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Projects from './Projects';
 import AssortedProjects from "./AssortedProjects/AssortedProjects";
-import HostedWebsites from './HostedWebsites/HostedWebsites';
 import ClassAssignments from './ClassAssignments/ClassAssignments';
-import Footer from './components/FooterNew';
 import Layout from './components/Layout';
 import AboutMePage from './AboutMe';
 import Education from './Education';
@@ -35,7 +33,6 @@ const App = () => {
                 <Route path="/Website" element={<Home />} />
                 <Route path="/Website/projects" element={<Projects />} />
                 <Route path="/Website/assortedprojects" element={<AssortedProjects />} />
-                <Route path="/Website/hostedwebsites" element={<HostedWebsites />} />
                 <Route path="/Website/classassignments" element={<ClassAssignments />} />
                 <Route path="/Website/videogames" element={<VideoGames />} />
                 <Route path="/Website/aboutme" element={<AboutMePage />} />

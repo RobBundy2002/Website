@@ -3,14 +3,25 @@ import React from 'react';
 // Vertical resume-style timeline (detailed, no arrows)
 const timelineData = [
   {
-    year: 'Jun 2025 - Present',
+    year: 'Mar 2026 - Present',
+    title: 'Software Engineer II — GA-Intelligence',
+    details: [
+      'Promoted to SE II; serving as Lead Developer on the analytics team, consistently delivering ~25 point sprints in early 2026.',
+      'Transitioned ownership of a critical repository to senior leadership, delivering a technical presentation to the data subteam.',
+      'Serving as Primary Developer on the data subteam; point of contact and repository authority for leadership.'
+    ]
+  },
+  {
+    year: 'Jun 2025 - Mar 2026',
     title: 'Software Engineer I — GA-Intelligence',
     details: [
       'Led migration of data converters into a centralized repository, adding strict validation and unit tests to improve data flow reliability.',
-      'Own release processes and manage MR queue for critical repositories, coordinating deployments end-to-end.',
-      'Served as secondary technical lead for data schema and conversion repos: guided schema decisions, code reviews, and coordinated releases.',
-      'Mentor other junior developers; lead sprint ceremonies and technical training sessions.',
-      'Delivered critical converters under tight deadlines; recognized with a Spotlight Award.'
+      'Owned release processes and managed MR queue for critical repositories, coordinating deployments and cutting releases.',
+      'Served as a secondary technical lead for data and conversion repos: guiding decisions and performing code reviews.',
+      'Drove team velocity averaging 16+ story points per sprint (e.g., 79 merged MRs across 49 tickets in Q3-4 2025).',
+      'Mentored junior developers through onboarding and mob sessions; led sprint ceremonies and technical training sessions.',
+      'Delivered critical data converters under tight deadlines, clarifying ambiguous requirements independently.',
+      'Recognized with a Spotlight Award for driving initiatives and a critical software release.'
     ]
   },
   {

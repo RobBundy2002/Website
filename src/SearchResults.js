@@ -2,11 +2,10 @@ import React from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import './StyleSheets/SharedStyles.css';
 
-// A tiny in-memory search index. Add entries for pages you want searchable.
 const INDEX = [
   { title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' },
   { title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' },
-  { title: 'Projects', path: '/Website/assortedprojects', body: 'Projects AIVestor ResumeGPT Proverbial Plates' },
+  { title: 'Projects', path: '/Website/projects', body: 'Projects AIVestor ResumeGPT Proverbial Plates' },
   { title: 'Education', path: '/Website/education', body: 'University of Virginia Georgia Tech coursework computer science' },
   { title: 'Class Work', path: '/Website/classassignments', body: 'Class assignments coursework' }
 ];

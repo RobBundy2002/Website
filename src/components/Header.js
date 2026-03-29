@@ -15,30 +15,33 @@ const SearchBox = () => {
   const [q, setQ] = useState('');
   const [results, setResults] = useState([]);
 
-  // Build a richer index by importing the project list
-  const INDEX = [
-    { title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' },
-    { title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' },
-    { title: 'Education', path: '/Website/education', body: 'UVA Georgia Tech coursework computer science' },
-    { title: 'Class Work', path: '/Website/classassignments', body: 'Coursework assignments' }
-  ];
-
+  // Build a richer index including projects and pages
+  const INDEX = [];
   try {
-    // dynamic import so this module doesn't create circular deps at module-eval time
     const projModule = require('../Projects');
     const PROJECT_LIST = projModule.PROJECT_LIST || [];
+    // base pages
+    INDEX.push({ title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' });
+    INDEX.push({ title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' });
+    INDEX.push({ title: 'Education', path: '/Website/education', body: 'UVA Georgia Tech coursework computer science' });
+    INDEX.push({ title: 'Class Work', path: '/Website/classassignments', body: 'Coursework assignments' });
+
     PROJECT_LIST.forEach(p => {
       INDEX.push({ title: p.title, path: p.link, body: p.description + ' ' + (p.technologies || []).join(' ') });
     });
   } catch (e) {
-    // ignore if require fails during testing/build
+    // fallback
+    INDEX.push({ title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' });
+    INDEX.push({ title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' });
   }
 
   useEffect(() => {
     if (q.trim() === '') { setResults([]); return; }
-    const term = q.toLowerCase();
-    const filtered = INDEX.filter(i => (i.title + ' ' + i.body).toLowerCase().includes(term));
-    setResults(filtered.slice(0, 6));
+    // Use Fuse.js for fuzzy search
+    const Fuse = require('fuse.js');
+    const fuse = new Fuse(INDEX, { keys: ['title', 'body'], threshold: 0.4, includeScore: true, minMatchCharLength: 2 });
+    const out = fuse.search(q).slice(0,8).map(r => r.item);
+    setResults(out);
   }, [q]);
 
   return (
