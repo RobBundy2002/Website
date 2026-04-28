@@ -10,7 +10,7 @@ const Hero = ({ title = 'Rob Bundy', subtitle = "Software Engineer · MS Candida
 
           <div className="hero-actions">
             <a className="hero-cta" href="#/Website/aboutme">About Me</a>
-            <a className="hero-cta ghost" href="#/Website/assortedprojects">See Projects</a>
+            <a className="hero-cta ghost" href="#/Website/projects">See Assorted Projects</a>
           </div>
         </div>
 

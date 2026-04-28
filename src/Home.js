@@ -14,21 +14,15 @@ const Home = () => {
             icon: <FaUser size={24} />
         },
         {
-            title: "Hosted Websites",
-            description: "Explore my collection of live, deployed web applications and projects.",
-            link: "/Website/hostedwebsites",
-            icon: <FaGlobe size={24} />
-        },
-        {
             title: "Video Games",
             description: "Check out my collection of Unity and other game development projects.",
             link: "/Website/videogames",
             icon: <FaGamepad size={24} />
         },
         {
-            title: "Assorted Projects",
+            title: "Projects",
             description: "Browse through my diverse portfolio of software development projects.",
-            link: "/Website/assortedprojects",
+            link: "/Website/projects",
             icon: <FaCode size={24} />
         },
         {
