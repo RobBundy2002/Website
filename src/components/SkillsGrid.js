@@ -4,7 +4,7 @@ const skills = [
   { group: 'Frameworks', items: ['Spring Boot', 'Spring Cloud Stream', 'React', 'Node.js', 'Express', 'JUnit', 'Maven'] },
   { group: 'Infrastructure', items: ['Docker', 'Kubernetes', 'Kafka', 'Helm', 'GitLab CI/CD', 'Git'] },
   { group: 'Tools', items: ['Jira', 'Confluence', 'IntelliJ', 'PyCharm', 'k9s'] },
-  { group: 'Web', items: ['HTML', 'CSS', 'Tailwind CSS', 'Axios'] }
+  { group: 'Web', items: ['HTML', 'CSS', 'Tailwind CSS', 'Jinja', 'Axios'] }
 ];
 
 const SkillsGrid = () => {

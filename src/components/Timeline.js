@@ -3,14 +3,28 @@ import React from 'react';
 // Vertical resume-style timeline (detailed, no arrows)
 const timelineData = [
   {
-    year: 'Jun 2025 - Present',
+    year: 'Mar 2026 - Present',
+    title: 'Software Engineer II — GA-Intelligence',
+    details: [
+      'Promoted to SE II; serving as Lead Developer on the analytics team, consistently delivering ~25-point sprints.',
+      'Transitioned ownership of a critical repository to senior leadership, delivering a technical presentation to the data subteam.',
+      'Serving as primary developer and repo authority for the data subteam, acting as point of contact for leadership.',
+      'Independently built a GitLab CI/CD pipeline that auto-generates schema \n' +
+      'documentation on every commit via GitLab Pages; replacing manual tag checkouts \n' +
+      'with diff visualization, backwards compatibility checks, and a metrics dashboard \n' +
+      'for  visibility into schema changes across formats.\''
+    ]
+  },
+  {
+    year: 'Jun 2025 - Mar 2026',
     title: 'Software Engineer I — GA-Intelligence',
     details: [
-      'Led migration of data converters into a centralized repository, adding strict validation and unit tests to improve data flow reliability.',
-      'Own release processes and manage MR queue for critical repositories, coordinating deployments end-to-end.',
-      'Served as secondary technical lead for data schema and conversion repos: guided schema decisions, code reviews, and coordinated releases.',
-      'Mentor other junior developers; lead sprint ceremonies and technical training sessions.',
-      'Delivered critical converters under tight deadlines; recognized with a Spotlight Award.'
+      'Led migration of data converters into a centralized repository with strict validation and unit tests, improving data flow reliability.',
+      'Owned release processes and MR queue for critical repositories, coordinating deployments end-to-end.',
+      'Served as secondary technical lead for data and conversion repos — guiding schema decisions, code reviews, and releases.',
+      'Drove strong team velocity averaging 16+ story points per sprint (79 merged MRs across 49 tickets in Q3–Q4 2025).',
+      'Mentored junior developers through onboarding and mob sessions; led sprint ceremonies and technical training.',
+      'Recognized with a Spotlight Award for contributions alongside a critical software release.',
     ]
   },
   {
