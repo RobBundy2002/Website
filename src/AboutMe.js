@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -7,6 +7,15 @@ import Timeline from './components/Timeline';
 import SkillsGrid from './components/SkillsGrid';
 
 const AboutMePage = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const check = () => setIsMobile(typeof window !== 'undefined' && window.innerWidth <= 1000);
+      check();
+      window.addEventListener('resize', check);
+      return () => window.removeEventListener('resize', check);
+    }, []);
+
     const skills = [
         { name: "React", category: "frontend" },
         { name: "JavaScript", category: "language" },
@@ -97,7 +106,7 @@ const AboutMePage = () => {
                         <div className="profile-info">
                             <h1 className="page-title">Rob Bundy</h1>
                             
-                            <div className="profile-details">
+                            <div className={"profile-details" + (isMobile ? ' mobile-centered' : '')}>
                                 <div className="detail-item">
                                     <FaMapMarkerAlt className="detail-icon" />
                                     <span>Charlottesville, VA</span>

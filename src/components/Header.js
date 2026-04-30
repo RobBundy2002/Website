@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../StyleSheets/SharedStyles.css';
+
 
 const navItems = [
   { to: '/Website', label: 'Home' },
@@ -11,51 +12,7 @@ const navItems = [
   { to: '/Website/videogames', label: 'Games' }
 ];
 
-const SearchBox = () => {
-  const [q, setQ] = useState('');
-  const [results, setResults] = useState([]);
 
-  // Build a richer index including projects and pages
-  const INDEX = [];
-  try {
-    const projModule = require('../Projects');
-    const PROJECT_LIST = projModule.PROJECT_LIST || [];
-    // base pages
-    INDEX.push({ title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' });
-    INDEX.push({ title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' });
-    INDEX.push({ title: 'Education', path: '/Website/education', body: 'UVA Georgia Tech coursework computer science' });
-    INDEX.push({ title: 'Class Work', path: '/Website/classassignments', body: 'Coursework assignments' });
-
-    PROJECT_LIST.forEach(p => {
-      INDEX.push({ title: p.title, path: p.link, body: p.description + ' ' + (p.technologies || []).join(' ') });
-    });
-  } catch (e) {
-    // fallback
-    INDEX.push({ title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' });
-    INDEX.push({ title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' });
-  }
-
-  useEffect(() => {
-    if (q.trim() === '') { setResults([]); return; }
-    // Use Fuse.js for fuzzy search
-    const Fuse = require('fuse.js');
-    const fuse = new Fuse(INDEX, { keys: ['title', 'body'], threshold: 0.4, includeScore: true, minMatchCharLength: 2 });
-    const out = fuse.search(q).slice(0,8).map(r => r.item);
-    setResults(out);
-  }, [q]);
-
-  return (
-    <div className="header-search-wrapper">
-      <input className="header-search-input" placeholder="Search this site..." value={q} onChange={e => setQ(e.target.value)} aria-label="Search site" />
-      <div className={`search-dropdown ${results.length ? 'open' : ''}`} role="listbox">
-        {results.map(r => (
-          <a key={r.path} href={r.path} className="search-item" role="option">{r.title} — {r.body.split(' ').slice(0,8).join(' ')}...</a>
-        ))}
-        {q && results.length === 0 && <div className="search-item">No results</div>}
-      </div>
-    </div>
-  );
-};
 
 const Header = () => {
   const loc = useLocation();
@@ -125,14 +82,6 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <div className="brand">
-          <Link to="/Website" className="brand-link">
-            Rob Bundy
-          </Link>
-        </div>
-
-
-
         <button
           ref={toggleRef}
           className={`nav-toggle ${open ? 'open' : ''}`}
@@ -160,15 +109,8 @@ const Header = () => {
               {item.label}
             </Link>
           ))}
-
-          {/* Insert Resume and Search immediately after 'Games' nav item (desktop-only) */}
-          <a className="nav-link desktop-only" href="/Rob-Resume.pdf" download style={{marginLeft:12}}>Resume</a>
-          <div className="header-search desktop-only" style={{marginLeft:8}}>
-            <SearchBox />
-          </div>
-
+          {/* <a className="nav-link desktop-only" href="/Rob-Resume.pdf" download style={{marginLeft:12}}>Resume</a> */}
         </nav>
-
 
       </div>
     </header>

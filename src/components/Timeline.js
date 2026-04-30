@@ -12,7 +12,7 @@ const timelineData = [
       'Independently built a GitLab CI/CD pipeline that auto-generates schema \n' +
       'documentation on every commit via GitLab Pages; replacing manual tag checkouts \n' +
       'with diff visualization, backwards compatibility checks, and a metrics dashboard \n' +
-      'for  visibility into schema changes across formats.\''
+      'for visibility into schema changes across formats.'
     ]
   },
   {

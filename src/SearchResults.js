@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import './StyleSheets/SharedStyles.css';
 
@@ -11,17 +11,30 @@ const INDEX = [
 ];
 
 const SearchResults = () => {
-  const [searchParams] = useSearchParams();
-  const q = (searchParams.get('q') || '').trim().toLowerCase();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialQ = (searchParams.get('q') || '').trim();
+  const [q, setQ] = useState(initialQ);
 
-  const results = q ? INDEX.filter(item => (item.title + ' ' + item.body).toLowerCase().includes(q)) : [];
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (q.trim() === '') {
+        setSearchParams({});
+      } else {
+        setSearchParams({ q: q.trim() });
+      }
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [q, setSearchParams]);
+
+  const qLower = q.trim().toLowerCase();
+  const results = qLower ? INDEX.filter(item => (item.title + ' ' + item.body).toLowerCase().includes(qLower)) : [];
 
   return (
     <div className="page-container">
       <div className="content-container">
-        <h1 className="page-title">Search Results</h1>
-        <p style={{color:'var(--text-secondary)'}}>Query: "{q}"</p>
-        {q === '' && <p style={{color:'var(--text-secondary)'}}>Enter a search term in the header to find pages.</p>}
+        <h1 className="page-title">Search</h1>
+        <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search this site..." style={{padding:8, borderRadius:8, border:'1px solid var(--border-color)', width:'100%', maxWidth:480}} />
+        <p style={{color:'var(--text-secondary)', marginTop:8}}>Query: "{q}"</p>
         <div className="projects-grid" style={{marginTop:16}}>
           {results.map(r => (
             <div className="project-card enhanced-card" key={r.path}>
