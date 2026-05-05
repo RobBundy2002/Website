@@ -1,22 +1,22 @@
 
 img {
-    width: 150px;
-    height: 150px;
+    width: 9.3750rem;
+    height: 9.3750rem;
     border-radius: 50%;
     overflow: hidden;
     border-color: #317873;
     border-style: solid;
-    border-width: 5px;
+    border-width: 0.3125rem;
 }
 
 h1 {
     color: #317873;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 0.0625rem white;
 }
 
 p {
     color: #317873;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 0.0625rem white;
 }
 
 .button-container,
@@ -26,19 +26,19 @@ p {
 .button-container5{
     display: inline-flex;
     text-decoration: none;
-    width: 185px;
-    height: 185px;
+    width: 11.5625rem;
+    height: 11.5625rem;
     border-radius: 50%;
     background: linear-gradient(to right, #084461, #FFA500 980%);
     cursor: pointer;
     justify-content: center;
     align-items: center;
-    padding: 0 2px;
+    padding: 0 0.1250rem;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
-    margin: 40px 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1.1875rem 2.3750rem, rgba(0, 0, 0, 0.22) 0 0.9375rem 0.7500rem;
+    margin: 2.5000rem 0.3125rem;
 
 }
 
@@ -47,7 +47,7 @@ p {
 .button-container3:hover,
 .button-container4:hover,
 .button-container5:hover {
-    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1.1875rem 2.3750rem, rgba(0, 0, 0, 0.22) 0 0.9375rem 0.7500rem;
 }
 
 .button-container:active,
@@ -59,23 +59,23 @@ p {
 }
 
 .fix {
-    margin-bottom: 8px;
+    margin-bottom: 0.5000rem;
 }
 .button-container6 {
     display: inline-flex;
     text-decoration: none;
-    width: 185px;
-    height: 185px;
+    width: 11.5625rem;
+    height: 11.5625rem;
     border-radius: 50%;
     background: linear-gradient(to right, #084461, #FFA500 980%);
     cursor: pointer;
     justify-content: center;
     align-items: center;
-    padding: 0 2px;
+    padding: 0 0.1250rem;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
-    margin: 40px 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1.1875rem 2.3750rem, rgba(0, 0, 0, 0.22) 0 0.9375rem 0.7500rem;
+    margin: 2.5000rem 0.3125rem;
 }
 

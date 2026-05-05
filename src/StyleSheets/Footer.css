@@ -13,7 +13,7 @@
     margin: 1vh 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5000rem) {
     .footer {
         bottom: -433.5vh;
         width: 92.3%;

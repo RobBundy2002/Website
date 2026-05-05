@@ -21,7 +21,7 @@
 }
 
 .about-me-content {
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     padding: 2rem;
     animation: fadeIn 0.8s ease-out;
@@ -44,19 +44,19 @@
 }
 
 .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 12.5000rem;
+    height: 12.5000rem;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+    border: 0.1875rem solid var(--accent);
+    box-shadow: 0 0 1.2500rem rgba(100, 255, 218, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-photo:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+    box-shadow: 0 0 1.8750rem rgba(100, 255, 218, 0.3);
 }
 
 .header-text {
@@ -94,7 +94,7 @@
 
 .social-icon:hover {
     color: var(--accent);
-    transform: translateY(-3px);
+    transform: translateY(-0.1875rem);
 }
 
 .about-sections {
@@ -106,15 +106,15 @@
 
 .about-section {
     background: rgba(17, 34, 64, 0.5);
-    border-radius: 16px;
+    border-radius: 1rem;
     padding: 2rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(100, 255, 218, 0.1);
+    backdrop-filter: blur(0.6250rem);
+    border: 0.0625rem solid rgba(100, 255, 218, 0.1);
     transition: transform 0.3s ease;
 }
 
 .about-section:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
 }
 
 .about-section h2 {
@@ -129,10 +129,10 @@
     position: absolute;
     bottom: -0.5rem;
     left: 0;
-    width: 60px;
-    height: 3px;
+    width: 3.7500rem;
+    height: 0.1875rem;
     background: var(--accent);
-    border-radius: 3px;
+    border-radius: 0.1875rem;
 }
 
 .about-bio p {
@@ -144,25 +144,25 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(8.1250rem, 1fr));
     gap: 1rem;
     margin-top: 1.5rem;
 }
 
 .skill-badge {
     padding: 0.75rem 1rem;
-    border-radius: 8px;
+    border-radius: 0.5000rem;
     font-size: 0.9rem;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2500rem 0.3750rem rgba(0, 0, 0, 0.1);
     font-weight: 500;
     cursor: default;
 }
 
 .skill-badge:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.1250rem) scale(1.05);
+    box-shadow: 0 0.3750rem 0.7500rem rgba(0, 0, 0, 0.15);
 }
 
 .back-to-home {
@@ -171,8 +171,8 @@
     background: transparent;
     color: var(--accent);
     text-decoration: none;
-    border: 2px solid var(--accent);
-    border-radius: 8px;
+    border: 0.1250rem solid var(--accent);
+    border-radius: 0.5000rem;
     font-weight: 500;
     transition: all 0.3s ease;
     margin-top: 2rem;
@@ -180,14 +180,14 @@
 
 .back-to-home:hover {
     background: rgba(100, 255, 218, 0.1);
-    transform: translateY(-2px);
+    transform: translateY(-0.1250rem);
 }
 
 /* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(1.2500rem);
     }
     to {
         opacity: 1;
@@ -198,7 +198,7 @@
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateX(-1.2500rem);
     }
     to {
         opacity: 1;
@@ -207,7 +207,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .profile-section {
         flex-direction: column;
         text-align: center;
@@ -236,18 +236,18 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
     .about-me-container {
         padding: 1rem;
     }
 
     .profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 9.3750rem;
+        height: 9.3750rem;
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(7.5000rem, 1fr));
     }
 }
 
