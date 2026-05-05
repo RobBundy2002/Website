@@ -17,6 +17,8 @@ import UJLP from "./HostedWebsites/UJLP";
 import CelestialArcade from "./HostedWebsites/CelestialArcade";
 import CourseReviewApplication from "./ClassAssignments/CourseReviewApplication";
 import CreditApprovalProject from "./ClassAssignments/CreditApprovalProject";
+import Attempt11 from "./ClassAssignments/Attempt11"; 
+import EmojisVsText from "./ClassAssignments/EmojisVsText"; 
 import SearchResults from './SearchResults';
 import VideoGames from './VideoGames/VideoGames';
 import SkywardBound from './VideoGames/SkywardBound';
@@ -47,6 +49,8 @@ const App = () => {
                 <Route path="/Website/celestialarcade" element={<CelestialArcade />} />
                 <Route path="/Website/coursereviewapp" element={<CourseReviewApplication />} />
                 <Route path="/Website/mlproject" element={<CreditApprovalProject />} />
+                <Route path="/Website/attempt11" element={<Attempt11 />} />
+                <Route path="/Website/emojisvstext" element={<EmojisVsText />} />
                 <Route path="/Website/videogames/skywardbound" element={<SkywardBound />} />
                 <Route path="/Website/videogames/draculareborn" element={<DraculaReborn />} />
                 <Route path="/Website/videogames/vampirefrostbite" element={<VampireFrostbite />} />

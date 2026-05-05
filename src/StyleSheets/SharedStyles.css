@@ -660,13 +660,14 @@ body {
     border-radius: var(--radius-md);
     font-weight: 600;
     transition: all var(--transition-normal);
-    box-shadow: var(--shadow-sm);
+    /* removed subtle shadow as requested */
+    box-shadow: none;
 }
 
 .live-link:hover {
     background: var(--accent-secondary);
-    transform: translateY(-0.1250rem);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-0.0625rem);
+    box-shadow: none;
 }
 
 .link-icon {

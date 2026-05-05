@@ -116,7 +116,7 @@ const Home = () => {
                             </video>
                             <div className="featured-body">
                                 <h3>Beneath the World Tree</h3>
-                                <p className="muted">Unity exploration prototype — built with a team at Georgia Tech.</p>
+                                <p className="muted">Unity exploration game prototype, built with a team at Georgia Tech.</p>
                                 <div className="featured-actions">
                                     <Link to="/Website/videogames/beneaththeworldtree" className="back-button primary">View</Link>
                                 </div>
@@ -129,7 +129,7 @@ const Home = () => {
                             </video>
                             <div className="featured-body">
                                 <h3>Matrix Madness</h3>
-                                <p className="muted">College hoops analytics grid game — modular React app with responsive design.</p>
+                                <p className="muted">College hoops analytics grid game and modular React app with responsive design.</p>
                                 <div className="featured-actions">
                                     <Link to="/Website/matrixmadness" className="back-button primary">View</Link>
                                 </div>
@@ -153,10 +153,23 @@ const Home = () => {
                         <motion.div className="featured-card" variants={itemVariants} whileHover={{ scale: 1.02 }}>
                             <img src="Images/ml.jpg" alt="Credit Approval" className="featured-image" />
                             <div className="featured-body">
-                                <h3>Credit Approval ML</h3>
+                                <h3>Credit Approval</h3>
                                 <p className="muted">Machine learning pipeline for credit approval prediction.</p>
                                 <div className="featured-actions">
                                     <Link to="/Website/mlproject" className="back-button primary">View</Link>
+                                    <a className="live-link" href="#" onClick={(e) => { e.preventDefault(); const siteBase = (typeof process !== 'undefined' && process.env && process.env.PUBLIC_URL) ? process.env.PUBLIC_URL : '/Website'; const origin = window.location.origin; const href = '/Machine_Learning_Final_Writeup.pdf'; const absolute = origin + (siteBase.startsWith('/') ? siteBase : '/' + siteBase) + href; window.open(absolute, '_blank', 'noopener'); }}>PDF</a>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div className="featured-card" variants={itemVariants} whileHover={{ scale: 1.02 }}>
+                            <img src="Images/Emoji.png" alt="Emojis vs Text" className="featured-image" />
+                            <div className="featured-body">
+                                <h3>Emojis vs. Text</h3>
+                                <p className="muted">Writeup on emoji-text conflict in emotional interpretation.</p>
+                                <div className="featured-actions">
+                                    <Link to="/Website/emojisvstext" className="back-button primary">View</Link>
+                                    <a className="live-link" href="#" onClick={(e) => { e.preventDefault(); const siteBase = (typeof process !== 'undefined' && process.env && process.env.PUBLIC_URL) ? process.env.PUBLIC_URL : '/Website'; const origin = window.location.origin; const href = '/ProjectWriteupGT.pdf'; const absolute = origin + (siteBase.startsWith('/') ? siteBase : '/' + siteBase) + href; window.open(absolute, '_blank', 'noopener'); }}>PDF</a>
                                 </div>
                             </div>
                         </motion.div>

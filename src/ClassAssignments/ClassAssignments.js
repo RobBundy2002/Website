@@ -21,7 +21,7 @@ const ClassAssignments = () => {
 
         {
             id: 2,
-            title: "Credit Approval Machine Learning",
+            title: "Credit Approval ML",
             description: "Machine learning pipeline for credit approval prediction.",            imageUrl: "Images/ml.jpg",
             link: "/Website/mlproject",
             technologies: ["Python", "Machine Learning", "Data Analysis"],
@@ -29,6 +29,18 @@ const ClassAssignments = () => {
             icon: <FaBrain size={24} />,
             color: "var(--accent-secondary)",
             course: "CS Machine Learning"
+        },
+        {
+            id: 3,
+            title: "Emojis vs. Text",
+            description: "Class writeup: Emotional conflicts between emoji and text.",
+            imageUrl: `${process.env.PUBLIC_URL}/Images/Emoji.png`,
+            link: "/Website/emojisvstext",
+            technologies: ["Python", "React", "Data Analysis"],
+            features: ["Experimental Design", "Error Analysis"],
+            icon: <FaGraduationCap size={24} />,
+            color: "var(--accent-primary)",
+            course: "Class Project"
         }
     ];
 
@@ -61,7 +73,7 @@ const ClassAssignments = () => {
                 <div className="page-intro fancy-intro">
                     <div className="intro-left">
                         <h1 className="page-title gradient-accent">Class Projects</h1>
-                        <p className="hero-subtitle">Academic projects and coursework implementations</p>
+                        <p className="hero-subtitle">Academic Projects and Other Non Website Coursework Implementations</p>
                     </div>
                     <div className="intro-right intro-stats">
                         <div className="stat-badge">

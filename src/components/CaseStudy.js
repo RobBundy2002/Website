@@ -27,9 +27,25 @@ const CaseStudy = ({ title, subtitle, image, video, date, role, tech, links = []
             {tech && <span className="meta-item tech">{tech.join(' • ')}</span>}
           </div>
           <div className="case-links">
-            {links.map((l, i) => (
-              <a key={i} href={l.href} className="live-link" target="_blank" rel="noreferrer">{l.label}</a>
-            ))}
+            {links.map((l, i) => {
+              const href = l.href || '#';
+              const isPdf = typeof href === 'string' && href.toLowerCase().endsWith('.pdf');
+              // compute a robust absolute URL that respects PUBLIC_URL when available
+              // prefer PUBLIC_URL when set (for gh-pages), otherwise force the /Website prefix used in dev
+              const siteBase = (typeof process !== 'undefined' && process.env && process.env.PUBLIC_URL) ? process.env.PUBLIC_URL : '/Website';
+              const origin = window.location.origin;
+              const normalizedHref = href.startsWith('/') ? href : '/' + href;
+              const absoluteUrl = origin + (siteBase.startsWith('/') ? siteBase : '/' + siteBase) + normalizedHref;
+              const handleClick = (e) => {
+                if (isPdf) {
+                  e.preventDefault();
+                  window.open(absoluteUrl, '_blank', 'noopener');
+                }
+              };
+              return (
+                <a key={i} href={absoluteUrl} className="live-link" target="_blank" rel="noreferrer" onClick={handleClick}>{l.label}</a>
+              );
+            })}
           </div>
         </div>
 
