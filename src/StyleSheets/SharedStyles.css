@@ -1006,13 +1006,28 @@ body {
 .profile-details.mobile-centered { align-items: center !important; text-align: center !important; }
 
 @media (max-width: 1000px) {
-    /* Force profile section to stack and center on small screens/tablets */
-    .profile-header { flex-direction: column !important; align-items: center !important; }
-    .profile-header .profile-info { text-align: center !important; width: 100% !important; }
-    .profile-header .profile-info .profile-details { align-items: center !important; justify-content: center !important; text-align: center !important; }
-    .profile-header .profile-image-container { margin-bottom: var(--spacing-md); }
-}
+    .about-hero { padding-left: 16px; padding-right: 12px; }
+    .about-hero .profile-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 640px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .about-hero .profile-image-container { margin-bottom: var(--spacing-md) !important; }
+    .about-hero .profile-info { width: 100% !important; text-align: center !important; }
+    .about-hero .profile-details, .about-hero .profile-details.mobile-centered { align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; }
 
+    .about-hero .profile-header { transform: translateX(-1.5625rem) !important; }
+
+    .about-hero .page-title { transform: translateX(0.125rem) !important; }
+
+}
 .detail-item {
     display: flex;
     align-items: center;
@@ -1020,6 +1035,9 @@ body {
     color: var(--text-secondary);
     font-size: 0.95rem;
 }
+/* Tighter spacing for the last detail item (Software Engineer) so the icon sits closer to the text */
+.profile-details .detail-item:last-child { gap: 6px; }
+.profile-details .detail-item:last-child .detail-icon { margin-right: 4px; }
 
 .detail-icon {
     color: var(--accent-primary);
@@ -1867,7 +1885,7 @@ body {
 .nav-toggle.open .burger::after { transform: translateY(-7px) rotate(-45deg); }
 
 .main-nav { display:flex; gap: var(--spacing-md); align-items:center; }
-.main-nav.open { display:flex !important; flex-direction:column; position:fixed; inset: 0; width:100%; min-height:100vh; background: linear-gradient(180deg, rgba(2,6,20,0.96), rgba(2,6,20,0.92)); padding:100px 20px; border-radius:0; box-shadow:none; z-index:99999; align-items:center; justify-content:flex-start; overflow:auto; left: 12rem; }
+.main-nav.open { display:flex !important; flex-direction:column; position:relative; inset: 0; width:100vh; min-height:30vh; background: linear-gradient(180deg, rgba(2,6,20,0.96), rgba(2,6,20,0.92)); padding:100px 2px; border-radius:0; box-shadow:none; z-index:99999; align-items:center; justify-content:flex-start; overflow:auto; left: 09rem; top:-5rem; }
 
 /* Make modal fill viewport and center its content */
 .main-nav.open .nav-link {
@@ -1885,15 +1903,16 @@ body {
 
 
 .main-nav.open .nav-link {
-  font-size: 1.25rem;
-  padding: 14px 20px;
+  font-size: 1rem;
+  padding: 8px 16px; /* reduced vertical padding */
   color: var(--text-primary);
   text-align: center;
   width: calc(100% - 40px);
   max-width: 520px;
-  margin: 10px 0;
-  border-radius: 12px;
+  margin: 6px 0;
+  border-radius: 10px;
   box-shadow: none;
+  line-height: 1.1;
 }
 
 .main-nav.open .nav-link.active { color: var(--accent-secondary); }
@@ -2054,7 +2073,7 @@ body {
 .timeline-vertical { margin: var(--spacing-2xl) 0; }
 .timeline-vertical-list { list-style: none; padding-left: 0; margin: 0; display: grid; grid-template-columns: 60px 1fr; gap: var(--spacing-lg); align-items:start; }
 .timeline-vertical-item { display: contents; }
-.timeline-marker { width: 18px; height: 18px; border-radius: 50%; background: var(--accent-primary); box-shadow: 0 0 12px var(--glow-color); grid-column: 1; }
+.timeline-marker { width: 18px; height: 0px; border-radius: 50%; background: var(--accent-primary); box-shadow: 0 0 12px var(--glow-color); grid-column: 1; z-index: -1000; }
 .timeline-content { grid-column: 2; }
 .timeline-year { display:block; color:var(--text-secondary); font-weight:700; margin-bottom: 6px; }
 .timeline-title { display:block; color:var(--text-primary); margin-bottom: 8px; }
@@ -2087,4 +2106,3 @@ body {
 .legend-dot.primary { background:var(--accent-primary); box-shadow:0 0 8px var(--glow-color); }
 .legend-dot.secondary { background:var(--accent-secondary); }
 .legend-dot.tertiary { background:var(--accent-tertiary); }
-

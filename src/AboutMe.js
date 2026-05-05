@@ -108,15 +108,12 @@ const AboutMePage = () => {
                             
                             <div className={"profile-details" + (isMobile ? ' mobile-centered' : '')}>
                                 <div className="detail-item">
-                                    <FaMapMarkerAlt className="detail-icon" />
                                     <span>Charlottesville, VA</span>
                                 </div>
                                 <div className="detail-item">
-                                    <FaGraduationCap className="detail-icon" />
                                     <span>UVA Computer Science Graduate</span>
                                 </div>
                                 <div className="detail-item">
-                                    <FaBriefcase className="detail-icon" />
                                     <span>Software Engineer at General Atomics Intelligence</span>
                                 </div>
                             </div>
