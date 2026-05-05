@@ -31,7 +31,7 @@ const Hero = ({ title = 'Rob Bundy', subtitle = "Software Engineer · MS Candida
               <motion.div className="role-badge" initial="hidden" animate="show" custom={2} variants={badgeVariants} whileHover={{ y: -6, scale: 1.02 }}>
                 <div className="role-icon"><FaGamepad /></div>
                 <div className="role-title">Game Dev</div>
-                <div className="role-sub">Unity · Prototyping</div>
+                <div className="role-sub">Unity + Pico8</div>
               </motion.div>
             </div>
 
