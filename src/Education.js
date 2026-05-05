@@ -4,12 +4,12 @@ import './StyleSheets/SharedStyles.css';
 const csCourses = [
   { code: 'CS 1112', name: 'Introduction to Programming Foundation', desc: 'First course in programming and computational thinking. For students with no prior programming experience.', skills: ['Programming Fundamentals'] },
   { code: 'CS 2100', name: 'Data Structures and Algorithms I', desc: 'Intro to object-oriented programming, Java, and foundational data structures (lists, stacks, trees, hash tables).', skills: ['Java', 'Data Structures', 'Algorithms'] },
-  { code: 'CS 2120', name: 'Discrete Math & Theory I', desc: '(3 credits) Proof techniques, first order logic, sets, relations, and combinatorics.', skills: ['Proofs', 'Logic', 'Combinatorics'] },
-  { code: 'CS 3120', name: 'Discrete Math & Theory II', desc: '(3 credits) Computation theory: grammars, automata, and limits of computation.', skills: ['Theory', 'Automata', 'Turing Machines'] },
-  { code: 'CS 3130', name: 'Computer Systems & Organization II', desc: '(4 credits) More advanced systems topics: virtual memory, concurrency, networks, and cryptography primitives.', skills: ['Systems', 'Virtual Memory', 'Networking'] },
-  { code: 'CS 3140', name: 'Software Development Essentials', desc: '(3 credits) Software engineering fundamentals: testing, design principles, and system construction.', skills: ['Testing', 'Design', 'CI/CD'] },
-  { code: 'CS 3710', name: 'Introduction to Cybersecurity', desc: '(3 credits) Practical exposure to cybersecurity topics: exploitation, encryption, forensics, and networking.', skills: ['Security', 'Encryption', 'Forensics'] },
-  { code: 'CS 4730', name: 'Computer Game Design', desc: '(3 credits) Tools and concepts for modern 2D/3D interactive game development: graphics, AI, and networking.', skills: ['Game Design', 'Graphics', 'AI'] },
+  { code: 'CS 2120', name: 'Discrete Math & Theory I', desc: 'Proof techniques, first order logic, sets, relations, and combinatorics.', skills: ['Proofs', 'Logic', 'Combinatorics'] },
+  { code: 'CS 3120', name: 'Discrete Math & Theory II', desc: 'Computation theory: grammars, automata, and limits of computation.', skills: ['Theory', 'Automata', 'Turing Machines'] },
+  { code: 'CS 3130', name: 'Computer Systems & Organization II', desc: 'More advanced systems topics: virtual memory, concurrency, networks, and cryptography primitives.', skills: ['Systems', 'Virtual Memory', 'Networking'] },
+  { code: 'CS 3140', name: 'Software Development Essentials', desc: 'Software engineering fundamentals: testing, design principles, and system construction.', skills: ['Testing', 'Design', 'CI/CD'] },
+  { code: 'CS 3710', name: 'Introduction to Cybersecurity', desc: 'Practical exposure to cybersecurity topics: exploitation, encryption, forensics, and networking.', skills: ['Security', 'Encryption', 'Forensics'] },
+  { code: 'CS 4730', name: 'Computer Game Design', desc: 'Tools and concepts for modern 2D/3D interactive game development: graphics, AI, and networking.', skills: ['Game Design', 'Graphics', 'AI'] },
   { code: 'CS 4710', name: 'Machine Learning (Independent Study)', desc: 'Independent study focused on ML techniques and applications.', skills: ['Machine Learning', 'Python'] }
 ];
 
