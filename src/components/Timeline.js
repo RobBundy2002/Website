@@ -7,8 +7,8 @@ const timelineData = [
     title: 'Software Engineer II — GA-Intelligence',
     details: [
       'Promoted to SE II; serving as Lead Developer on the analytics team, consistently delivering ~25-point sprints.',
-      'Transitioned ownership of a critical repository to senior leadership, delivering a technical presentation to the data subteam.',
-      'Serving as primary developer and repo authority for the data subteam, acting as point of contact for leadership.',
+      'Transitioned ownership of a critical repository to senior leadership, delivering a technical presentation to the schema subteam.',
+      'Served as primary developer and repo authority for the schema subteam, acting as point of contact for leadership.',
       'Independently built a GitLab CI/CD pipeline that auto-generates schema \n' +
       'documentation on every commit via GitLab Pages; replacing manual tag checkouts \n' +
       'with diff visualization, backwards compatibility checks, and a metrics dashboard \n' +
