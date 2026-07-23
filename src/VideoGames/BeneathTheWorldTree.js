@@ -14,7 +14,7 @@ const BeneathTheWorldTree = () => {
       <div className="content-container">
         <CaseStudy
           title="Beneath the World Tree"
-          subtitle="Unity exploration prototype — Georgia Tech"
+          subtitle="Unity exploration prototype at Georgia Tech"
           video="Videos/Shroom_beneath_world_tree_Trailer.mp4"
           date="2026"
           role="Lead Developer"
