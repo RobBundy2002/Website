@@ -1,227 +1,170 @@
 import React from 'react';
-import './StyleSheets/SharedStyles.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaBriefcase, FaHeart } from 'react-icons/fa';
-import Timeline from './components/Timeline';
-import SkillsGrid from './components/SkillsGrid';
+import {
+  ArrowRight,
+  BriefcaseBusiness,
+  Code2,
+  Disc3,
+  Github,
+  GraduationCap,
+  Linkedin,
+  Mail,
+  MapPin,
+  Music,
+  Trophy
+} from 'lucide-react';
+import './StyleSheets/SharedStyles.css';
+import { skillGroups, timeline } from './data/portfolioData';
+
+const profileStats = [
+  { value: 'GAI', label: 'Software engineer' },
+  { value: 'GT', label: 'MS CS candidate' },
+  { value: 'UVA', label: 'CS graduate' }
+];
+
+const interests = [
+  { label: 'Disc golf', icon: Disc3 },
+  { label: 'Music', icon: Music },
+  { label: 'Basketball', icon: Trophy },
+  { label: 'Game development', icon: Code2 }
+];
 
 const AboutMePage = () => {
-    const skills = [
-        { name: "React", category: "frontend" },
-        { name: "JavaScript", category: "language" },
-        { name: "Python", category: "language" },
-        { name: "Java", category: "language" },
-        { name: "C++", category: "language" },
-        { name: "Web Dev", category: "domain" },
-        { name: "Game Dev", category: "domain" },
-        { name: "UI/UX Design", category: "design" },
-        { name: "CSS", category: "frontend" },
-        { name: "HTML", category: "frontend" },
-        { name: "Node.js", category: "backend" },
-        { name: "C", category: "language" },
-        { name: "C#", category: "language" },
-        { name: "XML", category: "markup" },
-        { name: "XSLT", category: "markup" },
-        { name: "SQLite", category: "database" },
-        { name: "GitLab", category: "tools" },
-        { name: "Bash", category: "tools" },
-        { name: "Docker", category: "devops" },
-        { name: "Kubernetes", category: "devops" },
-        { name: "Kafka", category: "backend" },
-        { name: "Helm", category: "devops" },
-        { name: "Unity", category: "game" }
-    ];
+  return (
+    <div className="redesign-subpage about-redesign">
+      <section className="about-spotlight">
+        <motion.div
+          className="about-portrait"
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <img src="Images/Grad.jpg" alt="Rob Bundy" />
+          <div className="portrait-caption">
+            <strong>Rob Bundy</strong>
+            <span>Software engineer · AI builder · game dev</span>
+          </div>
+        </motion.div>
 
-    const skillCategories = {
-        language: { color: "var(--accent-primary)", icon: "💻" },
-        frontend: { color: "var(--accent-secondary)", icon: "🎨" },
-        backend: { color: "var(--accent-tertiary)", icon: "⚙️" },
-        database: { color: "var(--accent-primary)", icon: "🗄️" },
-        devops: { color: "var(--accent-secondary)", icon: "🚀" },
-        tools: { color: "var(--accent-tertiary)", icon: "🔧" },
-        game: { color: "var(--accent-primary)", icon: "🎮" },
-        design: { color: "var(--accent-secondary)", icon: "🎯" },
-        domain: { color: "var(--accent-tertiary)", icon: "🌟" },
-        markup: { color: "var(--accent-primary)", icon: "📝" }
-    };
+        <motion.div
+          className="about-story"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+        >
+          <span className="eyebrow">About</span>
+          <h1>Builder energy, serious engineering habits.</h1>
+          <p>
+            I am a software engineer and lifelong builder from Lebanon, Virginia. I studied Computer Science and
+            Religious Studies at UVA, graduated in May 2025, and now work as a Software Engineer at General Atomics
+            Intelligence while pursuing Georgia Tech's online M.S. in Computer Science.
+          </p>
+          <p>
+            The common thread in my work is making technical ideas feel tangible: AI resume tooling, ML-backed finance
+            analysis, hosted web products, game prototypes, and course projects that are built to be used.
+          </p>
+          <div className="about-actions">
+            <a href="mailto:robbielbundy@gmail.com" className="primary-action">
+              Contact me
+              <Mail size={18} />
+            </a>
+            <Link to="/Website/projects" className="secondary-action">
+              See projects
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </motion.div>
+      </section>
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    return (
-        <div className="page-container">
-            <div className="content-container">
-                {/* Hero Section */}
-                <motion.section 
-                    className="about-hero"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <div className="profile-header">
-                        <motion.div 
-                            className="profile-image-container"
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                        >
-                            <img
-                                src="Images/Grad.jpg"
-                                alt="Rob Bundy"
-                                className="profile-image"
-                            />
-                            <div className="profile-image-overlay"></div>
-                        </motion.div>
-                        
-                        <div className="profile-info">
-                            <h1 className="page-title">Rob Bundy</h1>
-                            
-                            <div className="profile-details">
-                                <div className="detail-item">
-                                    <FaMapMarkerAlt className="detail-icon" />
-                                    <span>Charlottesville, VA</span>
-                                </div>
-                                <div className="detail-item">
-                                    <FaGraduationCap className="detail-icon" />
-                                    <span>UVA Computer Science Graduate</span>
-                                </div>
-                                <div className="detail-item">
-                                    <FaBriefcase className="detail-icon" />
-                                    <span>Software Engineer at General Atomics Intelligence</span>
-                                </div>
-                            </div>
-
-                            <div className="social-links">
-                                <motion.a 
-                                    href="https://github.com/RobBundy2002" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    className="social-link"
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <FaGithub />
-                                </motion.a>
-                                <motion.a 
-                                    href="https://www.linkedin.com/in/rob-bundy-192035223/" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    className="social-link"
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <FaLinkedin />
-                                </motion.a>
-                                <motion.a 
-                                    href="mailto:robbielbundy@gmail.com" 
-                                    className="social-link"
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <FaEnvelope />
-                                </motion.a>
-                            </div>
-                        </div>
-                    </div>
-                </motion.section>
-
-                <motion.section 
-                    className="about-section"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <motion.div variants={itemVariants} className="about-card">
-                        <h2 className="section-title">About Me</h2>
-                        <div className="about-content">
-                            <div className="about-text">
-                                <p>
-                                    Hey, I'm a software engineer and lifelong builder, if it can be coded, designed,
-                                    or thrown across a disc golf course, I'm probably obsessed with it.
-                                </p>
-                                <p>
-                                    I grew up in Lebanon, a small town tucked in Southwest Virginia, and made my way to
-                                    Charlottesville to study Computer Science and Religious Studies at UVA. I graduated in May 2025 and hit the ground running: I'm now a Software
-                                    Engineer at General Atomics Intelligence and pursuing my Online Master's in
-                                    Computer Science at Georgia Tech.
-                                </p>
-                                <p>
-                                    When I'm not working or in class, you'll find me on the disc golf course, shooting hoops at the gym, or deep in a music rabbit hole. My real passion is
-                                    building: game development, innovative apps, and web projects that push what's actually
-                                    possible. I care about craft, and I care about making things that feel alive.
-                                </p>
-                                <p>
-                                    I'm always looking for the next interesting problem to solve. If that sounds like your
-                                    kind of person, let's connect.
-                                </p>
-                            </div>
-                            
-                            <div className="interests-section">
-                                <h3>Interests & Hobbies</h3>
-                                <div className="interests-grid">
-                                    <div className="interest-item">
-                                        <FaHeart className="interest-icon" />
-                                        <span>Disc Golf</span>
-                                    </div>
-                                    <div className="interest-item">
-                                        <FaHeart className="interest-icon" />
-                                        <span>Music</span>
-                                    </div>
-                                    <div className="interest-item">
-                                        <FaHeart className="interest-icon" />
-                                        <span>Basketball</span>
-                                    </div>
-                                    <div className="interest-item">
-                                        <FaHeart className="interest-icon" />
-                                        <span>Game Development</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </motion.section>
-
-                {/* Timeline inserted here */}
-                <Timeline />
-
-                <SkillsGrid />
-
-                {/* Navigation */}
-                <motion.div 
-                    className="navigation-buttons"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.5 }}
-                >
-                    <Link to="/Website" className="back-button primary">
-                        <span className="button-icon"></span>
-                        <span>Back to Home</span>
-                    </Link>
-                </motion.div>
-            </div>
+      <section className="about-info-band">
+        <div>
+          <MapPin size={18} />
+          <span>Charlottesville, VA</span>
         </div>
-    );
+        <div>
+          <GraduationCap size={18} />
+          <span>UVA Computer Science graduate</span>
+        </div>
+        <div>
+          <BriefcaseBusiness size={18} />
+          <span>Software Engineer at General Atomics Intelligence</span>
+        </div>
+      </section>
+
+      <section className="portfolio-strip about-stat-strip">
+        {profileStats.map((stat) => (
+          <div className="strip-item" key={stat.label}>
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
+          </div>
+        ))}
+      </section>
+
+      <section className="split-section about-split">
+        <div className="timeline-panel">
+          <div className="section-heading">
+            <span className="eyebrow">Path</span>
+            <h2>How the work has evolved</h2>
+          </div>
+          <div className="redesign-timeline">
+            {timeline.map((item) => (
+              <article key={`${item.date}-${item.title}`}>
+                <time>{item.date}</time>
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="skills-panel">
+          <div className="section-heading">
+            <span className="eyebrow">Signals</span>
+            <h2>What I keep returning to</h2>
+          </div>
+          <div className="interest-grid-redesign">
+            {interests.map(({ label, icon: Icon }) => (
+              <div key={label}>
+                <Icon size={22} />
+                <span>{label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="social-row-redesign">
+            <a href="https://github.com/RobBundy2002" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <Github size={20} />
+            </a>
+            <a href="https://www.linkedin.com/in/rob-bundy-192035223/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Linkedin size={20} />
+            </a>
+            <a href="mailto:robbielbundy@gmail.com" aria-label="Email">
+              <Mail size={20} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="subpage-section">
+        <div className="section-heading">
+          <span className="eyebrow">Skills matrix</span>
+          <h2>Same stack, sharper presentation</h2>
+        </div>
+        <div className="matrix-grid wide">
+          {skillGroups.map((group) => (
+            <article key={group.label}>
+              <h3>{group.label}</h3>
+              <div>
+                {group.skills.map((skill) => (
+                  <span key={skill}>{skill}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default AboutMePage;

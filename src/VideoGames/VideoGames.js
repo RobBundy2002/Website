@@ -1,200 +1,100 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Code2, Gamepad2, MonitorPlay, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../StyleSheets/SharedStyles.css';
-import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaGamepad, FaUnity, FaCode } from 'react-icons/fa';
+import { portfolioProjects } from '../data/portfolioData';
+import { RedesignProjectCard } from '../components/RedesignPieces';
 
 const VideoGames = () => {
-    const projects = [
-        {
-            id: 1,
-            title: "Beneath the World Tree",
-            description: "Unity exploration prototype set in a layered world.",
-            videoUrl: "Videos/Shroom_beneath_world_tree_Trailer.mp4",
-            link: "/Website/videogames/beneaththeworldtree",
-            technologies: ["Unity", "C#", "Game Design"],
-            features: ["Vertical Exploration", "Environmental Puzzles", "Narrative Nodes"],
-            icon: <FaUnity size={24} />,
-            color: "var(--accent-primary)",
-            platform: "Unity"
-        },
-        {
-            id: 2,
-            title: "Skyward Bound",
-            description: "Vertical platformer prototype built in Unity with precision-based scoring.",
-            imageUrl: "Images/Skyward Bound.jpg",
-            videoUrl: "Videos/SkywardBound.mp4",
-            link: "/Website/videogames/skywardbound",
-            technologies: ["Unity", "C#", "Game Development"],
-            features: ["Doodle Jump Style", "Unity Engine", "C# Scripts"],
-            icon: <FaUnity size={24} />,
-            color: "var(--accent-primary)",
-            platform: "Unity"
-        },
+  const games = portfolioProjects.filter((project) => project.category === 'Games');
+  const unityCount = games.filter((project) => project.technologies.includes('Unity')).length;
+  const picoCount = games.filter((project) => project.technologies.includes('Pico-8')).length;
 
-        {
-            id: 3,
-            title: "Dracula Reborn",
-            description: "PICO-8 action demo with pixel art and arcade controls.",
-            imageUrl: "Images/DraculaReborn.png",
-            videoUrl: "Videos/Dracula Reborn.mp4",
-            link: "/Website/videogames/draculareborn",
-            technologies: ["Pico-8", "Lua", "Game Logic"],
-            features: ["Core Game Logic", "Garlic Thrower", "Pico-8 Engine"],
-            icon: <FaGamepad size={24} />,
-            color: "var(--accent-secondary)",
-            platform: "Pico-8"
-        },
-
-        {
-            id: 4,
-            title: "Vampire Frost Bite",
-            description: "Single-room PICO-8 title featuring custom sprites and sound.",
-            imageUrl: "Images/VampireFrostBite.png",
-            videoUrl: "Videos/VampireFrostbite.mp4",
-            link: "/Website/videogames/vampirefrostbite",
-            technologies: ["Pico-8", "Lua", "Sprite Design"],
-            features: ["Custom Sprites", "Sound Design", "Single Room Theme"],
-            icon: <FaCode size={24} />,
-            color: "var(--accent-tertiary)",
-            platform: "Pico-8"
-        }
-    ];
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    return (
-        <div className="page-container">
-            <div className="content-container">
-                <div className="page-intro fancy-intro">
-                    <div className="intro-left">
-                        <h1 className="page-title gradient-accent">Video Games</h1>
-                        <p className="hero-subtitle">Unity and Pico-8 game development projects</p>
-                    </div>
-                    <div className="intro-right intro-stats">
-                        <div className="stat-badge">
-                            <div className="stat-number gradient-accent">{projects.length}</div>
-                            <div className="stat-label">Games</div>
-                        </div>
-                        <div className="stat-badge">
-                            <div className="stat-number gradient-accent">{new Set(projects.map(p => p.platform)).size}</div>
-                            <div className="stat-label">Platforms</div>
-                        </div>
-                        <div className="stat-badge">
-                            <div className="stat-number gradient-accent">2026</div>
-                            <div className="stat-label">Latest</div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Projects Grid */}
-                <motion.section 
-                    className="projects-section"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <div className="projects-grid">
-                        {projects.map((project, index) => (
-                            <motion.div
-                                key={project.id}
-                                className="project-card enhanced-card"
-                                variants={itemVariants}
-                                whileHover={{ 
-                                    scale: 1.02,
-                                    transition: { duration: 0.2 }
-                                }}
-                            >
-                                <div className="project-image-container">
-                                    {project.videoUrl ? (
-                                        <video className="project-video" muted autoPlay loop playsInline>
-                                            <source src={project.videoUrl} type="video/mp4" />
-                                        </video>
-                                    ) : (
-                                        <img
-                                            src={project.imageUrl}
-                                            alt={project.title}
-                                            className="project-image"
-                                        />
-                                    )}
-                                    <div className="project-overlay">
-                                        <div className={`platform-badge platform-${project.platform.replace(/[^a-z0-9]/gi,'').toLowerCase()}`}>
-                                            {project.platform}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="project-content">
-                                    <div className="project-header">
-                                        <h3 className="project-title">{project.title}</h3>
-                                        <Link to={project.link} className="project-link">
-                                            <FaExternalLinkAlt size={16} />
-                                        </Link>
-                                    </div>
-                                    <div className="project-technologies">
-                                        <h4>Technologies</h4>
-                                        <div className="tech-tags">
-                                            {project.technologies.map((tech, techIndex) => (
-                                                <span key={techIndex} className="tech-tag">
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="project-features">
-                                        <h4>Key Features</h4>
-                                        <ul className="features-list">
-                                            {project.features.map((feature, featureIndex) => (
-                                                <li key={featureIndex} className="feature-item-list">
-                                                    <FaGamepad size={12} />
-                                                    <span>{feature}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.section>
-
-                {/* Navigation */}
-                <motion.div 
-                    className="navigation-buttons"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8, duration: 0.5 }}
-                >
-                    <Link to="/Website" className="back-button primary">
-                        <span className="button-icon"></span>
-                        <span>Back to Home</span>
-                    </Link>
-                </motion.div>
-            </div>
+  return (
+    <div className="redesign-subpage games-redesign">
+      <section className="games-hero-redesign">
+        <div className="games-hero-copy">
+          <span className="eyebrow">Game lab</span>
+          <h1>Game lab.</h1>
+          <p>
+            Unity and PICO-8 builds with fast previews, engine tags, and direct paths into each playable project.
+          </p>
+          <div className="hero-command-row">
+            <Link to={games[0]?.link || '/Website/videogames'} className="primary-action">
+              Open first game
+              <ArrowRight size={18} />
+            </Link>
+            <Link to="/Website/projects" className="secondary-action">
+              All projects
+              <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
-    );
+
+        <div className="game-diagram" aria-label="Game development systems diagram">
+          <div className="diagram-core">
+            <Gamepad2 size={34} />
+            <strong>Prototype Loop</strong>
+            <span>Design, tune, test, polish</span>
+          </div>
+          <div className="diagram-track">
+            <div>
+              <Code2 size={22} />
+              <strong>Rules</strong>
+              <span>State, physics, scoring</span>
+            </div>
+            <div>
+              <Sparkles size={22} />
+              <strong>Feel</strong>
+              <span>Motion, feedback, timing</span>
+            </div>
+            <div>
+              <MonitorPlay size={22} />
+              <strong>Demo</strong>
+              <span>Video, route, project page</span>
+            </div>
+          </div>
+          <div className="diagram-stats">
+            <div>
+              <strong>{games.length}</strong>
+              <span>Games</span>
+            </div>
+            <div>
+              <strong>{unityCount}</strong>
+              <span>Unity</span>
+            </div>
+            <div>
+              <strong>{picoCount}</strong>
+              <span>PICO-8</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="subpage-section">
+        <div className="section-heading">
+          <span className="eyebrow">Playable gallery</span>
+          <h2>Games and prototypes</h2>
+        </div>
+        <motion.div className="subpage-project-grid game-grid" initial="hidden" animate="visible">
+          {games.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05 }}
+            >
+              <RedesignProjectCard
+                project={project}
+                accent={project.technologies.includes('Unity') ? 'var(--redesign-green)' : 'var(--redesign-coral)'}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+    </div>
+  );
 };
 
-export default VideoGames; 
+export default VideoGames;

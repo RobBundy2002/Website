@@ -1,6 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../StyleSheets/SharedStyles.css';
+import { Search, FileText, X } from 'lucide-react';
+import { searchIndex } from '../data/portfolioData';
 
 const navItems = [
   { to: '/Website', label: 'Home' },
@@ -11,47 +13,71 @@ const navItems = [
   { to: '/Website/videogames', label: 'Games' }
 ];
 
-const SearchBox = () => {
+const SearchOverlay = ({ open, onClose }) => {
   const [q, setQ] = useState('');
-  const [results, setResults] = useState([]);
-
-  // Build a richer index including projects and pages
-  const INDEX = [];
-  try {
-    const projModule = require('../Projects');
-    const PROJECT_LIST = projModule.PROJECT_LIST || [];
-    // base pages
-    INDEX.push({ title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' });
-    INDEX.push({ title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' });
-    INDEX.push({ title: 'Education', path: '/Website/education', body: 'UVA Georgia Tech coursework computer science' });
-    INDEX.push({ title: 'Class Work', path: '/Website/classassignments', body: 'Coursework assignments' });
-
-    PROJECT_LIST.forEach(p => {
-      INDEX.push({ title: p.title, path: p.link, body: p.description + ' ' + (p.technologies || []).join(' ') });
-    });
-  } catch (e) {
-    // fallback
-    INDEX.push({ title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' });
-    INDEX.push({ title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' });
-  }
+  const inputRef = useRef(null);
 
   useEffect(() => {
-    if (q.trim() === '') { setResults([]); return; }
-    // Use Fuse.js for fuzzy search
-    const Fuse = require('fuse.js');
-    const fuse = new Fuse(INDEX, { keys: ['title', 'body'], threshold: 0.4, includeScore: true, minMatchCharLength: 2 });
-    const out = fuse.search(q).slice(0,8).map(r => r.item);
-    setResults(out);
-  }, [q]);
+    if (!open) return;
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => inputRef.current?.focus(), 50);
+    const handleKey = (event) => {
+      if (event.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKey);
+    };
+  }, [open, onClose]);
+
+  const query = q.trim().toLowerCase();
+  const results = query
+    ? searchIndex
+        .map((item) => {
+          const title = item.title.toLowerCase();
+          const body = item.body.toLowerCase();
+          const titleMatch = title.includes(query) ? 2 : 0;
+          const bodyMatch = body.includes(query) ? 1 : 0;
+          const wordMatches = query
+            .split(/\s+/)
+            .filter((word) => title.includes(word) || body.includes(word)).length;
+          return { item, score: titleMatch + bodyMatch + wordMatches };
+        })
+        .filter((result) => result.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 8)
+        .map((result) => result.item)
+    : searchIndex.slice(6, 11);
+
+  if (!open) return null;
 
   return (
-    <div className="header-search-wrapper">
-      <input className="header-search-input" placeholder="Search this site..." value={q} onChange={e => setQ(e.target.value)} aria-label="Search site" />
-      <div className={`search-dropdown ${results.length ? 'open' : ''}`} role="listbox">
+    <div className="command-overlay" role="dialog" aria-modal="true" aria-label="Search portfolio">
+      <button className="command-backdrop" aria-label="Close search" onClick={onClose} />
+      <div className="command-panel">
+        <div className="command-input-row">
+          <Search size={20} />
+          <input
+            ref={inputRef}
+            className="command-input"
+            placeholder="Search projects, tech, games, coursework..."
+            value={q}
+            onChange={(event) => setQ(event.target.value)}
+          />
+          <button className="icon-button" aria-label="Close search" onClick={onClose}>
+            <X size={18} />
+          </button>
+        </div>
+        <div className="command-results">
         {results.map(r => (
-          <a key={r.path} href={r.path} className="search-item" role="option">{r.title} — {r.body.split(' ').slice(0,8).join(' ')}...</a>
+          <Link key={`${r.path}-${r.title}`} to={r.path} className="command-item" onClick={onClose}>
+            <span>{r.title}</span>
+            <small>{r.body.split(' ').slice(0, 12).join(' ')}</small>
+          </Link>
         ))}
-        {q && results.length === 0 && <div className="search-item">No results</div>}
+        {q && results.length === 0 && <div className="command-empty">No results</div>}
+        </div>
       </div>
     </div>
   );
@@ -60,8 +86,10 @@ const SearchBox = () => {
 const Header = () => {
   const loc = useLocation();
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useRef(null);
   const toggleRef = useRef(null);
+  const closeSearch = useCallback(() => setSearchOpen(false), []);
 
   // Lock body scroll while menu is open and restore when closed
   useEffect(() => {
@@ -71,6 +99,17 @@ const Header = () => {
       document.body.style.overflow = '';
     }
   }, [open]);
+
+  useEffect(() => {
+    const handleShortcut = (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    document.addEventListener('keydown', handleShortcut);
+    return () => document.removeEventListener('keydown', handleShortcut);
+  }, []);
 
   // Accessibility: trap focus inside mobile nav and handle Escape
   useEffect(() => {
@@ -127,7 +166,8 @@ const Header = () => {
       <div className="header-inner">
         <div className="brand">
           <Link to="/Website" className="brand-link">
-            Rob Bundy
+            <span className="brand-mark">RB</span>
+            <span>Rob Bundy</span>
           </Link>
         </div>
 
@@ -150,7 +190,7 @@ const Header = () => {
           className={`main-nav ${open ? 'open' : ''}`}
           aria-label="Main navigation"
         >
-          {navItems.map((item, idx) => (
+          {navItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
@@ -161,16 +201,26 @@ const Header = () => {
             </Link>
           ))}
 
-          {/* Insert Resume and Search immediately after 'Games' nav item (desktop-only) */}
-          <a className="nav-link desktop-only" href="/Rob-Resume.pdf" download style={{marginLeft:12}}>Resume</a>
-          <div className="header-search desktop-only" style={{marginLeft:8}}>
-            <SearchBox />
-          </div>
+          <a className="nav-link nav-resume" href="/Rob-Resume.pdf" download>
+            <FileText size={16} />
+            <span>Resume</span>
+          </a>
+          <button
+            className="search-trigger"
+            onClick={() => {
+              setOpen(false);
+              setSearchOpen(true);
+            }}
+            aria-label="Open search"
+          >
+            <Search size={16} />
+            <span>Search</span>
+            <kbd>⌘K</kbd>
+          </button>
 
         </nav>
-
-
       </div>
+      <SearchOverlay open={searchOpen} onClose={closeSearch} />
     </header>
   );
 };

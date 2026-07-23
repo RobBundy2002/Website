@@ -1,20 +1,28 @@
 import React from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import './StyleSheets/SharedStyles.css';
-
-const INDEX = [
-  { title: 'Home', path: '/Website', body: 'Home Rob Bundy projects websites games' },
-  { title: 'About', path: '/Website/aboutme', body: 'About Me education skills timeline' },
-  { title: 'Projects', path: '/Website/projects', body: 'Projects AIVestor ResumeGPT Proverbial Plates' },
-  { title: 'Education', path: '/Website/education', body: 'University of Virginia Georgia Tech coursework computer science' },
-  { title: 'Class Work', path: '/Website/classassignments', body: 'Class assignments coursework' }
-];
+import { searchIndex } from './data/portfolioData';
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
   const q = (searchParams.get('q') || '').trim().toLowerCase();
 
-  const results = q ? INDEX.filter(item => (item.title + ' ' + item.body).toLowerCase().includes(q)) : [];
+  const results = q
+    ? searchIndex
+        .map((item) => {
+          const title = item.title.toLowerCase();
+          const body = item.body.toLowerCase();
+          const titleMatch = title.includes(q) ? 2 : 0;
+          const bodyMatch = body.includes(q) ? 1 : 0;
+          const wordMatches = q
+            .split(/\s+/)
+            .filter((word) => title.includes(word) || body.includes(word)).length;
+          return { item, score: titleMatch + bodyMatch + wordMatches };
+        })
+        .filter((result) => result.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .map((result) => result.item)
+    : [];
 
   return (
     <div className="page-container">
