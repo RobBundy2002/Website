@@ -54,7 +54,7 @@ const AboutMePage = () => {
           transition={{ duration: 0.55 }}
         >
           <span className="eyebrow">About</span>
-          <h1>Builder energy, serious engineering habits.</h1>
+          <h1>Turning ideas into useful systems.</h1>
           <p>
             I am a software engineer and lifelong builder from Lebanon, Virginia. I studied Computer Science and
             Religious Studies at UVA, graduated in May 2025, and now work as a Software Engineer at General Atomics

@@ -17,7 +17,8 @@ const csCourses = [
 
 const gtCourses = [
   { code: 'CS 6457', name: 'Video Game Design', desc: 'Game engine concepts, structural elements, and game design process for 3D real-time games and game feel.', skills: ['Game Engines', '3D Design', 'Game Feel'] },
-  { code: 'COGSCI', name: 'Intro to Cognitive Science', desc: 'Interdisciplinary study of mind and intelligence across AI, psychology, neurobiology, linguistics, and philosophy.', skills: ['Cognitive Models', 'Human-Centered Design'] }
+  { code: 'CS 6795', name: 'Intro to Cognitive Science', desc: 'Interdisciplinary study of mind and intelligence across AI, psychology, neurobiology, linguistics, and philosophy.', skills: ['Cognitive Models', 'Human-Centered Design'] },
+  { code: 'CS8803-17', name: 'Intro to Entrepreneurship', desc: 'Foundations of identifying opportunities, shaping ideas, and building practical ventures around real user needs.', skills: ['Entrepreneurship', 'Product Thinking', 'Ideation'] }
 ];
 
 const schools = [

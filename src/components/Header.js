@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../StyleSheets/SharedStyles.css';
-import { Search, FileText, X } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import { searchIndex } from '../data/portfolioData';
 
 const navItems = [
@@ -12,6 +12,20 @@ const navItems = [
   { to: '/Website/classassignments', label: 'Class Work' },
   { to: '/Website/videogames', label: 'Games' }
 ];
+
+const HeaderMark = () => (
+  <svg className="header-brand-diagram" viewBox="0 0 48 48" aria-hidden="true">
+    <defs>
+      <linearGradient id="header-mark-gradient" x1="0" x2="1" y1="1" y2="0">
+        <stop offset="0" stopColor="#6ee7b7" />
+        <stop offset="1" stopColor="#f6d365" />
+      </linearGradient>
+    </defs>
+    <path d="M10 14L24 8L38 14V34L24 40L10 34Z" fill="none" stroke="url(#header-mark-gradient)" strokeWidth="2" />
+    <path d="M10 14L24 22L38 14M24 22V40" fill="none" stroke="url(#header-mark-gradient)" strokeWidth="2" />
+    <circle cx="24" cy="22" r="3.5" fill="#f6d365" />
+  </svg>
+);
 
 const SearchOverlay = ({ open, onClose }) => {
   const [q, setQ] = useState('');
@@ -166,7 +180,7 @@ const Header = () => {
       <div className="header-inner">
         <div className="brand">
           <Link to="/Website" className="brand-link">
-            <span className="brand-mark">RB</span>
+            <HeaderMark />
             <span>Rob Bundy</span>
           </Link>
         </div>
@@ -201,10 +215,6 @@ const Header = () => {
             </Link>
           ))}
 
-          <a className="nav-link nav-resume" href="/Rob-Resume.pdf" download>
-            <FileText size={16} />
-            <span>Resume</span>
-          </a>
           <button
             className="search-trigger"
             onClick={() => {
@@ -215,7 +225,6 @@ const Header = () => {
           >
             <Search size={16} />
             <span>Search</span>
-            <kbd>⌘K</kbd>
           </button>
 
         </nav>

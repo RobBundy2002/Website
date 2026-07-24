@@ -16,7 +16,6 @@ import {
   GraduationCap,
   Layers3,
   MonitorPlay,
-  Search,
   Sparkles,
   Trophy
 } from 'lucide-react';
@@ -41,16 +40,41 @@ const categoryIcons = {
 
 const Scene = () => {
   const mountRef = useRef(null);
+  const [webglAvailable, setWebglAvailable] = useState(true);
 
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount) return undefined;
 
+    // WebGL can be unavailable in privacy sandboxes, remote browsers, or on
+    // devices where hardware acceleration is disabled. The 3D decoration
+    // should never prevent the rest of the home page from rendering.
+    const testCanvas = document.createElement('canvas');
+    const webglContext = testCanvas.getContext('webgl2') || testCanvas.getContext('webgl');
+    if (!webglContext) {
+      setWebglAvailable(false);
+      return undefined;
+    }
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
     camera.position.z = 6;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    let renderer;
+    try {
+      // Reuse the probe canvas/context so initialization does not request a
+      // second context on devices with a strict WebGL context limit.
+      renderer = new THREE.WebGLRenderer({
+        canvas: testCanvas,
+        context: webglContext,
+        antialias: true,
+        alpha: true
+      });
+    } catch (error) {
+      setWebglAvailable(false);
+      return undefined;
+    }
+
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     mount.appendChild(renderer.domElement);
 
@@ -109,11 +133,16 @@ const Scene = () => {
     };
   }, []);
 
-  return <div className="home-3d-scene" ref={mountRef} aria-hidden="true" />;
+  return (
+    <div className={`home-3d-scene${webglAvailable ? '' : ' home-3d-scene-fallback'}`} ref={mountRef} aria-hidden="true">
+      {!webglAvailable && <div className="home-3d-fallback" />}
+    </div>
+  );
 };
 
 const ProjectMedia = ({ project, className = '' }) => {
   const [playing, setPlaying] = useState(false);
+  const usePlaceholder = project.id === 'beneath-world-tree' && !playing;
 
   return (
     <div
@@ -125,6 +154,11 @@ const ProjectMedia = ({ project, className = '' }) => {
         <video muted autoPlay loop playsInline poster={project.imageUrl}>
           <source src={project.videoUrl} type="video/mp4" />
         </video>
+      ) : usePlaceholder ? (
+        <div className="media-placeholder">
+          <span>Unity exploration prototype</span>
+          <strong>Beneath the World Tree</strong>
+        </div>
       ) : (
         <img src={project.imageUrl} alt={project.title} />
       )}
@@ -231,7 +265,7 @@ const Home = () => {
           })}
         </div>
 
-        <motion.div layout className="command-grid">
+        <motion.div key={activeFilter} layout className="command-grid">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.article
@@ -386,10 +420,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="search-callout">
-        <Search size={22} />
-        <p>Use the search button in the nav or press Command-K to jump straight to projects, tech, and pages.</p>
-      </section>
     </div>
   );
 };

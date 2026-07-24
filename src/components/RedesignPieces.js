@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink, MonitorPlay } from 'lucide-react';
 
-export const RedesignPageHero = ({ eyebrow, title, description, image, stats = [], actions = [] }) => (
+export const RedesignPageHero = ({ eyebrow, title, description, image, visual, stats = [], actions = [] }) => (
   <section className="subpage-hero">
     <div className="subpage-hero-copy">
       <span className="eyebrow">{eyebrow}</span>
@@ -27,7 +27,7 @@ export const RedesignPageHero = ({ eyebrow, title, description, image, stats = [
       )}
     </div>
     <div className="subpage-hero-media">
-      <img src={image} alt="" />
+      {visual || <img src={image} alt="" />}
       <div className="subpage-stat-stack">
         {stats.map((stat) => (
           <div key={stat.label}>
