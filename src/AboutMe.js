@@ -15,7 +15,8 @@ import {
   Trophy
 } from 'lucide-react';
 import './StyleSheets/SharedStyles.css';
-import { skillGroups, timeline } from './data/portfolioData';
+import { skillGroups } from './data/portfolioData';
+import Timeline from './components/Timeline';
 
 const profileStats = [
   { value: 'GAI', label: 'Software engineer' },
@@ -103,19 +104,7 @@ const AboutMePage = () => {
 
       <section className="split-section about-split">
         <div className="timeline-panel">
-          <div className="section-heading">
-            <span className="eyebrow">Path</span>
-            <h2>How the work has evolved</h2>
-          </div>
-          <div className="redesign-timeline">
-            {timeline.map((item) => (
-              <article key={`${item.date}-${item.title}`}>
-                <time>{item.date}</time>
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
-              </article>
-            ))}
-          </div>
+          <Timeline />
         </div>
 
         <div className="skills-panel">

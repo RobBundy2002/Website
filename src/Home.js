@@ -1,8 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import * as THREE from 'three';
 import {
   ArrowRight,
   BadgeCheck,
@@ -36,108 +35,6 @@ const categoryIcons = {
   Web: Code2,
   School: GraduationCap,
   'Hosted Sites': Globe2
-};
-
-const Scene = () => {
-  const mountRef = useRef(null);
-  const [webglAvailable, setWebglAvailable] = useState(true);
-
-  useEffect(() => {
-    const mount = mountRef.current;
-    if (!mount) return undefined;
-
-    // WebGL can be unavailable in privacy sandboxes, remote browsers, or on
-    // devices where hardware acceleration is disabled. The 3D decoration
-    // should never prevent the rest of the home page from rendering.
-    const testCanvas = document.createElement('canvas');
-    const webglContext = testCanvas.getContext('webgl2') || testCanvas.getContext('webgl');
-    if (!webglContext) {
-      setWebglAvailable(false);
-      return undefined;
-    }
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.z = 6;
-
-    let renderer;
-    try {
-      // Reuse the probe canvas/context so initialization does not request a
-      // second context on devices with a strict WebGL context limit.
-      renderer = new THREE.WebGLRenderer({
-        canvas: testCanvas,
-        context: webglContext,
-        antialias: true,
-        alpha: true
-      });
-    } catch (error) {
-      setWebglAvailable(false);
-      return undefined;
-    }
-
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    mount.appendChild(renderer.domElement);
-
-    const geometry = new THREE.IcosahedronGeometry(1.55, 2);
-    const material = new THREE.MeshStandardMaterial({
-      color: 0x6ee7b7,
-      roughness: 0.28,
-      metalness: 0.35,
-      wireframe: true
-    });
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
-
-    const core = new THREE.Mesh(
-      new THREE.IcosahedronGeometry(0.82, 1),
-      new THREE.MeshStandardMaterial({ color: 0xf6d365, roughness: 0.45, metalness: 0.08 })
-    );
-    scene.add(core);
-
-    const light = new THREE.PointLight(0xffffff, 3.2, 15);
-    light.position.set(3, 4, 5);
-    scene.add(light);
-    scene.add(new THREE.AmbientLight(0x93c5fd, 1.2));
-
-    const resize = () => {
-      const width = mount.clientWidth;
-      const height = mount.clientHeight;
-      renderer.setSize(width, height);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-    };
-
-    let frameId;
-    const animate = () => {
-      mesh.rotation.x += 0.003;
-      mesh.rotation.y += 0.006;
-      core.rotation.x -= 0.004;
-      core.rotation.y += 0.004;
-      renderer.render(scene, camera);
-      frameId = requestAnimationFrame(animate);
-    };
-
-    resize();
-    animate();
-    window.addEventListener('resize', resize);
-
-    return () => {
-      window.removeEventListener('resize', resize);
-      cancelAnimationFrame(frameId);
-      geometry.dispose();
-      material.dispose();
-      core.geometry.dispose();
-      core.material.dispose();
-      renderer.dispose();
-      renderer.domElement.remove();
-    };
-  }, []);
-
-  return (
-    <div className={`home-3d-scene${webglAvailable ? '' : ' home-3d-scene-fallback'}`} ref={mountRef} aria-hidden="true">
-      {!webglAvailable && <div className="home-3d-fallback" />}
-    </div>
-  );
 };
 
 const ProjectMedia = ({ project, className = '' }) => {
@@ -205,9 +102,6 @@ const Home = () => {
       </Helmet>
 
       <section className="redesign-hero">
-        <div className="hero-backdrop">
-          <img src="Images/Grad.jpg" alt="Rob Bundy" />
-        </div>
         <div className="hero-copy">
           <span className="eyebrow">
             <Sparkles size={16} />
@@ -229,7 +123,15 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <Scene />
+        <div className="hero-visual-stack">
+          <div className="hero-portrait-card">
+            <img src="Images/Grad.jpg" alt="Rob Bundy" />
+            <div className="hero-portrait-caption">
+              <span>ROB BUNDY</span>
+              <strong>Software Engineer</strong>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="portfolio-strip" aria-label="Portfolio stats">

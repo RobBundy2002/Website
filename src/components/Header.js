@@ -17,13 +17,13 @@ const HeaderMark = () => (
   <svg className="header-brand-diagram" viewBox="0 0 48 48" aria-hidden="true">
     <defs>
       <linearGradient id="header-mark-gradient" x1="0" x2="1" y1="1" y2="0">
-        <stop offset="0" stopColor="#6ee7b7" />
-        <stop offset="1" stopColor="#f6d365" />
+        <stop offset="0" stopColor="#67e8f9" />
+        <stop offset="1" stopColor="#c084fc" />
       </linearGradient>
     </defs>
     <path d="M10 14L24 8L38 14V34L24 40L10 34Z" fill="none" stroke="url(#header-mark-gradient)" strokeWidth="2" />
     <path d="M10 14L24 22L38 14M24 22V40" fill="none" stroke="url(#header-mark-gradient)" strokeWidth="2" />
-    <circle cx="24" cy="22" r="3.5" fill="#f6d365" />
+    <circle cx="24" cy="22" r="3.5" fill="#a78bfa" />
   </svg>
 );
 

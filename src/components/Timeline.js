@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight, BriefcaseBusiness, Code2, GraduationCap, Layers3 } from 'lucide-react';
 
 // Vertical resume-style timeline (detailed, no arrows)
 const timelineData = [
@@ -78,21 +79,38 @@ const timelineData = [
 
 const Timeline = () => {
   return (
-    <section aria-labelledby="timeline-heading" className="timeline-vertical">
-      <h2 id="timeline-heading" className="section-title">Timeline</h2>
-      <ol className="timeline-vertical-list">
+    <section aria-labelledby="timeline-heading" className="timeline-ledger">
+      <div className="timeline-ledger-heading">
+        <div>
+          <span className="eyebrow">Career ledger</span>
+          <h2 id="timeline-heading">The work behind the work</h2>
+        </div>
+        <span className="timeline-ledger-count">{timelineData.length} chapters</span>
+      </div>
+      <ol className="timeline-ledger-list">
         {timelineData.map((item, idx) => (
-          <li key={idx} className="timeline-vertical-item">
-            <div className="timeline-marker" aria-hidden></div>
-            <div className="timeline-content">
-              <span className="timeline-year">{item.year}</span>
-              <strong className="timeline-title">{item.title}</strong>
-              <ul className="timeline-details">
+          <li key={idx} className={`timeline-ledger-item ${idx === 0 ? 'is-current' : ''}`}>
+            <div className="timeline-ledger-rail" aria-hidden="true">
+              <span className="timeline-ledger-marker">
+                {idx === 0 ? <BriefcaseBusiness size={15} /> : idx === timelineData.length - 1 ? <GraduationCap size={15} /> : idx === 4 ? <Code2 size={15} /> : <Layers3 size={15} />}
+              </span>
+            </div>
+            <article className="timeline-ledger-card">
+              <div className="timeline-ledger-meta">
+                <time>{item.year}</time>
+                <span>{String(idx + 1).padStart(2, '0')}</span>
+              </div>
+              <div className="timeline-ledger-title-row">
+                <h3>{item.title}</h3>
+                {idx === 0 && <span className="timeline-current-badge">Current</span>}
+              </div>
+              <ul className="timeline-ledger-details">
                 {item.details.map((d, i) => (
                   <li key={i}>{d}</li>
                 ))}
               </ul>
-            </div>
+              <span className="timeline-ledger-link" aria-hidden="true"><ArrowUpRight size={16} /></span>
+            </article>
           </li>
         ))}
       </ol>
