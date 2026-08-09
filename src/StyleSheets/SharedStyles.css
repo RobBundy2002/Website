@@ -2185,6 +2185,12 @@ body {
   overflow: hidden;
 }
 
+.redesign-home *,
+.redesign-subpage * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
 .redesign-home img,
 .redesign-home video {
   border: 0;
@@ -3256,6 +3262,10 @@ body {
     height: 260px;
   }
 
+  .hero-visual-stack {
+    min-height: 460px;
+  }
+
   .activity-grid {
     grid-template-columns: repeat(12, 48px);
   }
@@ -3279,9 +3289,8 @@ body {
     padding-top: 38px;
   }
 
-  .hero-backdrop {
-    inset: 24px 0 auto auto;
-    width: 76vw;
+  .hero-copy h1 {
+    font-size: clamp(3rem, 16vw, 5rem);
   }
 
   .hero-command-row,
@@ -4040,6 +4049,17 @@ body {
 .education-course-card h3 {
   color: var(--redesign-text);
   line-height: 1.15;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.education-course-card p,
+.school-card-redesign h2,
+.school-card-redesign p,
+.school-card-redesign li {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .education-course-card div:last-child {
