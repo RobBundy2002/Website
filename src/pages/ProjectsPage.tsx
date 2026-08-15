@@ -33,7 +33,7 @@ export function ProjectsPage() {
         <SectionHeading
           eyebrow="Research & Substantial Projects"
           title="Full-stack builds and research work"
-          description="Medium-depth pages for projects with enough implementation or research substance to warrant more than an archive entry."
+          description="Larger builds and research projects with implementation details, methodology, results, and supporting artifacts."
         />
         <div className="substantial-grid">
           {substantialProjects.map((project) => (
@@ -46,7 +46,7 @@ export function ProjectsPage() {
         <SectionHeading
           eyebrow="Project Archive"
           title="Earlier games, coursework, and smaller builds"
-          description="Concise pages for older work, class projects, and game prototypes. These entries keep the artifacts available without treating each one like a full case study."
+          description="Earlier games, class projects, and smaller builds that show the path from coursework to larger product and platform work."
         />
         <div className="archive-grid">
           {archiveProjects.map((project) => (
