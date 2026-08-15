@@ -5,7 +5,7 @@ import { TechnologyList } from './TechnologyList';
 
 interface ProjectCardProps {
   project: Project;
-  variant?: 'featured' | 'compact';
+  variant?: 'featured' | 'substantial' | 'archive';
 }
 
 export function ProjectCard({ project, variant = 'featured' }: ProjectCardProps) {
@@ -20,10 +20,10 @@ export function ProjectCard({ project, variant = 'featured' }: ProjectCardProps)
         <span className="project-category">{project.category}</span>
         <h3>{project.title}</h3>
         <p>{project.summary}</p>
-        <TechnologyList technologies={project.technologies.slice(0, variant === 'compact' ? 3 : 5)} compact />
+        <TechnologyList technologies={project.technologies.slice(0, variant === 'archive' ? 3 : 5)} compact />
         {project.route ? (
           <span className="card-cta">
-            {project.featured ? 'View Case Study' : 'View Project'} <ArrowRight size={16} aria-hidden="true" />
+            {project.tier === 'featured' ? 'View Case Study' : 'View Details'} <ArrowRight size={16} aria-hidden="true" />
           </span>
         ) : null}
       </div>
@@ -32,7 +32,7 @@ export function ProjectCard({ project, variant = 'featured' }: ProjectCardProps)
 
   if (project.route) {
     return (
-      <Link className={`project-card ${variant}`} to={project.route} aria-label={`View ${project.title} case study`}>
+      <Link className={`project-card ${variant}`} to={project.route} aria-label={`View ${project.title} details`}>
         {content}
       </Link>
     );

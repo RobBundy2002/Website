@@ -29,8 +29,8 @@ export default function NorthstarPage() {
         <ProjectSection title="Problem / Motivation">
           <p>
             Kubernetes troubleshooting often means moving between kubectl, k9s, logs, workload descriptions,
-            metrics, RBAC checks, cluster contexts, and deployment tooling. Northstar explores how those
-            workflows can be consolidated without hiding the operational boundaries that make Kubernetes safe.
+            metrics, RBAC checks, cluster contexts, and deployment tooling. Northstar consolidates those
+            workflows while keeping the operational boundaries that make Kubernetes safe visible.
           </p>
         </ProjectSection>
 

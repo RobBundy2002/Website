@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, FileText, Github } from 'lucide-react';
 import type { Project } from '../../data/projects';
 
 export function ProjectCTA({ project }: { project: Project }) {
@@ -14,6 +14,12 @@ export function ProjectCTA({ project }: { project: Project }) {
         <a href={project.liveUrl} target="_blank" rel="noreferrer" className="button primary">
           <ExternalLink size={17} aria-hidden="true" />
           Live Site
+        </a>
+      ) : null}
+      {project.reportUrl ? (
+        <a href={project.reportUrl} className="button primary">
+          <FileText size={17} aria-hidden="true" />
+          {project.reportLabel ?? 'View Report'}
         </a>
       ) : null}
     </div>

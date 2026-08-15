@@ -29,7 +29,7 @@ export default function ResumeGPTPage() {
         <ProjectSection title="Problem / Motivation">
           <p>
             Many resume-analysis tools ask users to upload sensitive resume data and return opaque scores.
-            ResumeGPT explores a more explainable approach: parse the resume locally, normalize skills, match
+            ResumeGPT uses a more explainable approach: parse the resume locally, normalize skills, match
             deterministically, show evidence, and let the user decide whether to copy an AI-ready prompt into
             an external AI service.
           </p>

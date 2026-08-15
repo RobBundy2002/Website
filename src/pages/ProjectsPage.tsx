@@ -1,7 +1,7 @@
 import { ProjectCard } from '../components/project/ProjectCard';
 import { Seo } from '../components/ui/Seo';
 import { SectionHeading } from '../components/ui/SectionHeading';
-import { featuredProjects, otherProjects } from '../data/projects';
+import { archiveProjects, featuredProjects, substantialProjects } from '../data/projects';
 
 export function ProjectsPage() {
   return (
@@ -31,13 +31,26 @@ export function ProjectsPage() {
 
       <section className="page-section">
         <SectionHeading
-          eyebrow="Project Index"
-          title="Applications, games, research, and data projects"
-          description="Each project has its own page with context, implementation notes, technologies, and available screenshots or reports."
+          eyebrow="Research & Substantial Projects"
+          title="Full-stack builds and research work"
+          description="Medium-depth pages for projects with enough implementation or research substance to warrant more than an archive entry."
         />
-        <div className="other-grid">
-          {otherProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} variant="compact" />
+        <div className="substantial-grid">
+          {substantialProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} variant="substantial" />
+          ))}
+        </div>
+      </section>
+
+      <section className="page-section">
+        <SectionHeading
+          eyebrow="Project Archive"
+          title="Earlier games, coursework, and smaller builds"
+          description="Concise pages for older work, class projects, and game prototypes. These entries keep the artifacts available without treating each one like a full case study."
+        />
+        <div className="archive-grid">
+          {archiveProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} variant="archive" />
           ))}
         </div>
       </section>

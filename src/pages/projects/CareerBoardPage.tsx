@@ -28,8 +28,8 @@ export default function CareerBoardPage() {
 
         <ProjectSection title="Problem / Motivation">
           <p>
-            Job searches tend to fragment across tools. CareerBoard explores how a team or career group can
-            coordinate applications, referrals, interview prep, and follow-up in one workspace while preserving
+            Job searches tend to fragment across tools. CareerBoard gives a team or career group one place to
+            coordinate applications, referrals, interview prep, and follow-up while preserving
             ownership and permissions.
           </p>
         </ProjectSection>
@@ -98,7 +98,7 @@ export default function CareerBoardPage() {
 
         <ProjectSection title="Current Status / Outcome">
           <p>
-            The project demonstrates product workflow modeling, relational persistence, route-level
+            CareerBoard includes product workflow modeling, relational persistence, route-level
             authorization, operational probes, Docker packaging, and a presentation-friendly static demo.
           </p>
           <ProjectCTA project={project} />

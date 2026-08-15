@@ -111,7 +111,7 @@ export function HomePage() {
         </div>
         <a href={`mailto:${profile.email}`} className="button primary">
           <Mail size={17} aria-hidden="true" />
-          Email Robert
+          Email Rob
         </a>
       </section>
     </>

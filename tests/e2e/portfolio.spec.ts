@@ -6,6 +6,9 @@ test('homepage loads and navigation works', async ({ page }) => {
   await page.getByRole('link', { name: /View Projects/i }).click();
   await expect(page).toHaveURL(/\/Website\/projects$/);
   await expect(page.getByRole('heading', { name: 'Project portfolio' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Featured case studies' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Full-stack builds and research work' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Earlier games, coursework, and smaller builds' })).toBeVisible();
 });
 
 test('featured project routes load directly', async ({ page }) => {
@@ -22,21 +25,41 @@ test('project cards navigate to detail pages', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Northstar' })).toBeVisible();
 });
 
-test('secondary project cards navigate to detail pages', async ({ page }) => {
+test('Tier 2 project cards navigate to medium-depth pages', async ({ page }) => {
   await page.goto('./projects');
-  await page.getByRole('link', { name: /Emojis Versus Text/i }).first().click();
+  await page.getByRole('link', { name: /Emoji vs Text/i }).first().click();
   await expect(page).toHaveURL(/\/Website\/projects\/emoji-text$/);
-  await expect(page.getByRole('heading', { name: 'Emojis Versus Text' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Architecture / Implementation' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Emoji vs Text' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Research Question' })).toBeVisible();
   await expect(page.getByRole('link', { name: /View Final Report/i })).toHaveAttribute(
     'href',
     '/Website/assets/reports/ProjectWriteupGT.pdf'
   );
 });
 
+test('requested Tier 2 routes load', async ({ page }) => {
+  for (const [slug, heading] of [
+    ['matrixmadness', 'Basketball Grid'],
+    ['credit-approval', 'Credit Approval ML'],
+    ['emoji-text', 'Emoji vs Text']
+  ]) {
+    await page.goto(`./projects/${slug}`);
+    await expect(page.getByRole('heading', { name: heading })).toBeVisible();
+  }
+});
+
+test('archive project navigation works', async ({ page }) => {
+  await page.goto('./projects');
+  await page.getByRole('link', { name: /Wordle App/i }).first().click();
+  await expect(page).toHaveURL(/\/Website\/projects\/wordle$/);
+  await expect(page.getByRole('heading', { name: 'Wordle App' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Key Features / Mechanics' })).toBeVisible();
+});
+
 test('Credit Approval ML keeps its ML report link', async ({ page }) => {
   await page.goto('./projects/credit-approval');
   await expect(page.getByRole('heading', { name: 'Credit Approval ML' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Models and Results' })).toBeVisible();
   await expect(page.getByRole('link', { name: /View ML Writeup/i })).toHaveAttribute(
     'href',
     '/Website/assets/reports/Machine_Learning_Final_Writeup.pdf'

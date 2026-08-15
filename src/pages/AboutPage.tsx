@@ -28,7 +28,7 @@ export function AboutPage() {
             workflow modeling, and interface decisions make difficult work easier to reason about.
           </p>
           <p>
-            Side projects are treated as engineering laboratories. Northstar explores Kubernetes operations
+            Side projects are treated as engineering laboratories. Northstar handles Kubernetes operations
             workflows, CareerBoard models a collaborative job search, UJLP supports a real publication, and
             ResumeGPT tests privacy-first frontend architecture.
           </p>

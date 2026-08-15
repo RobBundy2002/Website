@@ -7,7 +7,7 @@ import { ExperiencePage } from './pages/ExperiencePage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { SecondaryProjectPage } from './pages/projects/SecondaryProjectPage';
+import { ProjectRoutePage } from './pages/projects/ProjectRoutePage';
 
 const NorthstarPage = lazy(() => import('./pages/projects/NorthstarPage'));
 const CareerBoardPage = lazy(() => import('./pages/projects/CareerBoardPage'));
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="projects/careerboard" element={<CareerBoardPage />} />
           <Route path="projects/ujlp" element={<UJLPPage />} />
           <Route path="projects/resumegpt" element={<ResumeGPTPage />} />
-          <Route path="projects/:slug" element={<SecondaryProjectPage />} />
+          <Route path="projects/:slug" element={<ProjectRoutePage />} />
           <Route path="experience" element={<ExperiencePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />

@@ -1,21 +1,23 @@
 export interface Project {
   slug: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   category: string;
   summary: string;
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
-  assetUrl?: string;
-  assetLabel?: string;
+  reportUrl?: string;
+  reportLabel?: string;
   dates?: string;
   image?: string;
   imageAlt?: string;
-  featured: boolean;
+  tier: ProjectTier;
   route?: string;
   status?: string;
 }
+
+export type ProjectTier = 'featured' | 'substantial' | 'archive';
 
 export const projects: Project[] = [
   {
@@ -30,7 +32,7 @@ export const projects: Project[] = [
     liveUrl: 'https://robbundy2002.github.io/northstar/',
     image: '/Website/assets/projects/northstar/overview.png',
     imageAlt: 'Northstar dashboard showing Kubernetes cluster health and workload status',
-    featured: true,
+    tier: 'featured',
     route: '/projects/northstar',
     status: 'Interactive demo and local Kubernetes mode'
   },
@@ -46,7 +48,7 @@ export const projects: Project[] = [
     liveUrl: 'https://robbundy2002.github.io/career/',
     image: '/Website/assets/projects/careerboard/dashboard.png',
     imageAlt: 'CareerBoard dashboard with application pipeline, interviews, analytics, and team activity',
-    featured: true,
+    tier: 'featured',
     route: '/projects/careerboard',
     status: 'Static demo plus local read-write app'
   },
@@ -62,7 +64,7 @@ export const projects: Project[] = [
     liveUrl: 'https://ujlawandpolitics.org/',
     image: '/Website/assets/projects/ujlp/home-desktop.png',
     imageAlt: 'UJLP homepage for the Undergraduate Journal of Law and Politics',
-    featured: true,
+    tier: 'featured',
     route: '/projects/ujlp',
     status: 'Production organizational website'
   },
@@ -78,32 +80,37 @@ export const projects: Project[] = [
     liveUrl: 'https://robbundy2002.github.io/ResumeGPT/',
     image: '/Website/assets/projects/resumegpt/screenshot.png',
     imageAlt: 'ResumeGPT interface for uploading a resume and comparing it to a job description',
-    featured: true,
+    tier: 'featured',
     route: '/projects/resumegpt',
     status: 'Static privacy-first browser application'
   },
   {
     slug: 'aivestor',
     title: 'AI-Vestor',
-    subtitle: 'Investment Analysis Experiment',
-    category: 'AI / Data Product',
-    summary: 'Market-analysis project exploring portfolio scoring, visualization, and ML-backed finance workflows.',
-    technologies: ['Python', 'Machine Learning', 'React', 'JavaScript'],
+    subtitle: 'Investment Analysis Platform',
+    category: 'AI / Finance',
+    summary: 'Investment analysis platform with market data, portfolio views, and model-driven finance workflows.',
+    technologies: ['Python', 'TensorFlow', 'React', 'JavaScript'],
+    githubUrl: 'https://github.com/RobBundy2002',
+    dates: '2024 - 2025',
     image: '/Website/Images/AIVestor.png',
     imageAlt: 'AI-Vestor project screenshot',
-    featured: false,
+    tier: 'substantial',
     route: '/projects/aivestor'
   },
   {
     slug: 'matrixmadness',
-    title: 'Basketball Grid Project',
-    subtitle: 'Sports Grid Game',
-    category: 'Full-Stack / Game Product',
-    summary: 'College basketball grid game with interactive scoring, sports logic, and social-friendly play.',
-    technologies: ['React', 'Node.js', 'MongoDB'],
+    title: 'Basketball Grid',
+    subtitle: 'College Basketball Trivia Grid',
+    category: 'Full-Stack Game',
+    summary: 'College basketball trivia game with a React frontend, Express API, MongoDB persistence, and daily grid data.',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose'],
+    githubUrl: 'https://github.com/RobBundy2002/BasketballGridProject',
+    liveUrl: 'https://basketball-grid-project.vercel.app/',
+    dates: 'Oct 2023 - Jan 2024',
     image: '/Website/Images/Hoop Grids.png',
     imageAlt: 'Basketball grid project screenshot',
-    featured: false,
+    tier: 'substantial',
     route: '/projects/matrixmadness'
   },
   {
@@ -113,21 +120,24 @@ export const projects: Project[] = [
     category: 'Mobile Product',
     summary: 'Recipe recommendation app centered on ingredients a user already has available.',
     technologies: ['React Native', 'Expo', 'JavaScript'],
+    dates: 'Oct 2023 - Jan 2024',
     image: '/Website/Images/Proverbial Plates.PNG',
     imageAlt: 'Proverbial Plates mobile app screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/proverbialplates'
   },
   {
     slug: 'celestialarcade',
     title: 'Celestial Arcade',
-    subtitle: 'Hosted Browser Game Collection',
+    subtitle: 'Browser Game Collection',
     category: 'Hosted Web Experience',
-    summary: 'A hosted arcade-style collection of lightweight browser games and demos.',
-    technologies: ['React', 'JavaScript', 'CSS'],
+    summary: 'Shared React arcade site for multiple browser games.',
+    technologies: ['React', 'Tailwind CSS', 'JavaScript'],
+    liveUrl: 'https://robbundy2002.github.io/Gaming-Website-Project/',
+    dates: '2023 - 2024',
     image: '/Website/Images/Celestial Arcade.png',
     imageAlt: 'Celestial Arcade project screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/celestialarcade'
   },
   {
@@ -136,10 +146,11 @@ export const projects: Project[] = [
     subtitle: 'CRUD Application',
     category: 'Application Development',
     summary: 'Course review app focused on CRUD flows, data modeling, persistence, and usability.',
-    technologies: ['Java', 'JavaFX', 'SQL'],
+    technologies: ['Java', 'JavaFX', 'SQLite'],
+    dates: '2023',
     image: '/Website/Images/Course Review App.png',
     imageAlt: 'Course Review Application screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/course-review'
   },
   {
@@ -147,14 +158,15 @@ export const projects: Project[] = [
     title: 'Credit Approval ML',
     subtitle: 'Applied Machine Learning Pipeline',
     category: 'Machine Learning',
-    summary: 'Structured-data ML pipeline for feature engineering, model evaluation, and approval prediction.',
-    technologies: ['Python', 'Scikit-learn', 'Pandas'],
+    summary: 'UCI Credit Approval study comparing classical ML models after preprocessing and class balancing.',
+    technologies: ['Python', 'Scikit-learn', 'Pandas', 'SMOTE'],
+    dates: '2024',
     image: '/Website/Images/ml.jpg',
     imageAlt: 'Machine learning project visual',
-    featured: false,
+    tier: 'substantial',
     route: '/projects/credit-approval',
-    assetUrl: '/Website/assets/reports/Machine_Learning_Final_Writeup.pdf',
-    assetLabel: 'View ML Writeup'
+    reportUrl: '/Website/assets/reports/Machine_Learning_Final_Writeup.pdf',
+    reportLabel: 'View ML Writeup'
   },
   {
     slug: 'cs1112site',
@@ -163,9 +175,10 @@ export const projects: Project[] = [
     category: 'Static Web Publishing',
     summary: 'Documentation-centered static site for course materials and student resources.',
     technologies: ['Jekyll', 'Markdown', 'HTML', 'CSS'],
+    dates: '2025',
     image: '/Website/Images/CS1112 Website.png',
     imageAlt: 'CS1112 course website screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/cs1112site'
   },
   {
@@ -173,23 +186,25 @@ export const projects: Project[] = [
     title: 'Wordle App',
     subtitle: 'Desktop Game Recreation',
     category: 'Desktop Application',
-    summary: 'Wordle-style desktop game with JavaFX UI, game-state logic, and a custom interaction loop.',
+    summary: 'JavaFX desktop recreation of Wordle with dictionary-backed guesses and tile feedback.',
     technologies: ['Java', 'JavaFX', 'FXML'],
+    dates: '2023',
     image: '/Website/Images/Wordle Recreation.jpg',
     imageAlt: 'Wordle recreation screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/wordle'
   },
   {
     slug: 'beneath-world-tree',
     title: 'Beneath the World Tree',
-    subtitle: 'Unity Exploration Prototype',
+    subtitle: 'Unity Game Prototype',
     category: 'Game Development',
-    summary: 'Team Unity prototype focused on traversal, environmental puzzles, and level flow.',
+    summary: 'Team Unity prototype about escaping a colosseum with a magical shield instead of a sword.',
     technologies: ['Unity', 'C#', 'Game Design'],
+    dates: '2026',
     image: '/Website/Images/Project.png',
     imageAlt: 'Beneath the World Tree game screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/beneath-world-tree'
   },
   {
@@ -197,11 +212,12 @@ export const projects: Project[] = [
     title: 'Skyward Bound',
     subtitle: 'Vertical Platformer Prototype',
     category: 'Game Development',
-    summary: 'Arcade platformer prototype with vertical movement, score loops, and platform generation.',
+    summary: 'Unity vertical platformer with power-ups, score progression, and precision movement.',
     technologies: ['Unity', 'C#'],
+    dates: '2024',
     image: '/Website/Images/Skyward Bound.jpg',
     imageAlt: 'Skyward Bound game screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/skyward-bound'
   },
   {
@@ -209,11 +225,12 @@ export const projects: Project[] = [
     title: 'Dracula Reborn',
     subtitle: 'PICO-8 Action Demo',
     category: 'Game Development',
-    summary: 'Compact fantasy-console action demo with pixel art, arcade controls, and game-loop design.',
+    summary: 'PICO-8 action game with pixel art, item collection, enemy behavior, and arcade controls.',
     technologies: ['PICO-8', 'Lua'],
+    dates: '2024',
     image: '/Website/Images/DraculaReborn.png',
     imageAlt: 'Dracula Reborn game screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/dracula-reborn'
   },
   {
@@ -221,32 +238,36 @@ export const projects: Project[] = [
     title: 'Vampire Frost Bite',
     subtitle: 'PICO-8 Game',
     category: 'Game Development',
-    summary: 'Small-scope PICO-8 title using custom sprites, sound, and encounter rules.',
+    summary: 'PICO-8 retro action game built around exposure avoidance, resources, sprites, and sound.',
     technologies: ['PICO-8', 'Lua', 'Sprite Design'],
+    dates: '2024',
     image: '/Website/Images/VampireFrostBite.png',
     imageAlt: 'Vampire Frost Bite game screenshot',
-    featured: false,
+    tier: 'archive',
     route: '/projects/vampire-frostbite'
   },
   {
     slug: 'emoji-text',
-    title: 'Emojis Versus Text',
-    subtitle: 'Emoji/Text Sentiment Study',
-    category: 'Human-Computer Interaction / Data Analysis',
+    title: 'Emoji vs Text',
+    subtitle: 'Human-Computer Interaction Study',
+    category: 'HCI Research',
     summary:
-      'Research project studying how people classify emotional sentiment when text and emoji cues agree, conflict, or appear without visual context.',
-    technologies: ['Python', 'Research Design', 'Data Analysis'],
+      'Georgia Tech HCI study on sentiment classification when text and emoji cues agree, conflict, or appear without visual context.',
+    technologies: ['Research Design', 'Data Analysis', 'HCI'],
+    dates: '2026',
     image: '/Website/Images/Emoji.png',
     imageAlt: 'Emoji project visual',
-    featured: false,
+    tier: 'substantial',
     route: '/projects/emoji-text',
-    assetUrl: '/Website/assets/reports/ProjectWriteupGT.pdf',
-    assetLabel: 'View Final Report'
+    reportUrl: '/Website/assets/reports/ProjectWriteupGT.pdf',
+    reportLabel: 'View Final Report'
   }
 ];
 
-export const featuredProjects = projects.filter((project) => project.featured);
-export const otherProjects = projects.filter((project) => !project.featured);
+export const featuredProjects = projects.filter((project) => project.tier === 'featured');
+export const substantialProjects = projects.filter((project) => project.tier === 'substantial');
+export const archiveProjects = projects.filter((project) => project.tier === 'archive');
+export const otherProjects = projects.filter((project) => project.tier !== 'featured');
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);

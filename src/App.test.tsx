@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import App from './App';
-import { featuredProjects, projects } from './data/projects';
+import { archiveProjects, featuredProjects, projects, substantialProjects } from './data/projects';
 import { profile } from './data/profile';
 
 function renderRoute(route = '/') {
@@ -28,8 +28,18 @@ describe('portfolio routes', () => {
   it('renders the projects page with all previous projects preserved', () => {
     renderRoute('/projects');
     expect(screen.getByRole('heading', { name: 'Project portfolio' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Featured case studies' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Full-stack builds and research work' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Earlier games, coursework, and smaller builds' })).toBeInTheDocument();
     expect(screen.getByText('AI-Vestor')).toBeInTheDocument();
     expect(screen.getByText('Beneath the World Tree')).toBeInTheDocument();
+    expect(substantialProjects.map((project) => project.slug)).toEqual([
+      'aivestor',
+      'matrixmadness',
+      'credit-approval',
+      'emoji-text'
+    ]);
+    expect(archiveProjects.some((project) => project.slug === 'wordle')).toBe(true);
     expect(projects.length).toBeGreaterThan(10);
   });
 
@@ -39,11 +49,12 @@ describe('portfolio routes', () => {
     expect(screen.getByText(/does not operate an Express backend/i)).toBeInTheDocument();
   });
 
-  it('renders secondary project detail routes and the Emojis Versus Text report link', () => {
+  it('renders substantial project routes with medium-depth content and the Emoji vs Text report link', () => {
     renderRoute('/projects/emoji-text');
-    expect(screen.getByRole('heading', { name: 'Emojis Versus Text' })).toBeInTheDocument();
-    expect(screen.getByText('Emoji/Text Sentiment Study')).toBeInTheDocument();
-    expect(screen.getByText('Architecture / Implementation')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Emoji vs Text' })).toBeInTheDocument();
+    expect(screen.getByText('Human-Computer Interaction Study')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Research Question' })).toBeInTheDocument();
+    expect(screen.getByText('94.6%')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /View Final Report/i })).toHaveAttribute(
       'href',
       '/Website/assets/reports/ProjectWriteupGT.pdf'
@@ -53,10 +64,32 @@ describe('portfolio routes', () => {
   it('renders Credit Approval ML with the ML writeup link', () => {
     renderRoute('/projects/credit-approval');
     expect(screen.getByRole('heading', { name: 'Credit Approval ML' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Models and Results' })).toBeInTheDocument();
+    expect(screen.getByText('93.56%')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /View ML Writeup/i })).toHaveAttribute(
       'href',
       '/Website/assets/reports/Machine_Learning_Final_Writeup.pdf'
     );
+  });
+
+  it('renders Basketball Grid with verified repository links', () => {
+    renderRoute('/projects/matrixmadness');
+    expect(screen.getByRole('heading', { name: 'Basketball Grid' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Gameplay' })).toBeInTheDocument();
+    expect(screen.getByText('124')).toBeInTheDocument();
+    expect(
+      screen.getAllByRole('link', { name: /GitHub/i }).some(
+        (link) => link.getAttribute('href') === 'https://github.com/RobBundy2002/BasketballGridProject'
+      )
+    ).toBe(true);
+  });
+
+  it('renders archive project routes concisely', () => {
+    renderRoute('/projects/wordle');
+    expect(screen.getByRole('heading', { name: 'Wordle App' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Key Features / Mechanics' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Problem' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Outcome' })).not.toBeInTheDocument();
   });
 
   it('renders experience and contact links', () => {
