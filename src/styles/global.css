@@ -1,15 +1,15 @@
 :root {
   color-scheme: light;
-  --bg: #f7f5ef;
+  --bg: #f5f7fb;
   --surface: #ffffff;
-  --surface-2: #efede6;
-  --ink: #17211f;
-  --muted: #65706c;
-  --line: #d9d5ca;
-  --accent: #246a5a;
-  --accent-2: #984b37;
-  --focus: #1b65d8;
-  --shadow: 0 18px 50px rgba(37, 45, 41, 0.08);
+  --surface-2: #e8edf5;
+  --ink: #101828;
+  --muted: #566274;
+  --line: #d6deea;
+  --accent: #155eef;
+  --accent-2: #0f766e;
+  --focus: #155eef;
+  --shadow: 0 18px 50px rgba(16, 24, 40, 0.08);
   --max: 1180px;
 }
 
@@ -38,8 +38,8 @@ body::before {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(120deg, rgba(36, 106, 90, 0.1), transparent 34%),
-    linear-gradient(280deg, rgba(152, 75, 55, 0.08), transparent 30%);
+    linear-gradient(120deg, rgba(21, 94, 239, 0.09), transparent 34%),
+    linear-gradient(280deg, rgba(15, 118, 110, 0.08), transparent 30%);
 }
 
 a {
@@ -85,8 +85,8 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid rgba(23, 33, 31, 0.1);
-  background: rgba(247, 245, 239, 0.9);
+  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  background: rgba(245, 247, 251, 0.92);
   backdrop-filter: blur(14px);
 }
 
@@ -133,7 +133,7 @@ textarea {
 .icon-link:hover,
 .mobile-nav a.active,
 .mobile-nav a:hover {
-  background: rgba(36, 106, 90, 0.1);
+  background: rgba(21, 94, 239, 0.09);
   color: var(--ink);
 }
 
@@ -243,7 +243,7 @@ main {
 .contact-grid a {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.88);
   box-shadow: var(--shadow);
 }
 
@@ -349,7 +349,7 @@ main {
 
 .project-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(36, 106, 90, 0.45);
+  border-color: rgba(21, 94, 239, 0.42);
 }
 
 .project-card img,
@@ -409,10 +409,10 @@ main {
 }
 
 .tech-list li {
-  border: 1px solid rgba(23, 33, 31, 0.12);
+  border: 1px solid rgba(16, 24, 40, 0.12);
   border-radius: 999px;
-  background: rgba(36, 106, 90, 0.08);
-  color: #23443d;
+  background: rgba(21, 94, 239, 0.08);
+  color: #16438f;
   padding: 0.28rem 0.55rem;
   font-size: 0.82rem;
   font-weight: 680;
@@ -634,9 +634,9 @@ main {
 }
 
 .diagram-step span {
-  border: 1px solid rgba(36, 106, 90, 0.22);
+  border: 1px solid rgba(21, 94, 239, 0.22);
   border-radius: 8px;
-  background: rgba(36, 106, 90, 0.08);
+  background: rgba(21, 94, 239, 0.08);
   padding: 0.75rem;
   font-weight: 720;
 }
@@ -684,6 +684,37 @@ main {
   max-width: var(--max);
   margin: 3rem auto;
   padding: 1rem;
+}
+
+.secondary-project-page {
+  padding: 3rem 0 5rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.compact-copy {
+  max-width: 760px;
+}
+
+.compact-copy h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.7rem;
+}
+
+.compact-copy p {
+  color: var(--muted);
 }
 
 @media (max-width: 900px) {

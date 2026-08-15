@@ -22,6 +22,17 @@ test('project cards navigate to detail pages', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Northstar' })).toBeVisible();
 });
 
+test('secondary project cards navigate to detail pages', async ({ page }) => {
+  await page.goto('./projects');
+  await page.getByRole('link', { name: /Attempt 11/i }).first().click();
+  await expect(page).toHaveURL(/\/Website\/projects\/attempt11$/);
+  await expect(page.getByRole('heading', { name: 'Attempt 11' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /View Final Report/i })).toHaveAttribute(
+    'href',
+    '/Website/assets/reports/ProjectWriteupGT.pdf'
+  );
+});
+
 test('external CTAs have expected hrefs', async ({ page }) => {
   await page.goto('./projects/ujlp');
   const ctas = page.locator('.project-cta-row').last();

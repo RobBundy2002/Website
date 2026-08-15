@@ -7,6 +7,8 @@ export interface Project {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  assetUrl?: string;
+  assetLabel?: string;
   dates?: string;
   image?: string;
   imageAlt?: string;
@@ -89,7 +91,8 @@ export const projects: Project[] = [
     technologies: ['Python', 'Machine Learning', 'React', 'JavaScript'],
     image: '/Website/Images/AIVestor.png',
     imageAlt: 'AI-Vestor project screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/aivestor'
   },
   {
     slug: 'matrixmadness',
@@ -100,7 +103,8 @@ export const projects: Project[] = [
     technologies: ['React', 'Node.js', 'MongoDB'],
     image: '/Website/Images/Hoop Grids.png',
     imageAlt: 'Basketball grid project screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/matrixmadness'
   },
   {
     slug: 'proverbialplates',
@@ -111,7 +115,8 @@ export const projects: Project[] = [
     technologies: ['React Native', 'Expo', 'JavaScript'],
     image: '/Website/Images/Proverbial Plates.PNG',
     imageAlt: 'Proverbial Plates mobile app screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/proverbialplates'
   },
   {
     slug: 'celestialarcade',
@@ -122,7 +127,8 @@ export const projects: Project[] = [
     technologies: ['React', 'JavaScript', 'CSS'],
     image: '/Website/Images/Celestial Arcade.png',
     imageAlt: 'Celestial Arcade project screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/celestialarcade'
   },
   {
     slug: 'course-review',
@@ -133,7 +139,8 @@ export const projects: Project[] = [
     technologies: ['Java', 'JavaFX', 'SQL'],
     image: '/Website/Images/Course Review App.png',
     imageAlt: 'Course Review Application screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/course-review'
   },
   {
     slug: 'credit-approval',
@@ -144,7 +151,10 @@ export const projects: Project[] = [
     technologies: ['Python', 'Scikit-learn', 'Pandas'],
     image: '/Website/Images/ml.jpg',
     imageAlt: 'Machine learning project visual',
-    featured: false
+    featured: false,
+    route: '/projects/credit-approval',
+    assetUrl: '/Website/assets/reports/Machine_Learning_Final_Writeup.pdf',
+    assetLabel: 'View ML Writeup'
   },
   {
     slug: 'cs1112site',
@@ -155,7 +165,8 @@ export const projects: Project[] = [
     technologies: ['Jekyll', 'Markdown', 'HTML', 'CSS'],
     image: '/Website/Images/CS1112 Website.png',
     imageAlt: 'CS1112 course website screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/cs1112site'
   },
   {
     slug: 'wordle',
@@ -166,7 +177,8 @@ export const projects: Project[] = [
     technologies: ['Java', 'JavaFX', 'FXML'],
     image: '/Website/Images/Wordle Recreation.jpg',
     imageAlt: 'Wordle recreation screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/wordle'
   },
   {
     slug: 'beneath-world-tree',
@@ -177,7 +189,8 @@ export const projects: Project[] = [
     technologies: ['Unity', 'C#', 'Game Design'],
     image: '/Website/Images/Project.png',
     imageAlt: 'Beneath the World Tree game screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/beneath-world-tree'
   },
   {
     slug: 'skyward-bound',
@@ -188,7 +201,8 @@ export const projects: Project[] = [
     technologies: ['Unity', 'C#'],
     image: '/Website/Images/Skyward Bound.jpg',
     imageAlt: 'Skyward Bound game screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/skyward-bound'
   },
   {
     slug: 'dracula-reborn',
@@ -199,7 +213,8 @@ export const projects: Project[] = [
     technologies: ['PICO-8', 'Lua'],
     image: '/Website/Images/DraculaReborn.png',
     imageAlt: 'Dracula Reborn game screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/dracula-reborn'
   },
   {
     slug: 'vampire-frostbite',
@@ -210,18 +225,23 @@ export const projects: Project[] = [
     technologies: ['PICO-8', 'Lua', 'Sprite Design'],
     image: '/Website/Images/VampireFrostBite.png',
     imageAlt: 'Vampire Frost Bite game screenshot',
-    featured: false
+    featured: false,
+    route: '/projects/vampire-frostbite'
   },
   {
     slug: 'attempt11',
-    title: 'Attempt 11 Research',
-    subtitle: 'Academic Research Writeup',
-    category: 'Research / Writing',
-    summary: 'Academic report retained as supporting evidence of research and technical writing work.',
-    technologies: ['Research', 'Writing', 'Analysis'],
-    image: '/Website/Images/gt.jpg',
-    imageAlt: 'Georgia Tech visual used for academic work',
-    featured: false
+    title: 'Attempt 11',
+    subtitle: 'Course Project Writeup',
+    category: 'Class Project PDF',
+    summary:
+      'A course-project PDF writeup documenting methodology, experiments, results, and reflections.',
+    technologies: ['Report', 'Data Analysis'],
+    image: '/Website/Images/ml.jpg',
+    imageAlt: 'Machine learning project visual used for the Attempt 11 writeup',
+    featured: false,
+    route: '/projects/attempt11',
+    assetUrl: '/Website/assets/reports/ProjectWriteupGT.pdf',
+    assetLabel: 'View Final Report'
   },
   {
     slug: 'emoji-text',
@@ -232,7 +252,8 @@ export const projects: Project[] = [
     technologies: ['Research', 'HCI', 'Analysis'],
     image: '/Website/Images/Emoji.png',
     imageAlt: 'Emoji project visual',
-    featured: false
+    featured: false,
+    route: '/projects/emoji-text'
   }
 ];
 

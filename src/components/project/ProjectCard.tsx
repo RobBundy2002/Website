@@ -23,7 +23,7 @@ export function ProjectCard({ project, variant = 'featured' }: ProjectCardProps)
         <TechnologyList technologies={project.technologies.slice(0, variant === 'compact' ? 3 : 5)} compact />
         {project.route ? (
           <span className="card-cta">
-            View Case Study <ArrowRight size={16} aria-hidden="true" />
+            {project.featured ? 'View Case Study' : 'View Project'} <ArrowRight size={16} aria-hidden="true" />
           </span>
         ) : null}
       </div>

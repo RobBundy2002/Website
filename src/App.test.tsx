@@ -39,6 +39,16 @@ describe('portfolio routes', () => {
     expect(screen.getByText(/does not operate an Express backend/i)).toBeInTheDocument();
   });
 
+  it('renders secondary project detail routes and restored Attempt 11 report link', () => {
+    renderRoute('/projects/attempt11');
+    expect(screen.getByRole('heading', { name: 'Attempt 11' })).toBeInTheDocument();
+    expect(screen.getByText('Course Project Writeup')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /View Final Report/i })).toHaveAttribute(
+      'href',
+      '/Website/assets/reports/ProjectWriteupGT.pdf'
+    );
+  });
+
   it('renders experience and contact links', () => {
     renderRoute('/experience');
     expect(screen.getByText('Software Engineer II')).toBeInTheDocument();
