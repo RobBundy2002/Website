@@ -21,7 +21,15 @@ export function ArchiveProjectLayout({ project, content }: ArchiveProjectLayoutP
 
       <section className="archive-layout">
         <div>
-          {project.image ? (
+          {project.videoUrl ? (
+            <figure className="project-screenshot project-video">
+              <video controls playsInline preload="metadata" poster={project.image}>
+                <source src={project.videoUrl} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>{project.title} trailer from the original portfolio assets.</figcaption>
+            </figure>
+          ) : project.image ? (
             <ProjectScreenshot
               src={project.image}
               alt={project.imageAlt ?? `${project.title} visual`}

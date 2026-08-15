@@ -557,7 +557,8 @@ main {
 
 .about-image img,
 .project-hero-media img,
-.project-screenshot img {
+.project-screenshot img,
+.project-video video {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -680,6 +681,12 @@ main {
 
 .project-screenshot {
   margin: 0;
+}
+
+.project-video video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .project-screenshot figcaption {

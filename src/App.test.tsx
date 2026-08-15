@@ -92,6 +92,15 @@ describe('portfolio routes', () => {
     expect(screen.queryByRole('heading', { name: 'Outcome' })).not.toBeInTheDocument();
   });
 
+  it('uses the Beneath the World Tree trailer as the archive visual', () => {
+    renderRoute('/projects/beneath-world-tree');
+    expect(screen.getByRole('heading', { name: 'Beneath the World Tree' })).toBeInTheDocument();
+    expect(document.querySelector('video source')).toHaveAttribute(
+      'src',
+      '/Website/assets/videos/beneath-world-tree-trailer.mp4'
+    );
+  });
+
   it('renders experience and contact links', () => {
     renderRoute('/experience');
     expect(screen.getByText('Software Engineer II')).toBeInTheDocument();

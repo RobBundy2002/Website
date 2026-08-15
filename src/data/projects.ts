@@ -9,6 +9,7 @@ export interface Project {
   liveUrl?: string;
   reportUrl?: string;
   reportLabel?: string;
+  videoUrl?: string;
   dates?: string;
   image?: string;
   imageAlt?: string;
@@ -204,6 +205,7 @@ export const projects: Project[] = [
     dates: '2026',
     image: '/Website/Images/Project.png',
     imageAlt: 'Beneath the World Tree game screenshot',
+    videoUrl: '/Website/assets/videos/beneath-world-tree-trailer.mp4',
     tier: 'archive',
     route: '/projects/beneath-world-tree'
   },
