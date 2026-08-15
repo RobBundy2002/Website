@@ -50,9 +50,13 @@ describe('portfolio routes', () => {
     );
   });
 
-  it('redirects the old attempt route to Emojis Versus Text', async () => {
-    renderRoute('/projects/attempt11');
-    expect(await screen.findByRole('heading', { name: 'Emojis Versus Text' })).toBeInTheDocument();
+  it('renders Credit Approval ML with the ML writeup link', () => {
+    renderRoute('/projects/credit-approval');
+    expect(screen.getByRole('heading', { name: 'Credit Approval ML' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /View ML Writeup/i })).toHaveAttribute(
+      'href',
+      '/Website/assets/reports/Machine_Learning_Final_Writeup.pdf'
+    );
   });
 
   it('renders experience and contact links', () => {

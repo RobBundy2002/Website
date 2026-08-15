@@ -34,6 +34,15 @@ test('secondary project cards navigate to detail pages', async ({ page }) => {
   );
 });
 
+test('Credit Approval ML keeps its ML report link', async ({ page }) => {
+  await page.goto('./projects/credit-approval');
+  await expect(page.getByRole('heading', { name: 'Credit Approval ML' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /View ML Writeup/i })).toHaveAttribute(
+    'href',
+    '/Website/assets/reports/Machine_Learning_Final_Writeup.pdf'
+  );
+});
+
 test('external CTAs have expected hrefs', async ({ page }) => {
   await page.goto('./projects/ujlp');
   const ctas = page.locator('.project-cta-row').last();

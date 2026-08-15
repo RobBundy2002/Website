@@ -6,9 +6,6 @@ import { Seo } from '../../components/ui/Seo';
 import { featuredProjects, getProject } from '../../data/projects';
 
 const featuredSlugs = new Set(featuredProjects.map((project) => project.slug));
-const legacyProjectRoutes: Record<string, string> = {
-  attempt11: '/projects/emoji-text'
-};
 
 const projectDetails: Record<
   string,
@@ -118,12 +115,12 @@ const projectDetails: Record<
     built: [
       'Data preparation workflow for structured applicant records.',
       'Machine-learning pipeline for training and evaluating approval prediction models.',
-      'Final writeup documenting the modeling approach and results.'
+      'Final report documenting the modeling approach, experiments, results, and reflections.'
     ],
     engineering: [
       'Python data-analysis workflow with Pandas and Scikit-learn.',
       'Feature engineering and model-evaluation steps.',
-      'Technical writing around methodology, tradeoffs, and findings.'
+      'The portfolio route serves the final ML writeup from `/Website/assets/reports/Machine_Learning_Final_Writeup.pdf`, preserving the Website deploy mapping.'
     ],
     outcome:
       'The project demonstrates applied ML fundamentals and the ability to communicate modeling work clearly.'
@@ -249,21 +246,15 @@ const projectDetails: Record<
     engineering: [
       'Research design grounded in dual coding theory and visual salience: verbal and nonverbal channels are compared when they reinforce or contradict each other.',
       'Analysis tracks condition-level accuracy, confidence, reaction time, and error direction to show whether contradictory responses follow text or emoji valence.',
-      'The portfolio route serves the report PDF from `/Website/assets/reports/ProjectWriteupGT.pdf`, preserving the Website deploy mapping.'
+      'The portfolio route serves the Emojis Versus Text report from `/Website/assets/reports/ProjectWriteupGT.pdf`, preserving the Website deploy mapping.'
     ],
     outcome:
-      'The study found substantially higher accuracy in congruent messages than contradictory messages, with contradictory errors mostly following emoji valence. The page now maps the archived PDF to the correct Emojis Versus Text project.'
+      'The study found substantially higher accuracy in congruent messages than contradictory messages, with contradictory errors mostly following emoji valence.'
   }
 };
 
 export function SecondaryProjectPage() {
   const { slug = '' } = useParams();
-  const legacyRoute = legacyProjectRoutes[slug];
-
-  if (legacyRoute) {
-    return <Navigate to={legacyRoute} replace />;
-  }
-
   const project = getProject(slug);
 
   if (!project) {
