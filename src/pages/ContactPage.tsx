@@ -1,0 +1,36 @@
+import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { Seo } from '../components/ui/Seo';
+import { profile } from '../data/profile';
+
+export function ContactPage() {
+  const contactLinks = [
+    { label: 'Email', href: `mailto:${profile.email}`, detail: profile.email, icon: Mail },
+    { label: 'GitHub', href: profile.githubUrl, detail: 'github.com/RobBundy2002', icon: Github },
+    { label: 'LinkedIn', href: profile.linkedinUrl, detail: 'linkedin.com/in/rob-bundy-192035223', icon: Linkedin },
+    { label: 'Resume', href: profile.resumeUrl, detail: 'Current resume PDF', icon: FileText }
+  ];
+
+  return (
+    <>
+      <Seo
+        title="Contact | Robert Bundy"
+        description="Contact Robert Bundy by email, GitHub, LinkedIn, or resume PDF."
+        path="/contact"
+      />
+      <section className="page-hero compact">
+        <span className="eyebrow">Contact</span>
+        <h1>Connect with Robert Bundy.</h1>
+        <p>No contact form or backend is needed. Use email, GitHub, LinkedIn, or the resume link below.</p>
+      </section>
+      <section className="page-section contact-grid" aria-label="Contact links">
+        {contactLinks.map(({ label, href, detail, icon: Icon }) => (
+          <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>
+            <Icon size={22} aria-hidden="true" />
+            <span>{label}</span>
+            <strong>{detail}</strong>
+          </a>
+        ))}
+      </section>
+    </>
+  );
+}
