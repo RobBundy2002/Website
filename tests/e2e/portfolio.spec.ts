@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test('homepage loads and navigation works', async ({ page }) => {
   await page.goto('./');
-  await expect(page.getByRole('heading', { name: 'Robert Bundy' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Rob Bundy' })).toBeVisible();
   await page.getByRole('link', { name: /View Projects/i }).click();
   await expect(page).toHaveURL(/\/Website\/projects$/);
   await expect(page.getByRole('heading', { name: 'Project portfolio' })).toBeVisible();
@@ -66,7 +66,7 @@ test('mobile navigation works', async ({ page }) => {
   await page.getByRole('button', { name: /open navigation menu/i }).click();
   await page.getByRole('link', { name: 'Contact' }).click();
   await expect(page).toHaveURL(/\/Website\/contact$/);
-  await expect(page.getByRole('heading', { name: /Connect with Robert Bundy/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Connect with Rob Bundy/i })).toBeVisible();
 });
 
 test('unknown route fails gracefully', async ({ page }) => {

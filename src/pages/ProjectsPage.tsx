@@ -7,8 +7,8 @@ export function ProjectsPage() {
   return (
     <>
       <Seo
-        title="Projects | Robert Bundy"
-        description="Project work by Robert Bundy, including Kubernetes tooling, full-stack products, production web platforms, privacy-first frontend architecture, games, data analysis, and research."
+        title="Projects | Rob Bundy"
+        description="Project work by Rob Bundy, including Kubernetes tooling, full-stack products, production web platforms, privacy-first frontend architecture, games, data analysis, and research."
         path="/projects"
       />
       <section className="page-hero compact">

@@ -4,7 +4,7 @@ import { Seo } from '../components/ui/Seo';
 export function NotFoundPage() {
   return (
     <>
-      <Seo title="Page Not Found | Robert Bundy" description="The requested portfolio page could not be found." path="/404" />
+      <Seo title="Page Not Found | Rob Bundy" description="The requested portfolio page could not be found." path="/404" />
       <section className="page-hero compact">
         <span className="eyebrow">404</span>
         <h1>Page not found.</h1>

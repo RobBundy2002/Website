@@ -6,14 +6,14 @@ const html = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Robert Bundy | Redirecting</title>
+    <title>Rob Bundy | Redirecting</title>
     <script>
       sessionStorage.redirect = location.href;
       location.replace('/Website/');
     </script>
   </head>
   <body>
-    <a href="/Website/">Robert Bundy portfolio</a>
+    <a href="/Website/">Rob Bundy portfolio</a>
   </body>
 </html>
 `;

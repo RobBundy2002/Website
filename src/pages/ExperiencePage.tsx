@@ -7,8 +7,8 @@ export function ExperiencePage() {
   return (
     <>
       <Seo
-        title="Experience | Robert Bundy"
-        description="Professional experience, education, and engineering skills for Robert Bundy."
+        title="Experience | Rob Bundy"
+        description="Professional experience, education, and engineering skills for Rob Bundy."
         path="/experience"
       />
       <section className="page-hero compact">

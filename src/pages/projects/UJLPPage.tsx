@@ -12,7 +12,7 @@ export default function UJLPPage() {
   return (
     <>
       <Seo
-        title="UJLP | Robert Bundy"
+        title="UJLP | Rob Bundy"
         description="UJLP is the production React and GitHub Pages publication platform for UVA's Undergraduate Journal of Law & Politics."
         path="/projects/ujlp"
         image={project.image}

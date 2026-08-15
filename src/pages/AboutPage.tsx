@@ -6,19 +6,19 @@ export function AboutPage() {
   return (
     <>
       <Seo
-        title="About | Robert Bundy"
-        description="About Robert Bundy's software engineering background, backend and platform interests, Georgia Tech HCI studies, and product-oriented side projects."
+        title="About | Rob Bundy"
+        description="About Rob Bundy's software engineering background, backend and platform interests, Georgia Tech HCI studies, and product-oriented side projects."
         path="/about"
       />
       <section className="about-page">
         <div className="about-image">
-          <img src="/Website/Images/Grad.jpg" alt="Robert Bundy at University of Virginia graduation" />
+          <img src="/Website/Images/Grad.jpg" alt="Rob Bundy at University of Virginia graduation" />
         </div>
         <div className="about-copy">
           <span className="eyebrow">About</span>
           <h1>Software engineer focused on practical workflow problems.</h1>
           <p>
-            Robert Bundy is a Software Engineer II at GA-Intelligence / General Atomics and a Georgia Tech
+            Rob Bundy is a Software Engineer II at GA-Intelligence / General Atomics and a Georgia Tech
             M.S. Computer Science student specializing in Human-Computer Interaction. He graduated from the
             University of Virginia in May 2025 with a B.A. in Computer Science and a minor in Religious Studies.
           </p>

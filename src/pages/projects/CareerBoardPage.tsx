@@ -12,7 +12,7 @@ export default function CareerBoardPage() {
   return (
     <>
       <Seo
-        title="CareerBoard | Robert Bundy"
+        title="CareerBoard | Rob Bundy"
         description="CareerBoard is a full-stack collaborative job search platform built with Node.js, Express, SQLite, Docker, authorization, analytics, and CI/CD."
         path="/projects/careerboard"
         image={project.image}

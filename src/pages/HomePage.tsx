@@ -15,13 +15,13 @@ export function HomePage() {
   return (
     <>
       <Seo
-        title="Robert Bundy | Software Engineer"
-        description="Robert Bundy's engineering portfolio covering backend engineering, platform engineering, developer tooling, infrastructure, CI/CD, and full-stack development."
+        title="Rob Bundy | Software Engineer"
+        description="Rob Bundy's engineering portfolio covering backend engineering, platform engineering, developer tooling, infrastructure, CI/CD, and full-stack development."
       />
       <section className="hero-section">
         <div className="hero-copy">
           <span className="eyebrow">Software Engineer</span>
-          <h1>Robert Bundy</h1>
+          <h1>Rob Bundy</h1>
           <p>
             I build backend systems, developer tooling, platform infrastructure, and full-stack products
             around practical workflow problems.

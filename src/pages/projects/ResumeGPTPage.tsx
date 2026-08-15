@@ -12,7 +12,7 @@ export default function ResumeGPTPage() {
   return (
     <>
       <Seo
-        title="ResumeGPT | Robert Bundy"
+        title="ResumeGPT | Rob Bundy"
         description="ResumeGPT is a privacy-first React, TypeScript, and Vite resume analyzer that parses resumes locally, normalizes skills, performs deterministic matching, and generates an AI-ready prompt."
         path="/projects/resumegpt"
         image={project.image}

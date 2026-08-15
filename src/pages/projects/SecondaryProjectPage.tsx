@@ -284,7 +284,7 @@ export function SecondaryProjectPage() {
   return (
     <>
       <Seo
-        title={`${project.title} | Robert Bundy`}
+        title={`${project.title} | Rob Bundy`}
         description={`${project.title}: ${project.summary}`}
         path={`/projects/${project.slug}`}
         image={project.image}

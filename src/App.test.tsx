@@ -17,7 +17,7 @@ function renderRoute(route = '/') {
 describe('portfolio routes', () => {
   it('renders the homepage and exactly four selected work cards', async () => {
     renderRoute('/');
-    expect(screen.getByRole('heading', { name: 'Robert Bundy' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Rob Bundy' })).toBeInTheDocument();
     expect(screen.getByText(/backend systems/i)).toBeInTheDocument();
     for (const project of featuredProjects) {
       expect(await screen.findByRole('link', { name: new RegExp(project.title, 'i') })).toBeInTheDocument();

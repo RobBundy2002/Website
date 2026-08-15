@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div>
-        <strong>Robert Bundy</strong>
+        <strong>Rob Bundy</strong>
         <p>Backend, platform, infrastructure, and full-stack product engineering.</p>
       </div>
       <nav aria-label="Footer links">

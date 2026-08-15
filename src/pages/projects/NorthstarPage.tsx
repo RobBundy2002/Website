@@ -12,7 +12,7 @@ export default function NorthstarPage() {
   return (
     <>
       <Seo
-        title="Northstar | Robert Bundy"
+        title="Northstar | Rob Bundy"
         description="Northstar is a Kubernetes operations platform for cluster debugging, observability, RBAC-aware operations, Prometheus metrics, Docker, and Helm workflows."
         path="/projects/northstar"
         image={project.image}

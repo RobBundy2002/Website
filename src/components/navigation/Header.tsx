@@ -23,7 +23,7 @@ export function Header() {
       </a>
       <div className="nav-wrap">
         <NavLink className="brand" to="/" onClick={close}>
-          Robert Bundy
+          Rob Bundy
         </NavLink>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {links.map((link) => (
@@ -35,9 +35,6 @@ export function Header() {
         <div className="nav-actions">
           <a href={profile.githubUrl} target="_blank" rel="noreferrer" className="icon-link" aria-label="GitHub profile">
             <Github size={18} aria-hidden="true" />
-          </a>
-          <a href={profile.resumeUrl} className="text-link">
-            Resume
           </a>
           <button
             type="button"
@@ -58,9 +55,6 @@ export function Header() {
         ))}
         <a href={profile.githubUrl} target="_blank" rel="noreferrer" onClick={close}>
           GitHub
-        </a>
-        <a href={profile.resumeUrl} onClick={close}>
-          Resume
         </a>
       </nav>
     </header>

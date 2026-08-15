@@ -1,6 +1,6 @@
-# Robert Bundy — Engineering Portfolio
+# Rob Bundy — Engineering Portfolio
 
-Personal engineering portfolio for Robert Bundy, focused on backend systems, platform engineering, developer tooling, infrastructure, CI/CD, full-stack products, and product usability.
+Personal engineering portfolio for Rob Bundy, focused on backend systems, platform engineering, developer tooling, infrastructure, CI/CD, full-stack products, and product usability.
 
 Live site: https://robbundy2002.github.io/Website/
 
