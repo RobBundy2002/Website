@@ -8,15 +8,15 @@ export function ProjectsPage() {
     <>
       <Seo
         title="Projects | Robert Bundy"
-        description="Selected and secondary project work by Robert Bundy, including Kubernetes tooling, full-stack products, production web platforms, privacy-first frontend architecture, games, and research."
+        description="Project work by Robert Bundy, including Kubernetes tooling, full-stack products, production web platforms, privacy-first frontend architecture, games, data analysis, and research."
         path="/projects"
       />
       <section className="page-hero compact">
         <span className="eyebrow">Work</span>
         <h1>Project portfolio</h1>
         <p>
-          Selected work leads with the strongest backend, platform, product, and production ownership stories.
-          Earlier projects remain available as secondary work for breadth.
+          A collection of platform tools, full-stack applications, production websites, data projects, games,
+          and HCI-oriented work.
         </p>
       </section>
 
@@ -31,9 +31,9 @@ export function ProjectsPage() {
 
       <section className="page-section">
         <SectionHeading
-          eyebrow="Other Work"
-          title="Earlier projects, games, coursework, and experiments"
-          description="These projects are preserved from the previous portfolio, but intentionally presented with smaller visual weight than the main case studies."
+          eyebrow="Project Index"
+          title="Applications, games, research, and data projects"
+          description="Each project has its own page with context, implementation notes, technologies, and available screenshots or reports."
         />
         <div className="other-grid">
           {otherProjects.map((project) => (

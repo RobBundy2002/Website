@@ -704,17 +704,30 @@ main {
   text-decoration: none;
 }
 
-.compact-copy {
+.compact-copy,
+.project-story-grid {
   max-width: 760px;
 }
 
-.compact-copy h2 {
+.compact-copy h2,
+.project-story-grid h2 {
   margin: 0 0 0.75rem;
   font-size: 1.7rem;
 }
 
-.compact-copy p {
+.compact-copy p,
+.project-story-grid p {
   color: var(--muted);
+}
+
+.project-story-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-story-grid > div {
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
 }
 
 @media (max-width: 900px) {

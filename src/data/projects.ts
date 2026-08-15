@@ -231,11 +231,11 @@ export const projects: Project[] = [
   {
     slug: 'attempt11',
     title: 'Attempt 11',
-    subtitle: 'Course Project Writeup',
-    category: 'Class Project PDF',
+    subtitle: 'Data Analysis Project Writeup',
+    category: 'Data Analysis / Course Project',
     summary:
-      'A course-project PDF writeup documenting methodology, experiments, results, and reflections.',
-    technologies: ['Report', 'Data Analysis'],
+      'A data-analysis project documented through a final report covering the project approach, methodology, results, and reflections.',
+    technologies: ['Data Analysis', 'Research', 'Technical Writing'],
     image: '/Website/Images/ml.jpg',
     imageAlt: 'Machine learning project visual used for the Attempt 11 writeup',
     featured: false,

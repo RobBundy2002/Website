@@ -15,7 +15,7 @@ This site is a static React + TypeScript + Vite application deployed to GitHub P
 - **UJLP** — Production publication platform for UVA's Undergraduate Journal of Law & Politics with structured content validation and GitHub Pages deployment.
 - **ResumeGPT** — Privacy-first browser-only resume analyzer with local PDF/TXT parsing, deterministic skill matching, explainable scoring, and AI-ready prompt generation.
 
-Earlier projects, games, coursework, and research artifacts are preserved as secondary work in the project portfolio.
+Additional applications, games, data projects, coursework, and research artifacts are included in the project portfolio with dedicated pages.
 
 ## Tech Stack
 
