@@ -49,7 +49,7 @@ describe('portfolio routes', () => {
     expect(screen.getByText(/does not operate an Express backend/i)).toBeInTheDocument();
   });
 
-  it('renders substantial project routes with medium-depth content and the Emoji vs Text report link', () => {
+  it('renders substantial project routes with research content and the Emoji vs Text report link', () => {
     renderRoute('/projects/emoji-text');
     expect(screen.getByRole('heading', { name: 'Emoji vs Text' })).toBeInTheDocument();
     expect(screen.getByText('Human-Computer Interaction Study')).toBeInTheDocument();

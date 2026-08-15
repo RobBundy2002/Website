@@ -25,7 +25,7 @@ test('project cards navigate to detail pages', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Northstar' })).toBeVisible();
 });
 
-test('Tier 2 project cards navigate to medium-depth pages', async ({ page }) => {
+test('Tier 2 project cards navigate to research and substantial pages', async ({ page }) => {
   await page.goto('./projects');
   await page.getByRole('link', { name: /Emoji vs Text/i }).first().click();
   await expect(page).toHaveURL(/\/Website\/projects\/emoji-text$/);

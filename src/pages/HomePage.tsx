@@ -61,8 +61,8 @@ export function HomePage() {
       <section className="page-section">
         <SectionHeading
           eyebrow="Selected Work"
-          title="Four projects with the clearest engineering story"
-          description="The homepage stays brief. Each case study explains motivation, architecture, tradeoffs, and implementation details."
+          title="Production, platform, and full-stack work"
+          description="A focused set of recent projects with live systems, source code, screenshots, and implementation notes."
         />
         <div className="featured-grid">
           {featuredProjects.map((project) => (
