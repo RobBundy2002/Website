@@ -25,6 +25,13 @@ export function ArchiveProjectLayout({ project, content }: ArchiveProjectLayoutP
             <figure className="project-screenshot project-video">
               <video controls playsInline preload="metadata" poster={project.image}>
                 <source src={project.videoUrl} type="video/mp4" />
+                <track
+                  kind="captions"
+                  src="/Website/assets/videos/beneath-world-tree-captions.vtt"
+                  srcLang="en"
+                  label="English captions"
+                  default
+                />
                 Your browser does not support the video tag.
               </video>
               <figcaption>{project.title} trailer from the original portfolio assets.</figcaption>
