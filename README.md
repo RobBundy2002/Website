@@ -1,40 +1,132 @@
-<h1 align="center">Welcome to Rob Bundy Portfolio Website 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-(0.1.0)-blue.svg?cacheSeconds=2592000" />
-</p>
+# Robert Bundy — Engineering Portfolio
 
-> Basic version of Rob Bundy's Portfolio Website, designed to give contact information and demonstrate and show off projects.
+Personal engineering portfolio for Robert Bundy, focused on backend systems, platform engineering, developer tooling, infrastructure, CI/CD, full-stack products, and product usability.
 
-### 🏠 [Homepage](https://RobBundy2002.github.io/Website/#/Website)
+Live site: https://robbundy2002.github.io/Website/
 
-## Install
+## Overview
 
-```sh
-npm install
+This site is a static React + TypeScript + Vite application deployed to GitHub Pages. It uses real routes for the homepage, project index, featured project case studies, experience, about, and contact pages.
+
+## Featured Projects
+
+- **Northstar** — Kubernetes operations platform for debugging, observability, RBAC-aware actions, Prometheus metrics, Docker, and Helm workflows.
+- **CareerBoard** — Full-stack collaborative job-search workspace with Express, SQLite, team roles, activity, interviews, analytics, CI, and Docker.
+- **UJLP** — Production publication platform for UVA's Undergraduate Journal of Law & Politics with structured content validation and GitHub Pages deployment.
+- **ResumeGPT** — Privacy-first browser-only resume analyzer with local PDF/TXT parsing, deterministic skill matching, explainable scoring, and AI-ready prompt generation.
+
+Earlier projects, games, coursework, and research artifacts are preserved as secondary work in the project portfolio.
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Vite
+- React Router
+- Vitest
+- React Testing Library
+- Playwright
+- ESLint
+- Prettier
+- GitHub Actions
+- GitHub Pages
+
+## Site Architecture
+
+```text
+src/data/projects.ts
+        |
+        |-- homepage cards
+        |-- projects overview
+        |-- project navigation
+        |-- project metadata
+        |
+        v
+React Router pages
+        |
+        v
+Vite static build
 ```
 
-## Usage
+## Project Pages
 
-```sh
-npm run start
+Required project routes:
+
+- `/projects/northstar`
+- `/projects/careerboard`
+- `/projects/ujlp`
+- `/projects/resumegpt`
+
+Each case study uses shared project layout components while keeping project-specific problem, motivation, architecture, screenshots, testing, deployment, tradeoff, and status content.
+
+## Local Development
+
+```bash
+npm ci
+npm run dev
 ```
 
-## Run tests
+## Testing
 
-```sh
-npm run test
+```bash
+npm run lint
+npm run typecheck
+npm run test:run
+npm run build
+npm run test:e2e
 ```
 
-## Author
+## CI/CD
 
-👤 **Rob Bundy**
+`.github/workflows/ci.yml` runs on pushes to `main` and pull requests targeting `main`:
 
-* Github: [@RobBundy2002](https://github.com/RobBundy2002)
-* LinkedIn: [@rob-bundy](https://linkedin.com/in/rob-bundy)
+```text
+npm ci
+npm run lint
+npm run typecheck
+npm run test:run
+npm run build
+```
 
-## Show your support
+## Deployment
 
-Give a ⭐️ if this project helped you!
+GitHub Pages deployment is handled by `.github/workflows/deploy.yml` using official Pages actions. The workflow builds Vite output into `dist/`, uploads the Pages artifact, and deploys from GitHub Actions.
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+```mermaid
+flowchart TD
+  Developer[Developer] --> Main[GitHub main]
+  Main --> Actions[GitHub Actions]
+  Actions --> Verify[Test + Build]
+  Verify --> Dist[Vite dist/]
+  Dist --> Pages[GitHub Pages]
+```
+
+Deep links use BrowserRouter with Vite base `/Website/` and a generated `404.html` redirect fallback for GitHub Pages refresh support.
+
+## Accessibility
+
+The site uses semantic landmarks, keyboard-accessible navigation, visible focus states, meaningful image alt text, sufficient contrast, reduced-motion handling, and automated route/component coverage.
+
+## Project Structure
+
+```text
+src/
+  components/
+    layout/
+    navigation/
+    project/
+    ui/
+  data/
+  layouts/
+  pages/
+    projects/
+  styles/
+  test/
+tests/e2e/
+public/
+legacy-assets/
+```
+
+## License
+
+No explicit license is currently declared for this repository.
