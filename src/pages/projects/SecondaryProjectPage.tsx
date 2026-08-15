@@ -6,6 +6,9 @@ import { Seo } from '../../components/ui/Seo';
 import { featuredProjects, getProject } from '../../data/projects';
 
 const featuredSlugs = new Set(featuredProjects.map((project) => project.slug));
+const legacyProjectRoutes: Record<string, string> = {
+  attempt11: '/projects/emoji-text'
+};
 
 const projectDetails: Record<
   string,
@@ -233,46 +236,34 @@ const projectDetails: Record<
     outcome:
       'The project shows end-to-end game creation inside a constrained engine.'
   },
-  attempt11: {
-    overview:
-      'Attempt 11 is a data-analysis project documented through a final technical report.',
-    problem:
-      'The project required turning an analysis task into a documented methodology with clear results, interpretation, and reflection.',
-    built: [
-      'Data-analysis workflow documented in a final PDF report.',
-      'Project methodology, experiment notes, results, and reflections.',
-      'Written artifact structured for review and explanation.'
-    ],
-    engineering: [
-      'Data analysis and technical writing.',
-      'Report organization around method, evidence, and conclusion.',
-      'Clear communication of project decisions and results.'
-    ],
-    outcome:
-      'The project demonstrates analytical work and the ability to explain a technical process through a polished writeup.'
-  },
   'emoji-text': {
     overview:
-      'Emojis vs Text explores how interface-mediated communication affects interpretation and expression.',
+      'Emojis Versus Text studies how people interpret emotional sentiment in digital messages when textual and emoji cues are congruent, contradictory, or text-only.',
     problem:
-      'Digital communication changes tone and meaning through small interface choices, including emoji use, text phrasing, and context.',
+      'Digital communication often mixes written language with visual emotional cues. When those cues conflict, the recipient has to resolve which signal carries more meaning, which can affect accuracy, confidence, and reaction time.',
     built: [
-      'HCI-oriented study of communication and interpretation.',
-      'Project framing around user perception and expression.',
-      'Analysis of how nonverbal digital cues affect communication.'
+      'Survey-style emotional classification study with congruent, contradictory, and control message conditions.',
+      'Stimulus set where participants judged message valence, reported confidence, and produced reaction-time data.',
+      'Final report covering theory, experiment design, results, discussion, limitations, and implications for sentiment analysis and UI/UX design.'
     ],
     engineering: [
-      'Human-computer interaction research framing.',
-      'Communication analysis and written synthesis.',
-      'Attention to product usability and user interpretation.'
+      'Research design grounded in dual coding theory and visual salience: verbal and nonverbal channels are compared when they reinforce or contradict each other.',
+      'Analysis tracks condition-level accuracy, confidence, reaction time, and error direction to show whether contradictory responses follow text or emoji valence.',
+      'The portfolio route serves the report PDF from `/Website/assets/reports/ProjectWriteupGT.pdf`, preserving the Website deploy mapping.'
     ],
     outcome:
-      'The project connects Robert’s HCI interests with practical questions about product communication and interface design.'
+      'The study found substantially higher accuracy in congruent messages than contradictory messages, with contradictory errors mostly following emoji valence. The page now maps the archived PDF to the correct Emojis Versus Text project.'
   }
 };
 
 export function SecondaryProjectPage() {
   const { slug = '' } = useParams();
+  const legacyRoute = legacyProjectRoutes[slug];
+
+  if (legacyRoute) {
+    return <Navigate to={legacyRoute} replace />;
+  }
+
   const project = getProject(slug);
 
   if (!project) {
@@ -285,10 +276,18 @@ export function SecondaryProjectPage() {
 
   const details = projectDetails[project.slug] ?? {
     overview: project.summary,
-    problem: 'This project explores a practical software, product, or research workflow through implementation.',
-    built: ['Project-specific interface, data, or interaction workflow.', 'Technology choices aligned to the project scope.'],
-    engineering: project.technologies.map((technology) => `${technology} used as part of the implementation.`),
-    outcome: 'The project demonstrates applied engineering judgment and delivery across its problem space.'
+    problem: `${project.title} addresses the project scope described above with a focused implementation rather than a broad case-study treatment.`,
+    built: [
+      `${project.title} project page with preserved screenshot, metadata, and any available report or live-link artifact.`,
+      `Technology stack selected around ${project.technologies.slice(0, 3).join(', ')}.`,
+      'Portfolio presentation that keeps this supporting project discoverable without inflating it into a primary case study.'
+    ],
+    engineering: [
+      `Route and card metadata are driven from the shared projects data model for consistent portfolio navigation.`,
+      'Static media is served from the `/Website/` deploy base so screenshots and linked artifacts resolve on GitHub Pages.',
+      `The page uses the secondary-project template for repeated structure while keeping ${project.title}-specific copy, technologies, and links.`
+    ],
+    outcome: `${project.title} remains available as supporting work with concrete implementation context, architecture notes, and reviewable artifacts where available.`
   };
 
   return (
@@ -359,7 +358,7 @@ export function SecondaryProjectPage() {
             </ul>
           </div>
           <div>
-            <h2>Engineering Notes</h2>
+            <h2>Architecture / Implementation</h2>
             <ul className="detail-list">
               {details.engineering.map((item) => (
                 <li key={item}>{item}</li>

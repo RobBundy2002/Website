@@ -39,14 +39,20 @@ describe('portfolio routes', () => {
     expect(screen.getByText(/does not operate an Express backend/i)).toBeInTheDocument();
   });
 
-  it('renders secondary project detail routes and restored Attempt 11 report link', () => {
-    renderRoute('/projects/attempt11');
-    expect(screen.getByRole('heading', { name: 'Attempt 11' })).toBeInTheDocument();
-    expect(screen.getByText('Data Analysis Project Writeup')).toBeInTheDocument();
+  it('renders secondary project detail routes and the Emojis Versus Text report link', () => {
+    renderRoute('/projects/emoji-text');
+    expect(screen.getByRole('heading', { name: 'Emojis Versus Text' })).toBeInTheDocument();
+    expect(screen.getByText('Emoji/Text Sentiment Study')).toBeInTheDocument();
+    expect(screen.getByText('Architecture / Implementation')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /View Final Report/i })).toHaveAttribute(
       'href',
       '/Website/assets/reports/ProjectWriteupGT.pdf'
     );
+  });
+
+  it('redirects the old attempt route to Emojis Versus Text', async () => {
+    renderRoute('/projects/attempt11');
+    expect(await screen.findByRole('heading', { name: 'Emojis Versus Text' })).toBeInTheDocument();
   });
 
   it('renders experience and contact links', () => {

@@ -229,31 +229,19 @@ export const projects: Project[] = [
     route: '/projects/vampire-frostbite'
   },
   {
-    slug: 'attempt11',
-    title: 'Attempt 11',
-    subtitle: 'Data Analysis Project Writeup',
-    category: 'Data Analysis / Course Project',
-    summary:
-      'A data-analysis project documented through a final report covering the project approach, methodology, results, and reflections.',
-    technologies: ['Data Analysis', 'Research', 'Technical Writing'],
-    image: '/Website/Images/ml.jpg',
-    imageAlt: 'Machine learning project visual used for the Attempt 11 writeup',
-    featured: false,
-    route: '/projects/attempt11',
-    assetUrl: '/Website/assets/reports/ProjectWriteupGT.pdf',
-    assetLabel: 'View Final Report'
-  },
-  {
     slug: 'emoji-text',
-    title: 'Emojis vs Text',
-    subtitle: 'Communication Study',
-    category: 'Human-Computer Interaction',
-    summary: 'Course project exploring communication, interpretation, and interface-mediated expression.',
-    technologies: ['Research', 'HCI', 'Analysis'],
+    title: 'Emojis Versus Text',
+    subtitle: 'Emoji/Text Sentiment Study',
+    category: 'Human-Computer Interaction / Data Analysis',
+    summary:
+      'Research project studying how people classify emotional sentiment when text and emoji cues agree, conflict, or appear without visual context.',
+    technologies: ['Python', 'Research Design', 'Data Analysis'],
     image: '/Website/Images/Emoji.png',
     imageAlt: 'Emoji project visual',
     featured: false,
-    route: '/projects/emoji-text'
+    route: '/projects/emoji-text',
+    assetUrl: '/Website/assets/reports/ProjectWriteupGT.pdf',
+    assetLabel: 'View Final Report'
   }
 ];
 

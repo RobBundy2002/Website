@@ -24,9 +24,10 @@ test('project cards navigate to detail pages', async ({ page }) => {
 
 test('secondary project cards navigate to detail pages', async ({ page }) => {
   await page.goto('./projects');
-  await page.getByRole('link', { name: /Attempt 11/i }).first().click();
-  await expect(page).toHaveURL(/\/Website\/projects\/attempt11$/);
-  await expect(page.getByRole('heading', { name: 'Attempt 11' })).toBeVisible();
+  await page.getByRole('link', { name: /Emojis Versus Text/i }).first().click();
+  await expect(page).toHaveURL(/\/Website\/projects\/emoji-text$/);
+  await expect(page.getByRole('heading', { name: 'Emojis Versus Text' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Architecture / Implementation' })).toBeVisible();
   await expect(page.getByRole('link', { name: /View Final Report/i })).toHaveAttribute(
     'href',
     '/Website/assets/reports/ProjectWriteupGT.pdf'
