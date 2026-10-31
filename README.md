@@ -12,7 +12,7 @@ This site is a static React + TypeScript + Vite application deployed to GitHub P
 
 - **Northstar** — Kubernetes operations platform for debugging, observability, RBAC-aware actions, Prometheus metrics, Docker, and Helm workflows.
 - **CareerBoard** — Full-stack collaborative job-search workspace with Express, SQLite, team roles, activity, interviews, analytics, CI, and Docker.
-- **UJLP** — Production publication platform for UVA's Undergraduate Journal of Law & Politics with structured content validation and GitHub Pages deployment.
+- **UJLP** — Production React 19 publication and member platform for UVA's Undergraduate Journal of Law & Politics, with Supabase Auth/Postgres, Row Level Security, admin file uploads, affiliation reviews, browser and accessibility checks, and GitHub Actions deployment. Includes a [maintenance and architecture Wiki](https://github.com/RobBundy2002/UJLP/wiki).
 - **ResumeGPT** — Privacy-first browser-only resume analyzer with local PDF/TXT parsing, deterministic skill matching, explainable scoring, and AI-ready prompt generation.
 
 Additional applications, games, data projects, coursework, and research artifacts are included in the project portfolio with dedicated pages.

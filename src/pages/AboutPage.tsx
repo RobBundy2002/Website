@@ -29,7 +29,8 @@ export function AboutPage() {
           </p>
           <p>
             Side projects are treated as engineering laboratories. Northstar handles Kubernetes operations
-            workflows, CareerBoard models a collaborative job search, UJLP supports a real publication, and
+            workflows, CareerBoard models a collaborative job search, UJLP combines journal publishing with
+            authenticated member and admin tools, and
             ResumeGPT tests privacy-first frontend architecture.
           </p>
           <Link to="/projects" className="button primary">

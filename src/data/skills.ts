@@ -1,7 +1,7 @@
 export const skillGroups = [
   {
     label: 'Backend & Application Development',
-    skills: ['Java', 'Spring Boot', 'Spring Cloud Stream', 'Node.js', 'REST APIs', 'SQL']
+    skills: ['Java', 'Spring Boot', 'Spring Cloud Stream', 'Node.js', 'REST APIs', 'SQL', 'Supabase']
   },
   {
     label: 'Platform & Infrastructure',
@@ -13,11 +13,11 @@ export const skillGroups = [
   },
   {
     label: 'Data & Integration',
-    skills: ['XML', 'XSLT', 'JSON', 'YAML', 'SQLite']
+    skills: ['XML', 'XSLT', 'JSON', 'YAML', 'SQLite', 'PostgreSQL']
   },
   {
     label: 'Engineering Practices',
-    skills: ['automated testing', 'code reviews', 'CI/CD', 'Agile/Scrum', 'Kanban']
+    skills: ['automated testing', 'Playwright', 'Vitest', 'accessibility checks', 'code reviews', 'CI/CD', 'Agile/Scrum', 'Kanban']
   }
 ];
 

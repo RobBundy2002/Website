@@ -56,18 +56,18 @@ export const projects: Project[] = [
   {
     slug: 'ujlp',
     title: 'UJLP',
-    subtitle: 'Digital Publication Platform',
+    subtitle: 'Publication & Member Platform',
     category: 'Production Web Platform',
     summary:
-      "The production website and digital publication platform for UVA's Undergraduate Journal of Law & Politics.",
-    technologies: ['React', 'React Router', 'Content Validation', 'GitHub Actions', 'GitHub Pages'],
+      "A production publication and member platform for UVA's law and politics journal, with authenticated profiles, admin uploads, and automated delivery.",
+    technologies: ['React 19', 'Supabase', 'PostgreSQL', 'Row Level Security', 'Vite', 'Playwright', 'GitHub Actions'],
     githubUrl: 'https://github.com/RobBundy2002/UJLP',
     liveUrl: 'https://ujlawandpolitics.org/',
     image: '/Website/assets/projects/ujlp/home-desktop.png',
     imageAlt: 'UJLP homepage for the Undergraduate Journal of Law and Politics',
     tier: 'featured',
     route: '/projects/ujlp',
-    status: 'Production organizational website'
+    status: 'Live publication with member and admin tools'
   },
   {
     slug: 'resumegpt',
